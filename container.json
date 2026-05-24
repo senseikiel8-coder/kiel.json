@@ -4,29 +4,29 @@
     {
       "name": "KIELHAX DELUXE [OPTIMIZED SKINHAX]",
       "status": "ONLINE",
-      "lib_name": "libv1.so",
-      "download_url": "https://imezekiel.x10.mx/Farlight/libv1.so",
+      "lib_name": "libkielhaxdeluxe.so",
+      "download_url": "https://imezekiel.x10.mx/Farlight/libkielhaxdeluxe.so",
       "game_activity": "com.tencent.tmgp.cod.CODMainActivity"
     },
     {
       "name": "KIELHAX PREMIER [SKINHACKS]",
       "status": "ONLINE",
-      "lib_name": "libv2.so",
-      "download_url": "https://imezekiel.x10.mx/Farlight/libv2.so",
+      "lib_name": "libkielhaxprimier.so",
+      "download_url": "https://imezekiel.x10.mx/Farlight/libkielhaxprimier.so",
       "game_activity": "com.tencent.tmgp.cod.CODMainActivity"
     },
     {
       "name": "KIELHAX SUPER SMOOTH [NO SKINHACKS]",
       "status": "ONLINE",
-      "lib_name": "libv3.so",
-      "download_url": "https://imezekiel.x10.mx/Farlight/libv3.so",
+      "lib_name": "libkielhaxlowend.so",
+      "download_url": "https://imezekiel.x10.mx/Farlight/libkielhaxlowend.so",
       "game_activity": "com.tencent.tmgp.cod.CODMainActivity"
     },
     {
       "name": "KIELHAX BLOODSTRIKE [SULASOK EDITIOIN]",
       "status": "ONLINE",
-      "lib_name": "libv4.so",
-      "download_url": "https://imezekiel.x10.mx/Farlight/libv4.so",
+      "lib_name": "libkielhaxbloodstrike.so",
+      "download_url": "https://imezekiel.x10.mx/Farlight/libkielhaxbloodstrike.so",
       "game_activity": "com.tencent.tmgp.cod.CODMainActivity"
     }
   ]
