@@ -1,0 +1,26 @@
+{
+  "menu_title": "SYSTEM SELECT",
+  "systems": [
+    {
+      "name": "KIELHAX DELUXE [OPTIMIZED SKINHAX]",
+      "status": "ONLINE",
+      "lib_name": "libv1.so",
+      "download_url": "https://https://imezekiel.x10.mx/Farlight/libv1.so",
+      "game_activity": "com.tencent.tmgp.cod.CODMainActivity"
+    },
+    {
+      "name": "KIELHAX PREMIER [SKINHACKS]",
+      "status": "ONLINE",
+      "lib_name": "libv2.so",
+      "download_url": "https://https://imezekiel.x10.mx/Farlight/libv2.so",
+      "game_activity": "com.tencent.tmgp.cod.CODMainActivity"
+    },
+    {
+      "name": "KIELHAX SMOOTH [NO SKINHACKS]",
+      "status": "MAINTENANCE",
+      "lib_name": "libv3.so",
+      "download_url": "https://imezekiel.x10.mx/Farlight/libv3.so",
+      "game_activity": "com.tencent.tmgp.cod.CODMainActivity"
+    }
+  ]
+}
