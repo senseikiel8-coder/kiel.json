@@ -2,17 +2,17 @@
   "menu_title": "KIELHAX LANG MALAKAS MGA WANNABE SHITS",
   "systems": [
     {
-      "name": "KIELHAX DELUXE [OPTIMIZED SKINHAX]",
-      "status": "ONLINE",
-      "lib_name": "libkielhaxdeluxe.so",
-      "download_url": "https://imezekiel.x10.mx/Farlight/libkielhaxdeluxe.so",
-      "game_activity": "com.tencent.tmgp.cod.CODMainActivity"
-    },
-    {
       "name": "KIELHAX PREMIER [PREMIUM SKINHACKS]",
       "status": "ONLINE",
       "lib_name": "libkielhaxprimier.so",
       "download_url": "https://imezekiel.x10.mx/Farlight/libkielhaxprimier.so",
+      "game_activity": "com.tencent.tmgp.cod.CODMainActivity"
+    },
+    {
+      "name": "KIELHAX DELUXE [OPTIMIZED SKINHAX]",
+      "status": "ONLINE",
+      "lib_name": "libkielhaxdeluxe.so",
+      "download_url": "https://imezekiel.x10.mx/Farlight/libkielhaxdeluxe.so",
       "game_activity": "com.tencent.tmgp.cod.CODMainActivity"
     },
     {
