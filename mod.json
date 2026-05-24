@@ -2,24 +2,24 @@
   "menu_title": "PILI KA WALANG BITAW",
   "systems": [
     {
+      "name": "KIELHAX PREMIER [PREMIUM SKINHACKS]",
+      "status": "ONLINE",
+      "lib_name": "libkielhaxprimier.so",
+      "download_url": "https://imezekiel.x10.mx/Farlight/libkielhaxprimier.so",
+      "game_activity": "com.tencent.tmgp.cod.CODMainActivity"
+    },
+    {
       "name": "KIELHAX DELUXE [OPTIMIZED SKINHAX]",
       "status": "ONLINE",
-      "lib_name": "libv1.so",
-      "download_url": "https://https://imezekiel.x10.mx/Farlight/libv1.so",
+      "lib_name": "libkielhaxdeluxe.so",
+      "download_url": "https://imezekiel.x10.mx/Farlight/libkielhaxdeluxe.so",
       "game_activity": "com.tencent.tmgp.cod.CODMainActivity"
     },
     {
-      "name": "KIELHAX PREMIER [SKINHACKS]",
+      "name": "KIELHAX LOWEND [NO SKINHACKS]",
       "status": "ONLINE",
-      "lib_name": "libv2.so",
-      "download_url": "https://https://imezekiel.x10.mx/Farlight/libv2.so",
-      "game_activity": "com.tencent.tmgp.cod.CODMainActivity"
-    },
-    {
-      "name": "KIELHAX SUPER SMOOTH [NO SKINHACKS]",
-      "status": "ONLINE",
-      "lib_name": "libv3.so",
-      "download_url": "https://imezekiel.x10.mx/Farlight/libv3.so",
+      "lib_name": "libkielhaxlowend.so",
+      "download_url": "https://imezekiel.x10.mx/Farlight/libkielhaxlowend.so",
       "game_activity": "com.tencent.tmgp.cod.CODMainActivity"
     }
   ]
