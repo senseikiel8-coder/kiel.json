@@ -3,7 +3,7 @@
   "systems": [
     {
       "name": "KIELHAX PREMIER [PREMIUM SKINHACKS]",
-      "status": "ONLINE",
+      "status": "OFFLINE",
       "lib_name": "libkielhaxprimier.so",
       "download_url": "https://imezekiel.x10.mx/Farlight/libkielhaxprimier.so",
       "game_activity": "com.ludashi.dualspace.MainActivity"
@@ -17,7 +17,7 @@
     },
     {
       "name": "KIELHAX LOWEND [NO SKINHACKS]",
-      "status": "ONLINE",
+      "status": "OFFLINE",
       "lib_name": "libkielhaxlowend.so",
       "download_url": "https://imezekiel.x10.mx/Farlight/libkielhaxlowend.so",
       "game_activity": "com.ludashi.dualspace.MainActivity"
