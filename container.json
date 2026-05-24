@@ -1,8 +1,8 @@
 {
-  "menu_title": "SELECT HAX VERSION NIGGA",
+  "menu_title": "PILI KA NA WALANG BITAW",
   "systems": [
     {
-      "name": "KIELHAX [OPTIMIZED SKINHAX]",
+      "name": "KIELHAX DELUXE [OPTIMIZED SKINHAX]",
       "status": "ONLINE",
       "lib_name": "libv1.so",
       "download_url": "https://imezekiel.x10.mx/Farlight/libv1.so",
@@ -16,7 +16,7 @@
       "game_activity": "com.tencent.tmgp.cod.CODMainActivity"
     },
     {
-      "name": "KIELHAX SMOOTH [NO SKINHACKS]",
+      "name": "KIELHAX SUPER SMOOTH [NO SKINHACKS]",
       "status": "ONLINE",
       "lib_name": "libv3.so",
       "download_url": "https://imezekiel.x10.mx/Farlight/libv3.so",
