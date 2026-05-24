@@ -1,5 +1,5 @@
 {
-  "menu_title": "PILI KA NA WALANG BITAW",
+  "menu_title": "KIELHAX LANG MALAKAS MGA WANNABE SHITS",
   "systems": [
     {
       "name": "KIELHAX DELUXE [OPTIMIZED SKINHAX]",
@@ -9,14 +9,14 @@
       "game_activity": "com.tencent.tmgp.cod.CODMainActivity"
     },
     {
-      "name": "KIELHAX PREMIER [SKINHACKS]",
+      "name": "KIELHAX PREMIER [PREMIUM SKINHACKS]",
       "status": "ONLINE",
       "lib_name": "libkielhaxprimier.so",
       "download_url": "https://imezekiel.x10.mx/Farlight/libkielhaxprimier.so",
       "game_activity": "com.tencent.tmgp.cod.CODMainActivity"
     },
     {
-      "name": "KIELHAX SUPER SMOOTH [NO SKINHACKS]",
+      "name": "KIELHAX LOWEND [NO SKINHACKS]",
       "status": "ONLINE",
       "lib_name": "libkielhaxlowend.so",
       "download_url": "https://imezekiel.x10.mx/Farlight/libkielhaxlowend.so",
