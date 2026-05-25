@@ -35,6 +35,19 @@
           "download_url": "https://imezekiel.x10.mx/Farlight/libkielhaxbloodstrike.so"
         }
       ]
+    },
+    {
+      "name": "MOBILE LEGENDS",
+      "status": "ONLINE",
+      "game_activity": "com.moba.unityplugin.MobaGameMainActivity",
+      "logo": "https://raw.githubusercontent.com/senseikiel8-coder/kiel.json/main/MLBB%20Wallpaper.jpg",
+      "libs": [
+        {
+          "name": "KIELHAX MLBB",
+          "lib_name": "libkielhaxmlbb.so",
+          "download_url": "https://imezekiel.x10.mx/Farlight/libkielhaxmlbb.so"
+        }
+      ]
     }
   ]
 }
