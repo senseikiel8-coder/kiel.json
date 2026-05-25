@@ -38,9 +38,9 @@
     },
     {
       "name": "MOBILE LEGENDS",
-      "status": "ONLINE",
+      "status": "MAINTENANCE",
       "game_activity": "com.moba.unityplugin.MobaGameMainActivity",
-      "logo": "https://raw.githubusercontent.com/senseikiel8-coder/kiel.json/main/MLBB%20Wallpaper.jpg",
+      "logo": "https://raw.githubusercontent.com/senseikiel8-coder/kiel.json/main/1ee440fb871542f6cdb2032200ef725f.jpg",
       "libs": [
         {
           "name": "KIELHAX MLBB",
