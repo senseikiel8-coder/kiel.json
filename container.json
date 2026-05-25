@@ -3,28 +3,28 @@
   "systems": [
     {
       "name": "KIELHAX PREMIER [PREMIUM SKINHACKS]",
-      "status": "ONLINE",
+      "status": "MAINTENANCE",
       "lib_name": "libkielhaxpremier.so",
       "download_url": "https://imezekiel.x10.mx/Farlight/libkielhaxpremier.so",
       "game_activity": "com.tencent.tmgp.cod.CODMainActivity"
     },
     {
       "name": "KIELHAX DELUXE [OPTIMIZED SKINHAX]",
-      "status": "ONLINE",
+      "status": "MAINTENANCE",
       "lib_name": "libkielhaxdeluxe.so",
       "download_url": "https://imezekiel.x10.mx/Farlight/libkielhaxdeluxe.so",
       "game_activity": "com.tencent.tmgp.cod.CODMainActivity"
     },
     {
       "name": "KIELHAX LOWEND [NO SKINHACKS]",
-      "status": "ONLINE",
+      "status": "MAINTENANCE",
       "lib_name": "libkielhaxlowend.so",
       "download_url": "https://imezekiel.x10.mx/Farlight/libkielhaxlowend.so",
       "game_activity": "com.tencent.tmgp.cod.CODMainActivity"
     },
     {
       "name": "KIELHAX BLOODSTRIKE [SULASOK]",
-      "status": "ONLINE",
+      "status": "MAINTENANCE",
       "lib_name": "libkielhaxbloodstrike.so",
       "download_url": "https://imezekiel.x10.mx/Farlight/libkielhaxbloodstrike.so",
       "game_activity": "com.tencent.tmgp.cod.CODMainActivity"
