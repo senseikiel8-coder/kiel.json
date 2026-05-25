@@ -1,33 +1,36 @@
 {
-  "menu_title": "KIELHAX LANG MALAKAS MGA WANNABE SHITS",
   "systems": [
     {
-      "name": "KIELHAX PREMIER [PREMIUM SKINHACKS]",
-      "status": "MAINTENANCE",
-      "lib_name": "libkielhaxpremier.so",
-      "download_url": "https://imezekiel.x10.mx/Farlight/libkielhaxpremier.so",
-      "game_activity": "com.tencent.tmgp.cod.CODMainActivity"
+      "name": "CALL OF DUTY",
+      "status": "ONLINE",
+      "game_activity": "com.tencent.tmgp.cod.CODMainActivity",
+      "logo": "https://raw.githubusercontent.com/X3-RO/testdd/refs/heads/main/4c91b95a589c61e4f0b9fc0302a0addd.jpg",
+      "libs": [
+        {
+          "name": "KIELHAX PREMIER",
+          "download_url": "https://imezekiel.x10.mx/Farlight/libkielhaxpremier.so"
+        },
+        {
+          "name": "KIELHAX DELUXE",
+          "download_url": "https://imezekiel.x10.mx/Farlight/libkielhaxdeluxe.so"
+        },
+        {
+          "name": "KIELHAX LOWEND",
+          "download_url": "https://imezekiel.x10.mx/Farlight/libkielhaxlowend.so"
+        }
+      ]
     },
     {
-      "name": "KIELHAX DELUXE [OPTIMIZED SKINHAX]",
-      "status": "MAINTENANCE",
-      "lib_name": "libkielhaxdeluxe.so",
-      "download_url": "https://imezekiel.x10.mx/Farlight/libkielhaxdeluxe.so",
-      "game_activity": "com.tencent.tmgp.cod.CODMainActivity"
-    },
-    {
-      "name": "KIELHAX LOWEND [NO SKINHACKS]",
-      "status": "MAINTENANCE",
-      "lib_name": "libkielhaxlowend.so",
-      "download_url": "https://imezekiel.x10.mx/Farlight/libkielhaxlowend.so",
-      "game_activity": "com.tencent.tmgp.cod.CODMainActivity"
-    },
-    {
-      "name": "KIELHAX BLOODSTRIKE [SULASOK]",
-      "status": "MAINTENANCE",
-      "lib_name": "libkielhaxbloodstrike.so",
-      "download_url": "https://imezekiel.x10.mx/Farlight/libkielhaxbloodstrike.so",
-      "game_activity": "com.tencent.tmgp.cod.CODMainActivity"
+      "name": "BLOOD STRIKE",
+      "status": "ONLINE",
+      "game_activity": "com.netease.bloodstrike.unity.MainActivity",
+      "logo": "https://raw.githubusercontent.com/X3-RO/testdd/refs/heads/main/b23ec8eaa31eb1e679e9a88509adb3f5.jpg",
+      "libs": [
+        {
+          "name": "KIELHAX BLOODSTRIKE",
+          "download_url": "https://imezekiel.x10.mx/Farlight/libkielhaxbloodstrike.so"
+        }
+      ]
     }
   ]
 }
