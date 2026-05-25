@@ -8,14 +8,17 @@
       "libs": [
         {
           "name": "KIELHAX PREMIER",
+          "lib_name": "libkielhaxpremier.so",
           "download_url": "https://imezekiel.x10.mx/Farlight/libkielhaxpremier.so"
         },
         {
           "name": "KIELHAX DELUXE",
+          "lib_name": "libkielhaxdeluxe.so",
           "download_url": "https://imezekiel.x10.mx/Farlight/libkielhaxdeluxe.so"
         },
         {
           "name": "KIELHAX LOWEND",
+          "lib_name": "libkielhaxlowend.so",
           "download_url": "https://imezekiel.x10.mx/Farlight/libkielhaxlowend.so"
         }
       ]
@@ -28,6 +31,7 @@
       "libs": [
         {
           "name": "KIELHAX BLOODSTRIKE",
+          "lib_name": "libkielhaxbloodstrike.so",
           "download_url": "https://imezekiel.x10.mx/Farlight/libkielhaxbloodstrike.so"
         }
       ]
