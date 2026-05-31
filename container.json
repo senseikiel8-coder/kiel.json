@@ -2,7 +2,7 @@
   "systems": [
     {
       "name": "CALL OF DUTY",
-      "status": "ONLINE",
+      "status": "MAINTENANCE",
       "game_activity": "com.tencent.tmgp.cod.CODMainActivity",
       "logo": "https://raw.githubusercontent.com/senseikiel8-coder/kiel.json/main/Call%20Of%20Duty%20Mobile%20Wallpaper.jpg",
       "libs": [
@@ -25,7 +25,7 @@
     },
     {
       "name": "JAYVEHAX CODM",
-      "status": "ONLINE",
+      "status": "MAINTENANCE",
       "game_activity": "com.tencent.tmgp.cod.CODMainActivity",
       "logo": "https://raw.githubusercontent.com/senseikiel8-coder/kiel.json/main/IMG_20260529_210756_130.jpg",
       "libs": [
