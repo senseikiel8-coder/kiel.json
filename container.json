@@ -29,24 +29,6 @@
       ]
     },
     {
-      "name": "JAYVEHAX CODM",
-      "status": "ONLINE",
-      "game_activity": "com.tencent.tmgp.cod.CODMainActivity",
-      "logo": "https://raw.githubusercontent.com/senseikiel8-coder/kiel.json/main/IMG_20260529_210756_130.jpg",
-      "libs": [
-        {
-          "name": "JAYVEHAX SKINHAX",
-          "lib_name": "libjayveskinhax.so",
-          "download_url": "https://imezekiel.x10.mx/Farlight/libjayveskinhax.so"
-        },
-        {
-          "name": "JAYVEHAX NO SKINHAX",
-          "lib_name": "libjayvenoskinhax.so",
-          "download_url": "https://imezekiel.x10.mx/Farlight/libjayvenoskinhax.so"
-        }
-      ]
-    },
-    {
       "name": "BLOOD STRIKE",
       "status": "ONLINE",
       "game_activity": "com.netease.bloodstrike.unity.MainActivity",
