@@ -55,10 +55,10 @@
       ]
     },
     {
-      "name": "CRACKS",
+      "name": "CODM CRACKS",
       "status": "ONLINE",
-      "game_activity": "com.cracks.main",
-      "logo": "https://via.placeholder.com/500",
+      "game_activity": "com.tencent.tmgp.cod.CODMainActivity",
+      "logo": "https://raw.githubusercontent.com/senseikiel8-coder/kiel.json/main/cracks.png",
       "libs": [
         {
           "name": "cid deluxe",
