@@ -5,21 +5,21 @@
       "name": "KIELHAX PREMIER [PREMIUM SKINHACKS]",
       "status": "ONLINE",
       "lib_name": "libkielhaxpremier.so",
-      "download_url": "https://imezekiel.x10.mx/Farlight/libkielhaxpremier.so",
+      "download_url": "https://yoshibuilds.x10.mx/Farlight/libkielhaxpremier.so",
       "game_activity": "com.tencent.tmgp.cod.CODMainActivity"
     },
     {
       "name": "KIELHAX DELUXE [OPTIMIZED SKINHAX]",
       "status": "ONLINE",
       "lib_name": "libkielhaxdeluxe.so",
-      "download_url": "https://imezekiel.x10.mx/Farlight/libkielhaxdeluxe.so",
+      "download_url": "https://yoshibuilds.x10.mx/Farlight/libkielhaxdeluxe.so",
       "game_activity": "com.tencent.tmgp.cod.CODMainActivity"
     },
     {
       "name": "KIELHAX LOWEND [NO SKINHACKS]",
       "status": "ONLINE",
       "lib_name": "libkielhaxlowend.so",
-      "download_url": "https://imezekiel.x10.mx/Farlight/libkielhaxlowend.so",
+      "download_url": "https://yoshibuilds.x10.mx/Farlight/libkielhaxlowend.so",
       "game_activity": "com.tencent.tmgp.cod.CODMainActivity"
     }
   ]
