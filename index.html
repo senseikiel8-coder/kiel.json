@@ -533,7 +533,6 @@
             margin-bottom: 14px;
         }
 
-        /* UPDATED: Much larger text size, more padding, clearly centered */
         .key-input {
             width: 100%;
             background: rgba(0,0,0,0.5);
@@ -742,7 +741,7 @@
             margin-bottom: 8px;
         }
 
-        .modal p {
+        .modal p, #modal-text {
             font-size: 0.9rem;
             color: var(--text-muted);
             line-height: 1.6;
@@ -762,7 +761,7 @@
             font-size: 0.9rem;
         }
 
-        .modal-btn:active {
+        .modal-btn:active:not(:disabled) {
             background: rgba(255,255,255,0.1);
         }
 
@@ -1338,7 +1337,9 @@
             </div>
             <h3 id="modal-title">Title</h3>
             <div id="modal-text">Content</div>
-            <button class="modal-btn" onclick="closeModal()">Got it</button>
+            <div id="modal-buttons" style="display: flex; gap: 12px; width: 100%;">
+                <button class="modal-btn" data-close="true" onclick="closeModal()">Got it</button>
+            </div>
         </div>
     </div>
 
@@ -1363,110 +1364,96 @@
             showModal(game + ' — ' + duration + '<br>Price: ' + price + '<br><br>Tap Buy in Owner tab to purchase this plan.', 'Plan Selected', true);
         }
 
-        function showModal(text, title = 'Notification', isHTML = false) {
+        function showModal(text, title = 'Notification', isHTML = false, buttonsHTML = null) {
             if(isHTML) {
                 document.getElementById('modal-text').innerHTML = text;
             } else {
                 document.getElementById('modal-text').innerHTML = text.replace(/\n/g, '<br>');
             }
             document.getElementById('modal-title').textContent = title;
+            
+            const btnContainer = document.getElementById('modal-buttons');
+            if (buttonsHTML) {
+                btnContainer.innerHTML = buttonsHTML;
+            } else {
+                btnContainer.innerHTML = '<button class="modal-btn" data-close="true" onclick="closeModal()">Got it</button>';
+            }
+
             document.getElementById('modal').classList.add('active');
         }
 
         function closeModal(event) {
-            if (!event || event.target.id === 'modal' || event.target.classList.contains('modal-btn')) {
+            // Closes modal if called without parameters, clicked background, or button holds data-close
+            if (!event || event.target.id === 'modal' || event.target.dataset.close === 'true') {
                 document.getElementById('modal').classList.remove('active');
             }
         }
 
         function generateKey() {
-            if (isGenerating) return; // Prevent multiple clicks
-            isGenerating = true;
+            if (isGenerating) return;
 
+            let buttons = `
+                <button class="modal-btn" data-close="true" style="background: rgba(255,255,255,0.05); color: var(--text-muted);" onclick="cancelGeneration()">No</button>
+                <button class="modal-btn" style="background: linear-gradient(135deg, #059669, #10b981); color: white;" onclick="proceedToTikTok()">Follow</button>
+            `;
+            showModal('Please follow kiel on tiktok, click the button below.', 'Action Required', false, buttons);
+        }
+
+        function cancelGeneration() {
+            // Delayed to show after modal visually closes
+            setTimeout(() => {
+                showModal('Key generation cancelled. You must follow to get a free key.', 'Cancelled');
+            }, 300);
+        }
+
+        function proceedToTikTok() {
+            isGenerating = true;
+            
             const btn = document.getElementById('generateBtn');
             const originalBtnHTML = btn.innerHTML;
             btn.disabled = true;
+            btn.innerHTML = 'Generating...';
 
-            // OPEN TAB IMMEDIATELY on user click (bypasses popup blockers)
-            let tiktokTab = null;
-            try {
-                tiktokTab = window.open('', '_blank');
-                if (tiktokTab) {
-                    tiktokTab.document.write('<body style="background:#000;color:#fff;display:flex;justify-content:center;align-items:center;height:100vh;font-family:sans-serif;"><h3>Loading TikTok...</h3></body>');
-                }
-            } catch(e) {
-                // Ignore if completely blocked
-            }
+            // Redirect user to TikTok profile to follow
+            window.open('https://tiktok.com/@kiel_no_aim', '_blank');
 
-            let redirectTime = 5;
+            // Verification phase
+            let waitTime = 10;
+            let timerHtml = `<button class="modal-btn" style="opacity: 0.7; cursor: not-allowed;" disabled>Waiting (<span id="wait-timer">${waitTime}</span>s)...</button>`;
             
-            // Phase 1: 5-second countdown before redirecting
-            showModal('PLEASE FOLLOW KIEL ON TIKTOK<br><br>Redirecting to link in <b>' + redirectTime + '</b> seconds...', 'Action Required', true);
-            btn.innerHTML = 'Redirecting (' + redirectTime + 's)...';
+            showModal('Please follow kiel on tiktok.<br><br>Waiting for verification...', 'Generating Key', true, timerHtml);
 
-            const redirectInterval = setInterval(() => {
-                redirectTime--;
-                btn.innerHTML = 'Redirecting (' + redirectTime + 's)...';
+            const waitInterval = setInterval(() => {
+                waitTime--;
+                let timerSpan = document.getElementById('wait-timer');
                 
-                const modalTitle = document.getElementById('modal-title');
-                const modalText = document.getElementById('modal-text');
-                
-                // Update modal text dynamically
-                if (document.getElementById('modal').classList.contains('active') && modalTitle.textContent === 'Action Required') {
-                    modalText.innerHTML = 'PLEASE FOLLOW KIEL ON TIKTOK<br><br>Redirecting to link in <b style="font-size:1.1rem; color:#a5b4fc;">' + redirectTime + '</b> seconds...';
+                if(timerSpan) {
+                    timerSpan.innerText = waitTime;
                 }
 
-                if (redirectTime <= 0) {
-                    clearInterval(redirectInterval);
+                if (waitTime <= 0) {
+                    clearInterval(waitInterval);
+                    isGenerating = false;
                     
-                    // Trigger the redirect to TikTok in the tab we opened!
-                    if (tiktokTab && !tiktokTab.closed) {
-                        tiktokTab.location.href = 'https://tiktok.com/@kiel_no_aim';
-                    } else {
-                        // Backup if the popup was completely blocked by a strict browser
-                        window.open('https://tiktok.com/@kiel_no_aim', '_blank');
-                    }
-                    
-                    // Phase 2: Start 10-second wait after redirect
-                    let waitTime = 10;
-                    showModal('PLEASE FOLLOW KIEL ON TIKTOK<br><br>Waiting <b>' + waitTime + '</b> seconds after following...', 'Generating Key', true);
-                    btn.innerHTML = 'Waiting (' + waitTime + 's)...';
-                    
-                    const waitInterval = setInterval(() => {
-                        waitTime--;
-                        btn.innerHTML = 'Waiting (' + waitTime + 's)...';
-                        
-                        if (document.getElementById('modal').classList.contains('active') && modalTitle.textContent === 'Generating Key') {
-                            modalText.innerHTML = 'PLEASE FOLLOW KIEL ON TIKTOK<br><br>Waiting <b style="font-size:1.1rem; color:#a5b4fc;">' + waitTime + '</b> seconds after following...';
-                        }
+                    // Reset generate button
+                    btn.innerHTML = originalBtnHTML;
+                    btn.disabled = false;
 
-                        if (waitTime <= 0) {
-                            clearInterval(waitInterval);
-                            isGenerating = false;
-                            
-                            // Reset button
-                            btn.innerHTML = originalBtnHTML;
-                            btn.disabled = false;
-
-                            //put key here\\ //put key here\\ //put key here\\ //put key here\\ //put key here\\ //put key here\\ //put key here\\ //put key here\\ //put key here\\ //put key here\\ //put key here\\ //put key here\\ //put key here\\ //put key here\\ //put key here\\ //put key here\\ //put key here\\ //put key here\\ //put key here\\ //put key here\\
-                            let key = '1xCHRIS-U6GK3rFVNy';
-                            
-                            // Highlight the input box
-                            const input = document.getElementById('keyInput');
-                            input.value = key;
-                            input.classList.add('generated');
-                            
-                            // Show the final massive key modal
-                            let finalHtml = `
-                                Your key has been successfully generated!<br><br>
-                                <div style="font-size: 1.8rem; font-weight: 900; color: #22d3ee; letter-spacing: 3px; padding: 20px 10px; background: rgba(0,0,0,0.4); border-radius: 12px; border: 1px solid rgba(34, 211, 238, 0.4); margin: 10px 0; word-break: break-all;">
-                                    ${key}
-                                </div>
-                                <br>Copy it now — it will not be shown again.
-                            `;
-                            showModal(finalHtml, 'Key Generated', true);
-                        }
-                    }, 1000);
+                    //put key here\\ //put key here\\ //put key here\\ //put key here\\ //put key here\\ 
+                    let key = '1xCHRIS-U6GK3rFVNy';
+                    
+                    const input = document.getElementById('keyInput');
+                    input.value = key;
+                    input.classList.add('generated');
+                    
+                    let finalHtml = `
+                        Your key has been successfully generated!<br><br>
+                        <div style="font-size: 1.8rem; font-weight: 900; color: #22d3ee; letter-spacing: 3px; padding: 20px 10px; background: rgba(0,0,0,0.4); border-radius: 12px; border: 1px solid rgba(34, 211, 238, 0.4); margin: 10px 0; word-break: break-all;">
+                            ${key}
+                        </div>
+                        <br>Copy it now — it will not be shown again.
+                    `;
+                    showModal(finalHtml, 'Key Generated', true);
                 }
             }, 1000);
         }
@@ -1579,16 +1566,10 @@
             const overlay = document.getElementById('musicOverlay');
             const audio = document.getElementById('bgMusic');
             
-            // Hide the popup overlay immediately
             overlay.style.display = 'none'; 
             
             if (play) {
-                // Set the HTML5 audio element to 100% volume
-                // Note: Security restrictions in modern browsers prevent websites from overriding the physical hardware volume limits of the phone.
-                // It will play at 100% of whatever the user's phone media volume is currently set to.
                 audio.volume = 1.0; 
-                
-                // Play audio
                 audio.play().catch(e => {
                     console.log("Audio play failed:", e);
                 });
