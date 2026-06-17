@@ -1,77 +1,1513 @@
-{
-  "systems": [
-    {
-      "name": "CALL OF DUTY",
-      "status": "ONLINE",
-      "game_activity": "com.tencent.tmgp.cod.CODMainActivity",
-      "logo": "https://raw.githubusercontent.com/senseikiel8-coder/kiel.json/main/Call%20Of%20Duty%20Mobile%20Wallpaper.jpg",
-      "libs": [
-        {
-          "name": "KIELHAX PREMIER [ PREMIUM SKINHAX ]",
-          "lib_name": "libkielhaxpremier.so",
-          "download_url": "https://xaidomain.x10.mx/Farlight/libkielhaxpremier.so"
-        },
-        {
-          "name": "KIELHAX DELUXE [ SKINHAX OPTIMIZED ]",
-          "lib_name": "libkielhaxdeluxe.so",
-          "download_url": "https://xaidomain.x10.mx/Farlight/libkielhaxdeluxe.so"
-        },
-        {
-          "name": "KIELHAX LOWEND [ NO SKINHAX ]",
-          "lib_name": "libkielhaxlowend.so",
-          "download_url": "https://xaidomain.x10.mx/Farlight/libkielhaxlowend.so"
-        },
-        {
-          "name": "OLD LOWEND V3",
-          "lib_name": "libkielhaxlowendv3.so",
-          "download_url": "https://xaidomain.x10.mx/Farlight/libkielhaxlowendv3.so"
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>KIELHAX SULASOK WEBSITE</title>
+    
+<!-- //CSS_STYLES\\ //CSS_STYLES\\ //CSS_STYLES\\ //CSS_STYLES\\ //CSS_STYLES\\ //CSS_STYLES\\ //CSS_STYLES\\ //CSS_STYLES\\ //CSS_STYLES\\ //CSS_STYLES\\ //CSS_STYLES\\ //CSS_STYLES\\ //CSS_STYLES\\ //CSS_STYLES\\ //CSS_STYLES\\ //CSS_STYLES\\ //CSS_STYLES\\ //CSS_STYLES\\ //CSS_STYLES\\ //CSS_STYLES\\ -->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
         }
-      ]
-    },
-    {
-      "name": "BLOOD STRIKE",
-      "status": "ONLINE",
-      "game_activity": "com.netease.bloodstrike.unity.MainActivity",
-      "logo": "https://raw.githubusercontent.com/X3-RO/testdd/refs/heads/main/b23ec8eaa31eb1e679e9a88509adb3f5.jpg",
-      "libs": [
-        {
-          "name": "KIELHAX BLOODSTRIKE [ CRACKED ]",
-          "lib_name": "libkielhaxbloodstrike.so",
-          "download_url": "https://xaidomain.x10.mx/Farlight/libkielhaxbloodstrike.so"
+
+        :root {
+            --primary: #6366f1;
+            --primary-dark: #4f46e5;
+            --secondary: #ec4899;
+            --accent: #06b6d4;
+            --success: #10b981;
+            --warning: #f59e0b;
+            --danger: #ef4444;
+            --bg: #050507;
+            --surface: #0f0f14;
+            --surface-light: #16161e;
+            --border: rgba(255, 255, 255, 0.06);
+            --text: #f1f5f9;
+            --text-muted: #64748b;
         }
-      ]
-    },
-    {
-      "name": "MOBILE LEGENDS",
-      "status": "MAINTENANCE",
-      "game_activity": "com.moba.unityplugin.MobaGameMainActivity",
-      "logo": "https://raw.githubusercontent.com/senseikiel8-coder/kiel.json/main/1ee440fb871542f6cdb2032200ef725f.jpg",
-      "libs": [
-        {
-          "name": "KIELHAX MLBB [ AUTOBAN 10Y ]",
-          "lib_name": "libkielhaxmlbb.so",
-          "download_url": "https://xaidomain.x10.mx/Farlight/libkielhaxmlbb.so"
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #000;
+            min-height: 100vh;
+            color: var(--text);
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            padding: 0;
         }
-      ]
-    },
-    {
-      "name": "CODM CRACKS",
-      "status": "ONLINE",
-      "game_activity": "com.tencent.tmgp.cod.CODMainActivity",
-      "logo": "https://raw.githubusercontent.com/senseikiel8-coder/kiel.json/main/cracks.png",
-      "libs": [
-        {
-          "name": "cid deluxe",
-          "lib_name": "libv+++.so",
-          "download_url": "https://xaidomain.x10.mx/Farlight/libv+++.so"
-        },
-        {
-          "name": "ARIX CRACK",
-          "lib_name": "ARIXCRACK.so",
-          "download_url": "https://xaidomain.x10.mx/Farlight/ARIXCRACK.so"
+
+        /* Phone Container */
+        .phone {
+            width: 100%;
+            max-width: 430px;
+            min-height: 100vh;
+            background: var(--bg);
+            position: relative;
+            overflow-x: hidden;
+            box-shadow: 0 0 100px rgba(99, 102, 241, 0.1);
         }
-      ]
-    }
-  ],
-  "music": "https://audio.jukehost.co.uk/019ebbc4-6eb2-73ca-9705-db29e68cc62b"
-}
+
+        @media (min-width: 431px) {
+            .phone {
+                min-height: 850px;
+                height: 100vh;
+                border-left: 1px solid rgba(255,255,255,0.05);
+                border-right: 1px solid rgba(255,255,255,0.05);
+            }
+            body {
+                background: linear-gradient(135deg, #0a0a12, #1a1025);
+            }
+        }
+
+        /* Background Orbs */
+        .orb {
+            position: fixed;
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            filter: blur(80px);
+            opacity: 0.25;
+            pointer-events: none;
+        }
+
+        .orb-1 {
+            background: var(--primary);
+            top: -100px;
+            right: -100px;
+        }
+
+        .orb-2 {
+            background: var(--secondary);
+            bottom: 80px;
+            left: -100px;
+            width: 250px;
+            height: 250px;
+        }
+
+        /* Header */
+        .header {
+            text-align: center;
+            padding: 32px 20px 20px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .header h1 {
+            font-size: 1.5rem;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            background: linear-gradient(135deg, #fff, #c4b5fd);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 4px;
+        }
+
+        .header p {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            font-weight: 500;
+        }
+
+        /* Content Area */
+        .content {
+            padding: 0 16px 100px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .section {
+            display: none;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .section.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Card Base */
+        .card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            padding: 20px;
+            margin-bottom: 12px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+        }
+
+        /* Game Card in Price List */
+        .game-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            padding: 20px;
+            margin-bottom: 12px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .game-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+        }
+
+        .game-header {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            margin-bottom: 16px;
+        }
+
+        .game-icon {
+            width: 44px;
+            height: 44px;
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .game-icon::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(255,255,255,0.2), transparent);
+        }
+
+        .game-icon svg {
+            width: 22px;
+            height: 22px;
+            position: relative;
+            z-index: 1;
+            color: white;
+        }
+
+        .icon-mlbb { background: linear-gradient(135deg, #4f46e5, #7c3aed); }
+        .icon-codm { background: linear-gradient(135deg, #059669, #10b981); }
+        .icon-blood { background: linear-gradient(135deg, #dc2626, #ef4444); }
+        .icon-crack { background: linear-gradient(135deg, #d97706, #f59e0b); }
+        .icon-mod { background: linear-gradient(135deg, #0891b2, #06b6d4); }
+        .icon-all { background: linear-gradient(135deg, #f59e0b, #ef4444); }
+
+        .game-title {
+            font-weight: 700;
+            font-size: 1rem;
+            color: var(--text);
+            display: flex;
+            align-items: center;
+        }
+
+        .game-subtitle {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            margin-top: 2px;
+        }
+
+        /* Duration Scroll */
+        .duration-scroll {
+            display: flex;
+            gap: 8px;
+            overflow-x: auto;
+            padding-bottom: 4px;
+            margin: 0 -4px;
+            scrollbar-width: none;
+        }
+
+        .duration-scroll::-webkit-scrollbar {
+            display: none;
+        }
+
+        .duration-pill {
+            flex-shrink: 0;
+            padding: 10px 14px;
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 12px;
+            text-align: center;
+            min-width: 80px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .duration-pill:active {
+            transform: scale(0.95);
+        }
+
+        .duration-pill.active {
+            background: linear-gradient(135deg, rgba(99,102,241,0.2), rgba(139,92,246,0.15));
+            border-color: rgba(99,102,241,0.4);
+        }
+
+        .duration-label {
+            font-size: 0.7rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: var(--text-muted);
+            margin-bottom: 4px;
+        }
+
+        .duration-pill.active .duration-label {
+            color: #a5b4fc;
+        }
+
+        .duration-price {
+            font-size: 0.95rem;
+            font-weight: 800;
+            color: var(--text);
+        }
+
+        .duration-pill.active .duration-price {
+            background: linear-gradient(135deg, #a5b4fc, #c4b5fd);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Download Cards */
+        .download-list {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .download-item {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            padding: 16px;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            cursor: pointer;
+            transition: all 0.2s;
+            position: relative;
+            overflow: hidden;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .download-item:active {
+            transform: scale(0.98);
+            background: var(--surface-light);
+        }
+
+        .dl-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .dl-icon svg {
+            width: 24px;
+            height: 24px;
+            color: white;
+        }
+
+        .dl-info {
+            flex: 1;
+        }
+
+        .dl-name {
+            font-weight: 700;
+            font-size: 0.95rem;
+            margin-bottom: 4px;
+        }
+
+        .dl-meta {
+            display: flex;
+            gap: 8px;
+            align-items: center;
+        }
+
+        .dl-badge {
+            font-size: 0.65rem;
+            font-weight: 700;
+            padding: 2px 8px;
+            border-radius: 6px;
+            text-transform: uppercase;
+        }
+
+        .badge-new { background: rgba(99,102,241,0.15); color: #a5b4fc; }
+        .badge-stable { background: rgba(16,185,129,0.15); color: #34d399; }
+        .badge-beta { background: rgba(245,158,11,0.15); color: #fbbf24; }
+
+        .dl-size {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            font-weight: 500;
+        }
+
+        .dl-arrow {
+            color: var(--text-muted);
+            transition: transform 0.2s;
+        }
+
+        .download-item:active .dl-arrow {
+            transform: translateX(4px);
+        }
+
+        /* Owner Section */
+        .owner-status {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 16px;
+            background: rgba(16,185,129,0.05);
+            border: 1px solid rgba(16,185,129,0.1);
+            border-radius: 16px;
+            margin-bottom: 16px;
+        }
+
+        .status-dot {
+            width: 10px;
+            height: 10px;
+            background: var(--success);
+            border-radius: 50%;
+            box-shadow: 0 0 12px var(--success);
+            position: relative;
+            flex-shrink: 0;
+        }
+
+        .status-dot::after {
+            content: '';
+            position: absolute;
+            inset: -4px;
+            border-radius: 50%;
+            border: 2px solid var(--success);
+            opacity: 0;
+            animation: ripple 2s infinite;
+        }
+
+        @keyframes ripple {
+            0% { transform: scale(0.8); opacity: 1; }
+            100% { transform: scale(2); opacity: 0; }
+        }
+
+        .status-text {
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .status-sub {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+        }
+
+        .stats-row {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .stat-box {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 16px 8px;
+            text-align: center;
+        }
+
+        .stat-num {
+            font-size: 1.25rem;
+            font-weight: 900;
+            color: var(--text);
+            display: block;
+        }
+
+        .stat-label {
+            font-size: 0.65rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-top: 4px;
+            font-weight: 600;
+        }
+
+        .contact-list {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .contact-row {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            padding: 14px 16px;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            cursor: pointer;
+            transition: all 0.2s;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .contact-row:active {
+            background: var(--surface-light);
+            transform: scale(0.98);
+        }
+
+        .contact-icon-sm {
+            width: 36px;
+            height: 36px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(99,102,241,0.1);
+            flex-shrink: 0;
+        }
+
+        .contact-icon-sm svg {
+            width: 18px;
+            height: 18px;
+            color: #a5b4fc;
+        }
+
+        .contact-text {
+            flex: 1;
+        }
+
+        .contact-name {
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .contact-handle {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+        }
+
+        /* Keys Section */
+        .key-box {
+            background: linear-gradient(135deg, rgba(6,182,212,0.08), rgba(99,102,241,0.08));
+            border: 1px solid rgba(6,182,212,0.2);
+            border-radius: 16px;
+            padding: 24px 20px;
+            margin-bottom: 16px;
+            text-align: center;
+        }
+
+        .key-label {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 700;
+            margin-bottom: 14px;
+        }
+
+        /* UPDATED: Much larger text size, more padding, clearly centered */
+        .key-input {
+            width: 100%;
+            background: rgba(0,0,0,0.5);
+            border: 1px solid rgba(255,255,255,0.15);
+            border-radius: 14px;
+            padding: 18px 10px;
+            font-family: 'Courier New', monospace;
+            font-size: 1.6rem;
+            font-weight: 900;
+            color: #22d3ee;
+            text-align: center;
+            letter-spacing: 3px;
+            outline: none;
+            margin-bottom: 16px;
+            transition: all 0.3s ease;
+        }
+
+        .key-input::placeholder {
+            color: #475569;
+            letter-spacing: 4px;
+            font-size: 1.3rem;
+            font-weight: 700;
+        }
+
+        @keyframes keyPulse {
+            0% { box-shadow: 0 0 0 0 rgba(34, 211, 238, 0.4); }
+            70% { box-shadow: 0 0 0 15px rgba(34, 211, 238, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(34, 211, 238, 0); }
+        }
+
+        .key-input.generated {
+            animation: keyPulse 2s infinite;
+            border-color: #22d3ee;
+            background: rgba(34, 211, 238, 0.1);
+        }
+
+        .key-hint {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+        }
+
+        .btn {
+            width: 100%;
+            padding: 14px;
+            border: none;
+            border-radius: 14px;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.9rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.2s;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            text-decoration: none;
+        }
+
+        .btn:active:not(:disabled) {
+            transform: scale(0.97);
+        }
+        
+        .btn:disabled {
+            opacity: 0.7;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary-dark), var(--primary));
+            box-shadow: 0 4px 20px rgba(79, 70, 229, 0.3);
+        }
+
+        .btn-success {
+            background: linear-gradient(135deg, #059669, var(--success));
+            box-shadow: 0 4px 20px rgba(16, 185, 129, 0.3);
+        }
+
+        .btn-accent {
+            background: linear-gradient(135deg, #0891b2, var(--accent));
+            box-shadow: 0 4px 20px rgba(6, 182, 212, 0.3);
+        }
+
+        .btn-ghost {
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+            color: var(--text-muted);
+            margin-top: 10px;
+        }
+
+        .btn-ghost:active {
+            background: rgba(255,255,255,0.08);
+        }
+
+        /* Bottom Nav */
+        .bottom-nav {
+            position: fixed;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100%;
+            max-width: 430px;
+            background: rgba(15, 15, 20, 0.95);
+            backdrop-filter: blur(20px);
+            border-top: 1px solid var(--border);
+            padding: 8px 16px 24px;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 8px;
+            z-index: 100;
+        }
+
+        .nav-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 4px;
+            padding: 8px;
+            background: none;
+            border: none;
+            color: var(--text-muted);
+            font-family: 'Inter', sans-serif;
+            font-size: 0.65rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+            border-radius: 12px;
+        }
+
+        .nav-item:active {
+            background: rgba(255,255,255,0.05);
+        }
+
+        .nav-item.active {
+            color: #a5b4fc;
+        }
+
+        .nav-item svg {
+            width: 22px;
+            height: 22px;
+            transition: transform 0.2s;
+        }
+
+        .nav-item.active svg {
+            transform: scale(1.1);
+        }
+
+        /* Modal */
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.8);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            justify-content: center;
+            align-items: flex-end;
+            padding: 0;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .modal-overlay.active {
+            display: flex;
+            opacity: 1;
+        }
+
+        .modal {
+            background: linear-gradient(180deg, #16161e, #0f0f14);
+            border-top: 1px solid rgba(255,255,255,0.1);
+            border-radius: 24px 24px 0 0;
+            padding: 32px 24px 40px;
+            width: 100%;
+            max-width: 430px;
+            text-align: center;
+            transform: translateY(100%);
+            transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .modal-overlay.active .modal {
+            transform: translateY(0);
+        }
+
+        .modal-icon {
+            width: 56px;
+            height: 56px;
+            border-radius: 18px;
+            background: linear-gradient(135deg, rgba(99,102,241,0.15), rgba(139,92,246,0.1));
+            border: 1px solid rgba(99,102,241,0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 16px;
+        }
+
+        .modal-icon svg {
+            width: 24px;
+            height: 24px;
+            color: #a5b4fc;
+        }
+
+        .modal h3 {
+            font-size: 1.1rem;
+            font-weight: 800;
+            margin-bottom: 8px;
+        }
+
+        .modal p {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .modal-btn {
+            width: 100%;
+            padding: 14px;
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 14px;
+            color: var(--text);
+            font-family: 'Inter', sans-serif;
+            font-weight: 700;
+            cursor: pointer;
+            font-size: 0.9rem;
+        }
+
+        .modal-btn:active {
+            background: rgba(255,255,255,0.1);
+        }
+
+        ::-webkit-scrollbar {
+            width: 0;
+            height: 0;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+
+    <div class="phone">
+        <div class="header">
+            <h1>KIELHAX SULASOK SHOP</h1>
+            <p>QUALITY GAMING CHAIR</p>
+        </div>
+
+        <div class="content">
+
+<!-- //PRICELIST\\ //PRICELIST\\ //PRICELIST\\ //PRICELIST\\ //PRICELIST\\ //PRICELIST\\ //PRICELIST\\ //PRICELIST\\ //PRICELIST\\ //PRICELIST\\ //PRICELIST\\ //PRICELIST\\ //PRICELIST\\ //PRICELIST\\ //PRICELIST\\ //PRICELIST\\ //PRICELIST\\ //PRICELIST\\ //PRICELIST\\ //PRICELIST\\ -->
+            <div class="section active" id="pricelist">
+                
+                <!-- KIEL LOADER -->
+                <div class="game-card">
+                    <div class="game-header">
+                        <div class="game-icon icon-mod">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <div class="game-title">KIEL LOADER ⚡</div>
+                            <div class="game-subtitle">Loader Tool</div>
+                        </div>
+                    </div>
+                    <div class="duration-scroll">
+                        <div class="duration-pill" onclick="selectDuration(this, 'KIEL LOADER', '03 Days', '₱70 (₱150 root)')">
+                            <div class="duration-label">03 Days</div>
+                            <div class="duration-price">₱70</div>
+                        </div>
+                        <div class="duration-pill" onclick="selectDuration(this, 'KIEL LOADER', '07 Days', '₱180 ($3.38)')">
+                            <div class="duration-label">07 Days</div>
+                            <div class="duration-price">₱180</div>
+                        </div>
+                        <div class="duration-pill" onclick="selectDuration(this, 'KIEL LOADER', '14 Days', '₱300 ($5.92)')">
+                            <div class="duration-label">14 Days</div>
+                            <div class="duration-price">₱300</div>
+                        </div>
+                        <div class="duration-pill" onclick="selectDuration(this, 'KIEL LOADER', '31 Days', '₱400 ($8.45)')">
+                            <div class="duration-label">31 Days</div>
+                            <div class="duration-price">₱400</div>
+                        </div>
+                        <div class="duration-pill" onclick="selectDuration(this, 'KIEL LOADER', 'Lifetime', '₱600 (450?)')">
+                            <div class="duration-label">Lifetime</div>
+                            <div class="duration-price">₱600</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- KIEL MOD/CONTAINER -->
+                <div class="game-card">
+                    <div class="game-header">
+                        <div class="game-icon icon-crack">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+                                <path d="M7 11V7a5 5 0 0 1 9.9-1"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <div class="game-title">KIEL MOD/CONTAINER</div>
+                            <div class="game-subtitle">Container Mod</div>
+                        </div>
+                    </div>
+                    <div class="duration-scroll">
+                        <div class="duration-pill" onclick="selectDuration(this, 'KIEL MOD/CONTAINER', '03 Days', '₱90 ($1.69)')">
+                            <div class="duration-label">03 Days</div>
+                            <div class="duration-price">₱90</div>
+                        </div>
+                        <div class="duration-pill" onclick="selectDuration(this, 'KIEL MOD/CONTAINER', '07 Days', '₱200 ($3.38)')">
+                            <div class="duration-label">07 Days</div>
+                            <div class="duration-price">₱200</div>
+                        </div>
+                        <div class="duration-pill" onclick="selectDuration(this, 'KIEL MOD/CONTAINER', '14 Days', '₱280 ($5.92)')">
+                            <div class="duration-label">14 Days</div>
+                            <div class="duration-price">₱280</div>
+                        </div>
+                        <div class="duration-pill" onclick="selectDuration(this, 'KIEL MOD/CONTAINER', '31 Days', '₱380 ($8.45)')">
+                            <div class="duration-label">31 Days</div>
+                            <div class="duration-price">₱380</div>
+                        </div>
+                        <div class="duration-pill" onclick="selectDuration(this, 'KIEL MOD/CONTAINER', 'Lifetime', '₱700 (500?)')">
+                            <div class="duration-label">Lifetime</div>
+                            <div class="duration-price">₱700</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- KIEL INJECTOR -->
+                <div class="game-card">
+                    <div class="game-header">
+                        <div class="game-icon icon-codm">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="10"/>
+                                <circle cx="12" cy="12" r="6"/>
+                                <circle cx="12" cy="12" r="2"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <div class="game-title">KIEL INJECTOR</div>
+                            <div class="game-subtitle">Injector Tool</div>
+                        </div>
+                    </div>
+                    <div class="duration-scroll">
+                        <div class="duration-pill" onclick="selectDuration(this, 'KIEL INJECTOR', '03 Days', '₱70 ($1.69)')">
+                            <div class="duration-label">03 Days</div>
+                            <div class="duration-price">₱70</div>
+                        </div>
+                        <div class="duration-pill" onclick="selectDuration(this, 'KIEL INJECTOR', '07 Days', '₱100 ($3.38)')">
+                            <div class="duration-label">07 Days</div>
+                            <div class="duration-price">₱100</div>
+                        </div>
+                        <div class="duration-pill" onclick="selectDuration(this, 'KIEL INJECTOR', '14 Days', '₱130 ($5.92)')">
+                            <div class="duration-label">14 Days</div>
+                            <div class="duration-price">₱130</div>
+                        </div>
+                        <div class="duration-pill" onclick="selectDuration(this, 'KIEL INJECTOR', '31 Days', '₱200 ($8.45)')">
+                            <div class="duration-label">31 Days</div>
+                            <div class="duration-price">₱200</div>
+                        </div>
+                        <div class="duration-pill" onclick="selectDuration(this, 'KIEL INJECTOR', 'Lifetime', '₱300 (200?)')">
+                            <div class="duration-label">Lifetime</div>
+                            <div class="duration-price">₱300</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- KIEL MLBB V1 (UNAVAILABLE) -->
+                <div class="game-card" style="opacity: 0.6;">
+                    <div class="game-header">
+                        <div class="game-icon icon-mlbb">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M14.5 17.5L3 6V3h3l11.5 11.5"/>
+                                <path d="M13 19l6-6"/>
+                                <path d="M16 16l4 4"/>
+                                <path d="M19 21l2-2"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <div class="game-title">KIEL MLBB V1 <span style="color: var(--danger); font-size: 0.65rem; font-weight: 800; margin-left: 8px; padding: 2px 6px; background: rgba(239, 68, 68, 0.15); border-radius: 4px;">UNAVAILABLE</span></div>
+                            <div class="game-subtitle">Mobile Legends</div>
+                        </div>
+                    </div>
+                    <div class="duration-scroll" style="pointer-events: none; filter: grayscale(1);">
+                        <div class="duration-pill">
+                            <div class="duration-label">03 Days</div>
+                            <div class="duration-price">₱100</div>
+                        </div>
+                        <div class="duration-pill">
+                            <div class="duration-label">07 Days</div>
+                            <div class="duration-price">₱200</div>
+                        </div>
+                        <div class="duration-pill">
+                            <div class="duration-label">14 Days</div>
+                            <div class="duration-price">₱300</div>
+                        </div>
+                        <div class="duration-pill">
+                            <div class="duration-label">31 Days</div>
+                            <div class="duration-price">₱400</div>
+                        </div>
+                        <div class="duration-pill">
+                            <div class="duration-label">Lifetime</div>
+                            <div class="duration-price">₱800</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- EZEKIEL MLBB V2 (UNAVAILABLE) -->
+                <div class="game-card" style="opacity: 0.6;">
+                    <div class="game-header">
+                        <div class="game-icon icon-mlbb">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M14.5 17.5L3 6V3h3l11.5 11.5"/>
+                                <path d="M13 19l6-6"/>
+                                <path d="M16 16l4 4"/>
+                                <path d="M19 21l2-2"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <div class="game-title">EZEKIEL MLBB V2 <span style="color: var(--danger); font-size: 0.65rem; font-weight: 800; margin-left: 8px; padding: 2px 6px; background: rgba(239, 68, 68, 0.15); border-radius: 4px;">UNAVAILABLE</span></div>
+                            <div class="game-subtitle">Mobile Legends</div>
+                        </div>
+                    </div>
+                    <div class="duration-scroll" style="pointer-events: none; filter: grayscale(1);">
+                        <div class="duration-pill">
+                            <div class="duration-label">03 Days</div>
+                            <div class="duration-price">₱150</div>
+                        </div>
+                        <div class="duration-pill">
+                            <div class="duration-label">07 Days</div>
+                            <div class="duration-price">₱250</div>
+                        </div>
+                        <div class="duration-pill">
+                            <div class="duration-label">14 Days</div>
+                            <div class="duration-price">₱400</div>
+                        </div>
+                        <div class="duration-pill">
+                            <div class="duration-label">30 Days</div>
+                            <div class="duration-price">₱700</div>
+                        </div>
+                        <div class="duration-pill">
+                            <div class="duration-label">60 Days</div>
+                            <div class="duration-price">₱1,000</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- EZEKIEL MLBB ( SCRIPT ) -->
+                <div class="game-card">
+                    <div class="game-header">
+                        <div class="game-icon icon-mlbb">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M14.5 17.5L3 6V3h3l11.5 11.5"/>
+                                <path d="M13 19l6-6"/>
+                                <path d="M16 16l4 4"/>
+                                <path d="M19 21l2-2"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <div class="game-title">EZEKIEL MLBB (SCRIPT)</div>
+                            <div class="game-subtitle">Mobile Legends Script</div>
+                        </div>
+                    </div>
+                    <div class="duration-scroll">
+                        <div class="duration-pill" onclick="selectDuration(this, 'EZEKIEL MLBB SCRIPT', '03 Days', '₱70 ($5)')">
+                            <div class="duration-label">03 Days</div>
+                            <div class="duration-price">₱70</div>
+                        </div>
+                        <div class="duration-pill" onclick="selectDuration(this, 'EZEKIEL MLBB SCRIPT', '07 Days', '₱150 ($20)')">
+                            <div class="duration-label">07 Days</div>
+                            <div class="duration-price">₱150</div>
+                        </div>
+                        <div class="duration-pill" onclick="selectDuration(this, 'EZEKIEL MLBB SCRIPT', '14 Days', '₱250 ($15)')">
+                            <div class="duration-label">14 Days</div>
+                            <div class="duration-price">₱250</div>
+                        </div>
+                        <div class="duration-pill" onclick="selectDuration(this, 'EZEKIEL MLBB SCRIPT', '30 Days', '₱400 ($20)')">
+                            <div class="duration-label">30 Days</div>
+                            <div class="duration-price">₱400</div>
+                        </div>
+                        <div class="duration-pill" onclick="selectDuration(this, 'EZEKIEL MLBB SCRIPT', '∞ Days', '₱500 ($25)')">
+                            <div class="duration-label">∞ Days</div>
+                            <div class="duration-price">₱500</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- KIEL BLOODSTRIKE -->
+                <div class="game-card">
+                    <div class="game-header">
+                        <div class="game-icon icon-blood">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <div class="game-title">KIEL BLOODSTRIKE ✔️</div>
+                            <div class="game-subtitle">BloodStrike Mod</div>
+                        </div>
+                    </div>
+                    <div class="duration-scroll">
+                        <div class="duration-pill" onclick="selectDuration(this, 'KIEL BLOODSTRIKE', '01 Days', '₱50 ($1)')">
+                            <div class="duration-label">01 Days</div>
+                            <div class="duration-price">₱50</div>
+                        </div>
+                        <div class="duration-pill" onclick="selectDuration(this, 'KIEL BLOODSTRIKE', '03 Days', '₱100 ($3)')">
+                            <div class="duration-label">03 Days</div>
+                            <div class="duration-price">₱100</div>
+                        </div>
+                        <div class="duration-pill" onclick="selectDuration(this, 'KIEL BLOODSTRIKE', '07 Days', '₱200 ($5)')">
+                            <div class="duration-label">07 Days</div>
+                            <div class="duration-price">₱200</div>
+                        </div>
+                        <div class="duration-pill" onclick="selectDuration(this, 'KIEL BLOODSTRIKE', '14 Days', '₱300 ($8)')">
+                            <div class="duration-label">14 Days</div>
+                            <div class="duration-price">₱300</div>
+                        </div>
+                        <div class="duration-pill" onclick="selectDuration(this, 'KIEL BLOODSTRIKE', '30 Days', '₱400 ($10)')">
+                            <div class="duration-label">30 Days</div>
+                            <div class="duration-price">₱400</div>
+                        </div>
+                        <div class="duration-pill" onclick="selectDuration(this, 'KIEL BLOODSTRIKE', 'Lifetime', '₱500 (₱399)')">
+                            <div class="duration-label">Lifetime</div>
+                            <div class="duration-price">₱500</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- (KIEL) ALL CHEAT ACCESS -->
+                <div class="game-card">
+                    <div class="game-header">
+                        <div class="game-icon icon-all">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <div class="game-title">(KIEL) ALL ACCESS 👑</div>
+                            <div class="game-subtitle">Premium Bundle</div>
+                        </div>
+                    </div>
+                    <div class="duration-scroll">
+                        <div class="duration-pill" onclick="selectDuration(this, '(KIEL) ALL CHEAT ACCESS', '03 Days', '₱200 ($1.69)')">
+                            <div class="duration-label">03 Days</div>
+                            <div class="duration-price">₱200</div>
+                        </div>
+                        <div class="duration-pill" onclick="selectDuration(this, '(KIEL) ALL CHEAT ACCESS', '07 Days', '₱300 ($3.38)')">
+                            <div class="duration-label">07 Days</div>
+                            <div class="duration-price">₱300</div>
+                        </div>
+                        <div class="duration-pill" onclick="selectDuration(this, '(KIEL) ALL CHEAT ACCESS', '14 Days', '₱400 ($5.92)')">
+                            <div class="duration-label">14 Days</div>
+                            <div class="duration-price">₱400</div>
+                        </div>
+                        <div class="duration-pill" onclick="selectDuration(this, '(KIEL) ALL CHEAT ACCESS', '31 Days', '₱700 ($8.45)')">
+                            <div class="duration-label">31 Days</div>
+                            <div class="duration-price">₱700</div>
+                        </div>
+                        <div class="duration-pill" onclick="selectDuration(this, '(KIEL) ALL CHEAT ACCESS', 'Lifetime', '₱2000 (₱1000)')">
+                            <div class="duration-label">Lifetime</div>
+                            <div class="duration-price">₱2000</div>
+                        </div>
+                    </div>
+                </div>
+
+                <button class="btn btn-primary" onclick="window.open('https://t.me/FEEDBACK_EZEKIEL', '_blank')">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+                    </svg>
+                    View Feedback Details
+                </button>
+            </div>
+
+<!-- //FILES\\ //FILES\\ //FILES\\ //FILES\\ //FILES\\ //FILES\\ //FILES\\ //FILES\\ //FILES\\ //FILES\\ //FILES\\ //FILES\\ //FILES\\ //FILES\\ //FILES\\ //FILES\\ //FILES\\ //FILES\\ //FILES\\ //FILES\\ -->
+            <div class="section" id="files">
+                <div class="download-list">
+                    
+                    <!-- CONTAINER FILE -->
+                    <a href="https://t.me/crack_files1/9" class="download-item" target="_blank">
+                        <div class="dl-icon icon-mod">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+                                <path d="M7 11V7a5 5 0 0 1 9.9-1"/>
+                            </svg>
+                        </div>
+                        <div class="dl-info">
+                            <div class="dl-name" style="font-size: 0.8rem;">CONTAINER (CODM, MLBB, BLOODSTRIKE, CRACK)</div>
+                            <div class="dl-meta">
+                                <span class="dl-badge badge-stable">LATEST</span>
+                                <span class="dl-size">Telegram</span>
+                            </div>
+                        </div>
+                        <svg class="dl-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="9 18 15 12 9 6"/>
+                        </svg>
+                    </a>
+
+                    <!-- GARENA APK FILE -->
+                    <a href="https://t.me/crack_files1/11" class="download-item" target="_blank">
+                        <div class="dl-icon icon-codm">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                                <polyline points="7 10 12 15 17 10"/>
+                                <line x1="12" y1="15" x2="12" y2="3"/>
+                            </svg>
+                        </div>
+                        <div class="dl-info">
+                            <div class="dl-name">GARENA APK</div>
+                            <div class="dl-meta">
+                                <span class="dl-badge badge-new">OFFICIAL</span>
+                                <span class="dl-size">Telegram</span>
+                            </div>
+                        </div>
+                        <svg class="dl-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="9 18 15 12 9 6"/>
+                        </svg>
+                    </a>
+
+                </div>
+
+                <button class="btn btn-ghost" onclick="showModal('All files are verified with SHA-256 checksums and scanned for malware before release.', 'Security Info')" style="margin-top: 16px;">
+                    Security Details
+                </button>
+            </div>
+
+<!-- //OWNER\\ //OWNER\\ //OWNER\\ //OWNER\\ //OWNER\\ //OWNER\\ //OWNER\\ //OWNER\\ //OWNER\\ //OWNER\\ //OWNER\\ //OWNER\\ //OWNER\\ //OWNER\\ //OWNER\\ //OWNER\\ //OWNER\\ //OWNER\\ //OWNER\\ //OWNER\\ -->
+            <div class="section" id="owner">
+                <div class="card">
+                    <div class="owner-status">
+                        <div class="status-dot"></div>
+                        <div>
+                            <div class="status-text">Online Now</div>
+                            <div class="status-sub">Avg. response: 3 min</div>
+                        </div>
+                    </div>
+
+                    <div class="stats-row">
+                        <div class="stat-box">
+                            <span class="stat-num">5K+</span>
+                            <span class="stat-label">Clients</span>
+                        </div>
+                        <div class="stat-box">
+                            <span class="stat-num">99%</span>
+                            <span class="stat-label">Uptime</span>
+                        </div>
+                        <div class="stat-box">
+                            <span class="stat-num">4.9</span>
+                            <span class="stat-label">Rating</span>
+                        </div>
+                    </div>
+
+                    <div class="contact-list">
+                        <a href="https://t.me/kielhax" class="contact-row" target="_blank">
+                            <div class="contact-icon-sm">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M21.198 2.433a2.242 2.242 0 0 0-1.022.215l-8.609 3.33c-2.068.8-4.133 1.598-5.724 2.21a405.15 405.15 0 0 1-2.849.973c-.433.147-.85.309-1.285.465-1.317.487-1.9 1.638-1.319 2.74.343.647.71 1.323 1.086 1.962.365.623.747 1.276 1.143 1.927.712 1.18 1.648 2.305 2.79 3.336 1.142 1.03 2.461 1.954 3.932 2.75 1.47.796 3.097 1.46 4.848 1.98 1.75.52 3.62.896 5.61 1.13 1.99.233 4.097.323 6.322.27 2.225-.053 4.566-.26 7.023-.62a2.242 2.242 0 0 0 1.022-.215l-8.609-3.33c-2.068-.8-4.133-1.598-5.724-2.21a405.15 405.15 0 0 1-2.849-.973c-.433-.147-.85-.309-1.285-.465-1.317-.487-1.9-1.638-1.319-2.74-.343-.647-.71-1.323-1.086-1.962-.365-.623-.747-1.276-1.143-1.927-.712-1.18-1.648-2.305-2.79-3.336-1.142-1.03-2.461-1.954-3.932-2.75-1.47-.796-3.097-1.46-4.848-1.98-1.75-.52-3.62-.896-5.61-1.13-1.99-.233-4.097-.323-6.322-.27-2.225.053-4.566.26-7.023.62z"/>
+                                </svg>
+                            </div>
+                            <div class="contact-text">
+                                <div class="contact-name">Telegram</div>
+                                <div class="contact-handle">@kielhax</div>
+                            </div>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color: var(--text-muted);">
+                                <polyline points="9 18 15 12 9 6"/>
+                            </svg>
+                        </a>
+
+                        <a href="https://tiktok.com/@kiel_no_aim" class="contact-row" target="_blank">
+                            <div class="contact-icon-sm">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"/>
+                                </svg>
+                            </div>
+                            <div class="contact-text">
+                                <div class="contact-name">TikTok</div>
+                                <div class="contact-handle">@kiel_no_aim</div>
+                            </div>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color: var(--text-muted);">
+                                <polyline points="9 18 15 12 9 6"/>
+                            </svg>
+                        </a>
+
+                        <a href="mailto:sentexalohabaxter@gmail.com" class="contact-row">
+                            <div class="contact-icon-sm">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                                    <polyline points="22,6 12,13 2,6"/>
+                                </svg>
+                            </div>
+                            <div class="contact-text">
+                                <div class="contact-name">Email</div>
+                                <div class="contact-handle">sentexalohabaxter@gmail.com</div>
+                            </div>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color: var(--text-muted);">
+                                <polyline points="9 18 15 12 9 6"/>
+                            </svg>
+                        </a>
+                    </div>
+
+                    <a href="https://t.me/kielhax" class="btn btn-success" target="_blank" style="margin-top: 16px;">
+                        Buy Now
+                    </a>
+                </div>
+            </div>
+
+<!-- //KEYS\\ //KEYS\\ //KEYS\\ //KEYS\\ //KEYS\\ //KEYS\\ //KEYS\\ //KEYS\\ //KEYS\\ //KEYS\\ //KEYS\\ //KEYS\\ //KEYS\\ //KEYS\\ //KEYS\\ //KEYS\\ //KEYS\\ //KEYS\\ //KEYS\\ //KEYS\\ -->
+            <div class="section" id="keys">
+                <div class="card" style="text-align: center;">
+                    <div class="key-box">
+                        <div class="key-label">Generated Key</div>
+                        <input type="text" class="key-input" id="keyInput" placeholder="XXXX-XXXX-XXXX" readonly>
+                        <div class="key-hint">Tap generate to create your free key</div>
+                    </div>
+
+                    <button class="btn btn-accent" id="generateBtn" onclick="generateKey()">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="23 4 23 10 17 10"/>
+                            <path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"/>
+                        </svg>
+                        Generate Key
+                    </button>
+
+                    <button class="btn btn-ghost" onclick="showModal('• 1 key per IP every 24 hours\n• Keys expire after 7 days\n• Premium keys available for purchase\n• Contact owner for unlimited access', 'Key Rules')">
+                        Key Policy
+                    </button>
+                </div>
+
+                <div class="card" style="margin-top: 12px;">
+                    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; text-align: center;">
+                        <div>
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#06b6d4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin: 0 auto 8px; display: block;">
+                                <circle cx="12" cy="12" r="10"/>
+                                <polyline points="12 6 12 12 16 14"/>
+                            </svg>
+                            <div style="font-size: 0.75rem; font-weight: 700; color: var(--text);">24h Reset</div>
+                            <div style="font-size: 0.65rem; color: var(--text-muted); margin-top: 2px;">Daily Drops</div>
+                        </div>
+                        <div>
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin: 0 auto 8px; display: block;">
+                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                            </svg>
+                            <div style="font-size: 0.75rem; font-weight: 700; color: var(--text);">Secure</div>
+                            <div style="font-size: 0.65rem; color: var(--text-muted); margin-top: 2px;">1 Per IP</div>
+                        </div>
+                        <div>
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#8b5cf6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin: 0 auto 8px; display: block;">
+                                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                                <polyline points="22 4 12 14.01 9 11.01"/>
+                            </svg>
+                            <div style="font-size: 0.75rem; font-weight: 700; color: var(--text);">Verified</div>
+                            <div style="font-size: 0.65rem; color: var(--text-muted); margin-top: 2px;">Instant Use</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+<!-- //BOTTOM_NAV\\ //BOTTOM_NAV\\ //BOTTOM_NAV\\ //BOTTOM_NAV\\ //BOTTOM_NAV\\ //BOTTOM_NAV\\ //BOTTOM_NAV\\ //BOTTOM_NAV\\ //BOTTOM_NAV\\ //BOTTOM_NAV\\ //BOTTOM_NAV\\ //BOTTOM_NAV\\ //BOTTOM_NAV\\ //BOTTOM_NAV\\ //BOTTOM_NAV\\ //BOTTOM_NAV\\ //BOTTOM_NAV\\ //BOTTOM_NAV\\ //BOTTOM_NAV\\ //BOTTOM_NAV\\ -->
+        <nav class="bottom-nav">
+            <button class="nav-item active" onclick="switchTab('pricelist')" data-tab="pricelist">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="12" y1="1" x2="12" y2="23"/>
+                    <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+                </svg>
+                Prices
+            </button>
+            <button class="nav-item" onclick="switchTab('files')" data-tab="files">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                    <polyline points="7 10 12 15 17 10"/>
+                    <line x1="12" y1="15" x2="12" y2="3"/>
+                </svg>
+                Files
+            </button>
+            <button class="nav-item" onclick="switchTab('owner')" data-tab="owner">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+                    <circle cx="12" cy="7" r="4"/>
+                </svg>
+                Owner
+            </button>
+            <button class="nav-item" onclick="switchTab('keys')" data-tab="keys">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+                    <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+                </svg>
+                Keys
+            </button>
+        </nav>
+    </div>
+
+<!-- //MODAL\\ //MODAL\\ //MODAL\\ //MODAL\\ //MODAL\\ //MODAL\\ //MODAL\\ //MODAL\\ //MODAL\\ //MODAL\\ //MODAL\\ //MODAL\\ //MODAL\\ //MODAL\\ //MODAL\\ //MODAL\\ //MODAL\\ //MODAL\\ //MODAL\\ //MODAL\\ -->
+    <div class="modal-overlay" id="modal" onclick="closeModal(event)">
+        <div class="modal" onclick="event.stopPropagation()">
+            <div class="modal-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                    <polyline points="22 4 12 14.01 9 11.01"/>
+                </svg>
+            </div>
+            <h3 id="modal-title">Title</h3>
+            <div id="modal-text">Content</div>
+            <button class="modal-btn" onclick="closeModal()">Got it</button>
+        </div>
+    </div>
+
+<!-- //JAVASCRIPT\\ //JAVASCRIPT\\ //JAVASCRIPT\\ //JAVASCRIPT\\ //JAVASCRIPT\\ //JAVASCRIPT\\ //JAVASCRIPT\\ //JAVASCRIPT\\ //JAVASCRIPT\\ //JAVASCRIPT\\ //JAVASCRIPT\\ //JAVASCRIPT\\ //JAVASCRIPT\\ //JAVASCRIPT\\ //JAVASCRIPT\\ //JAVASCRIPT\\ //JAVASCRIPT\\ //JAVASCRIPT\\ //JAVASCRIPT\\ //JAVASCRIPT\\ -->
+    <script>
+        let isGenerating = false;
+
+        function switchTab(tabName) {
+            document.querySelectorAll('.nav-item').forEach(tab => {
+                tab.classList.remove('active');
+                if (tab.dataset.tab === tabName) tab.classList.add('active');
+            });
+            document.querySelectorAll('.section').forEach(sec => sec.classList.remove('active'));
+            document.getElementById(tabName).classList.add('active');
+        }
+
+        function selectDuration(el, game, duration, price) {
+            const parent = el.parentElement;
+            parent.querySelectorAll('.duration-pill').forEach(p => p.classList.remove('active'));
+            el.classList.add('active');
+            
+            showModal(game + ' — ' + duration + '<br>Price: ' + price + '<br><br>Tap Buy in Owner tab to purchase this plan.', 'Plan Selected', true);
+        }
+
+        function showModal(text, title = 'Notification', isHTML = false) {
+            if(isHTML) {
+                document.getElementById('modal-text').innerHTML = text;
+            } else {
+                document.getElementById('modal-text').innerHTML = text.replace(/\n/g, '<br>');
+            }
+            document.getElementById('modal-title').textContent = title;
+            document.getElementById('modal').classList.add('active');
+        }
+
+        function closeModal(event) {
+            if (!event || event.target.id === 'modal' || event.target.classList.contains('modal-btn')) {
+                document.getElementById('modal').classList.remove('active');
+            }
+        }
+
+        function generateKey() {
+            if (isGenerating) return; // Prevent multiple clicks
+            isGenerating = true;
+
+            const btn = document.getElementById('generateBtn');
+            const originalBtnHTML = btn.innerHTML;
+            btn.disabled = true;
+
+            // OPEN TAB IMMEDIATELY on user click (bypasses popup blockers)
+            let tiktokTab = null;
+            try {
+                tiktokTab = window.open('', '_blank');
+                if (tiktokTab) {
+                    tiktokTab.document.write('<body style="background:#000;color:#fff;display:flex;justify-content:center;align-items:center;height:100vh;font-family:sans-serif;"><h3>Loading TikTok...</h3></body>');
+                }
+            } catch(e) {
+                // Ignore if completely blocked
+            }
+
+            let redirectTime = 5;
+            
+            // Phase 1: 5-second countdown before redirecting
+            showModal('PLEASE FOLLOW KIEL ON TIKTOK<br><br>Redirecting to link in <b>' + redirectTime + '</b> seconds...', 'Action Required', true);
+            btn.innerHTML = 'Redirecting (' + redirectTime + 's)...';
+
+            const redirectInterval = setInterval(() => {
+                redirectTime--;
+                btn.innerHTML = 'Redirecting (' + redirectTime + 's)...';
+                
+                const modalTitle = document.getElementById('modal-title');
+                const modalText = document.getElementById('modal-text');
+                
+                // Update modal text dynamically
+                if (document.getElementById('modal').classList.contains('active') && modalTitle.textContent === 'Action Required') {
+                    modalText.innerHTML = 'PLEASE FOLLOW KIEL ON TIKTOK<br><br>Redirecting to link in <b style="font-size:1.1rem; color:#a5b4fc;">' + redirectTime + '</b> seconds...';
+                }
+
+                if (redirectTime <= 0) {
+                    clearInterval(redirectInterval);
+                    
+                    // Trigger the redirect to TikTok in the tab we opened!
+                    if (tiktokTab && !tiktokTab.closed) {
+                        tiktokTab.location.href = 'https://tiktok.com/@kiel_no_aim';
+                    } else {
+                        // Backup if the popup was completely blocked by a strict browser
+                        window.open('https://tiktok.com/@kiel_no_aim', '_blank');
+                    }
+                    
+                    // Phase 2: Start 10-second wait after redirect
+                    let waitTime = 10;
+                    showModal('PLEASE FOLLOW KIEL ON TIKTOK<br><br>Waiting <b>' + waitTime + '</b> seconds after following...', 'Generating Key', true);
+                    btn.innerHTML = 'Waiting (' + waitTime + 's)...';
+                    
+                    const waitInterval = setInterval(() => {
+                        waitTime--;
+                        btn.innerHTML = 'Waiting (' + waitTime + 's)...';
+                        
+                        if (document.getElementById('modal').classList.contains('active') && modalTitle.textContent === 'Generating Key') {
+                            modalText.innerHTML = 'PLEASE FOLLOW KIEL ON TIKTOK<br><br>Waiting <b style="font-size:1.1rem; color:#a5b4fc;">' + waitTime + '</b> seconds after following...';
+                        }
+
+                        if (waitTime <= 0) {
+                            clearInterval(waitInterval);
+                            isGenerating = false;
+                            
+                            // Reset button
+                            btn.innerHTML = originalBtnHTML;
+                            btn.disabled = false;
+
+                            //put key here\\ //put key here\\ //put key here\\ //put key here\\ //put key here\\ //put key here\\ //put key here\\ //put key here\\ //put key here\\ //put key here\\ //put key here\\ //put key here\\ //put key here\\ //put key here\\ //put key here\\ //put key here\\ //put key here\\ //put key here\\ //put key here\\ //put key here\\
+                            let key = '1xCHRIS-U6GK3rFVNy';
+                            
+                            // Highlight the input box
+                            const input = document.getElementById('keyInput');
+                            input.value = key;
+                            input.classList.add('generated');
+                            
+                            // Show the final massive key modal
+                            let finalHtml = `
+                                Your key has been successfully generated!<br><br>
+                                <div style="font-size: 1.8rem; font-weight: 900; color: #22d3ee; letter-spacing: 3px; padding: 20px 10px; background: rgba(0,0,0,0.4); border-radius: 12px; border: 1px solid rgba(34, 211, 238, 0.4); margin: 10px 0; word-break: break-all;">
+                                    ${key}
+                                </div>
+                                <br>Copy it now — it will not be shown again.
+                            `;
+                            showModal(finalHtml, 'Key Generated', true);
+                        }
+                    }, 1000);
+                }
+            }, 1000);
+        }
+    </script>
+
+<!-- //AUDIO\\ //AUDIO\\ //AUDIO\\ //AUDIO\\ //AUDIO\\ //AUDIO\\ //AUDIO\\ //AUDIO\\ //AUDIO\\ //AUDIO\\ //AUDIO\\ //AUDIO\\ //AUDIO\\ //AUDIO\\ //AUDIO\\ //AUDIO\\ //AUDIO\\ //AUDIO\\ //AUDIO\\ //AUDIO\\ -->
+    <audio id="bgMusic" src="https://audio.jukehost.co.uk/019ebbc4-6eb2-73ca-9705-db29e68cc62b" autoplay loop></audio>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const audio = document.getElementById("bgMusic");
+            
+            // Force max volume
+            audio.volume = 1.0; 
+
+            // Attempt to force autoplay right away
+            const playAudio = () => {
+                audio.play().catch(error => {
+                    console.log("Autoplay blocked by browser. Waiting for user interaction...");
+                });
+            };
+
+            playAudio();
+
+            // Fallback for browsers with strict autoplay policies (e.g., Chrome, Safari)
+            // Starts audio at max volume upon the very first click/tap anywhere on the screen
+            const interactionEvents = ['click', 'touchstart', 'keydown'];
+            const forcePlayOnInteraction = () => {
+                audio.volume = 1.0;
+                if (audio.paused) {
+                    audio.play();
+                }
+                // Remove listeners once it's playing
+                interactionEvents.forEach(event => {
+                    document.body.removeEventListener(event, forcePlayOnInteraction);
+                });
+            };
+
+            interactionEvents.forEach(event => {
+                document.body.addEventListener(event, forcePlayOnInteraction, { once: true });
+            });
+        });
+    </script>
+</body>
+</html>
