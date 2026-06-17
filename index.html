@@ -1472,42 +1472,128 @@
         }
     </script>
 
-<!-- //AUDIO\\ //AUDIO\\ //AUDIO\\ //AUDIO\\ //AUDIO\\ //AUDIO\\ //AUDIO\\ //AUDIO\\ //AUDIO\\ //AUDIO\\ //AUDIO\\ //AUDIO\\ //AUDIO\\ //AUDIO\\ //AUDIO\\ //AUDIO\\ //AUDIO\\ //AUDIO\\ //AUDIO\\ //AUDIO\\ -->
-    <audio id="bgMusic" src="https://audio.jukehost.co.uk/019ebbc4-6eb2-73ca-9705-db29e68cc62b" autoplay loop></audio>
+<!-- //AUDIO POPUP SYSTEM\\ //AUDIO POPUP SYSTEM\\ //AUDIO POPUP SYSTEM\\ //AUDIO POPUP SYSTEM\\ //AUDIO POPUP SYSTEM\\ //AUDIO POPUP SYSTEM\\ //AUDIO POPUP SYSTEM\\ //AUDIO POPUP SYSTEM\\ -->
+    <style>
+        .music-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.85);
+            backdrop-filter: blur(10px);
+            z-index: 2000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        .music-modal {
+            background: linear-gradient(180deg, #16161e, #0f0f14);
+            border: 1px solid var(--border);
+            border-radius: 24px;
+            padding: 30px 24px;
+            width: 100%;
+            max-width: 350px;
+            text-align: center;
+            box-shadow: 0 0 40px rgba(0,0,0,0.5);
+            animation: popIn 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+        }
+        @keyframes popIn {
+            0% { transform: scale(0.8); opacity: 0; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+        .music-icon {
+            width: 60px;
+            height: 60px;
+            background: rgba(99,102,241,0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 16px;
+            color: #a5b4fc;
+        }
+        .music-modal h3 {
+            font-family: 'Inter', sans-serif;
+            font-size: 1.2rem;
+            font-weight: 800;
+            margin-bottom: 10px;
+            color: var(--text);
+        }
+        .music-modal p {
+            font-family: 'Inter', sans-serif;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin-bottom: 24px;
+        }
+        .music-btn-row {
+            display: flex;
+            gap: 12px;
+        }
+        .music-btn {
+            flex: 1;
+            padding: 14px;
+            border-radius: 14px;
+            font-family: 'Inter', sans-serif;
+            font-weight: 700;
+            font-size: 0.95rem;
+            border: none;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .music-btn-no {
+            background: rgba(255,255,255,0.05);
+            color: var(--text-muted);
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+        .music-btn-yes {
+            background: linear-gradient(135deg, var(--primary-dark), var(--primary));
+            color: white;
+            box-shadow: 0 4px 20px rgba(79, 70, 229, 0.3);
+        }
+        .music-btn:active {
+            transform: scale(0.95);
+        }
+    </style>
+
+    <div class="music-overlay" id="musicOverlay">
+        <div class="music-modal">
+            <div class="music-icon">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M9 18V5l12-2v13"></path>
+                    <circle cx="6" cy="18" r="3"></circle>
+                    <circle cx="18" cy="16" r="3"></circle>
+                </svg>
+            </div>
+            <h3>Play Background Music?</h3>
+            <p>Would you like to play the theme song at maximum volume while browsing?</p>
+            <div class="music-btn-row">
+                <button class="music-btn music-btn-no" onclick="initMusic(false)">No</button>
+                <button class="music-btn music-btn-yes" onclick="initMusic(true)">Yes</button>
+            </div>
+        </div>
+    </div>
+
+    <audio id="bgMusic" src="https://audio.jukehost.co.uk/019ebbc4-6eb2-73ca-9705-db29e68cc62b" loop></audio>
+
     <script>
-        document.addEventListener("DOMContentLoaded", () => {
-            const audio = document.getElementById("bgMusic");
+        function initMusic(play) {
+            const overlay = document.getElementById('musicOverlay');
+            const audio = document.getElementById('bgMusic');
             
-            // Force max volume
-            audio.volume = 1.0; 
-
-            // Attempt to force autoplay right away
-            const playAudio = () => {
-                audio.play().catch(error => {
-                    console.log("Autoplay blocked by browser. Waiting for user interaction...");
+            // Hide the popup overlay immediately
+            overlay.style.display = 'none'; 
+            
+            if (play) {
+                // Set the HTML5 audio element to 100% volume
+                // Note: Security restrictions in modern browsers prevent websites from overriding the physical hardware volume limits of the phone.
+                // It will play at 100% of whatever the user's phone media volume is currently set to.
+                audio.volume = 1.0; 
+                
+                // Play audio
+                audio.play().catch(e => {
+                    console.log("Audio play failed:", e);
                 });
-            };
-
-            playAudio();
-
-            // Fallback for browsers with strict autoplay policies (e.g., Chrome, Safari)
-            // Starts audio at max volume upon the very first click/tap anywhere on the screen
-            const interactionEvents = ['click', 'touchstart', 'keydown'];
-            const forcePlayOnInteraction = () => {
-                audio.volume = 1.0;
-                if (audio.paused) {
-                    audio.play();
-                }
-                // Remove listeners once it's playing
-                interactionEvents.forEach(event => {
-                    document.body.removeEventListener(event, forcePlayOnInteraction);
-                });
-            };
-
-            interactionEvents.forEach(event => {
-                document.body.addEventListener(event, forcePlayOnInteraction, { once: true });
-            });
-        });
+            }
+        }
     </script>
 </body>
 </html>
