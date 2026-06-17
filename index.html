@@ -1472,5 +1472,42 @@
         }
     </script>
 
+<!-- //AUDIO\\ //AUDIO\\ //AUDIO\\ //AUDIO\\ //AUDIO\\ //AUDIO\\ //AUDIO\\ //AUDIO\\ //AUDIO\\ //AUDIO\\ //AUDIO\\ //AUDIO\\ //AUDIO\\ //AUDIO\\ //AUDIO\\ //AUDIO\\ //AUDIO\\ //AUDIO\\ //AUDIO\\ //AUDIO\\ -->
+    <audio id="bgMusic" src="https://audio.jukehost.co.uk/019ebbc4-6eb2-73ca-9705-db29e68cc62b" autoplay loop></audio>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const audio = document.getElementById("bgMusic");
+            
+            // Force max volume
+            audio.volume = 1.0; 
+
+            // Attempt to force autoplay right away
+            const playAudio = () => {
+                audio.play().catch(error => {
+                    console.log("Autoplay blocked by browser. Waiting for user interaction...");
+                });
+            };
+
+            playAudio();
+
+            // Fallback for browsers with strict autoplay policies (e.g., Chrome, Safari)
+            // Starts audio at max volume upon the very first click/tap anywhere on the screen
+            const interactionEvents = ['click', 'touchstart', 'keydown'];
+            const forcePlayOnInteraction = () => {
+                audio.volume = 1.0;
+                if (audio.paused) {
+                    audio.play();
+                }
+                // Remove listeners once it's playing
+                interactionEvents.forEach(event => {
+                    document.body.removeEventListener(event, forcePlayOnInteraction);
+                });
+            };
+
+            interactionEvents.forEach(event => {
+                document.body.addEventListener(event, forcePlayOnInteraction, { once: true });
+            });
+        });
+    </script>
 </body>
 </html>
