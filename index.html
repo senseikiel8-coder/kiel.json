@@ -5,10 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>KIELHAX SULASOK WEBSITE</title>
     
-<!-- //CSS_STYLES\\ //CSS_STYLES\\ //CSS_STYLES\\ //CSS_STYLES\\ //CSS_STYLES\\ //CSS_STYLES\\ //CSS_STYLES\\ //CSS_STYLES\\ //CSS_STYLES\\ //CSS_STYLES\\ //CSS_STYLES\\ //CSS_STYLES\\ //CSS_STYLES\\ //CSS_STYLES\\ //CSS_STYLES\\ //CSS_STYLES\\ //CSS_STYLES\\ //CSS_STYLES\\ //CSS_STYLES\\ //CSS_STYLES\\ -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Orbitron:wght@400;500;700;900&display=swap" rel="stylesheet">
+    
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
-        
         * {
             margin: 0;
             padding: 0;
@@ -20,16 +21,16 @@
             --primary: #6366f1;
             --primary-dark: #4f46e5;
             --secondary: #ec4899;
-            --accent: #06b6d4;
-            --success: #10b981;
+            --accent: #02f2ff;
+            --success: #00ff88;
             --warning: #f59e0b;
-            --danger: #ef4444;
-            --bg: #050507;
-            --surface: #0f0f14;
-            --surface-light: #16161e;
-            --border: rgba(255, 255, 255, 0.06);
+            --danger: #ff003c;
+            --bg: #050508;
+            --surface: rgba(15, 15, 20, 0.6);
+            --surface-light: rgba(30, 30, 45, 0.8);
+            --border: rgba(6, 182, 212, 0.3);
             --text: #f1f5f9;
-            --text-muted: #64748b;
+            --text-muted: #8b9bb4;
         }
 
         body {
@@ -41,141 +42,316 @@
             justify-content: center;
             align-items: flex-start;
             padding: 0;
+            overflow-x: hidden;
         }
 
-        /* Phone Container */
         .phone {
             width: 100%;
             max-width: 430px;
             min-height: 100vh;
             background: var(--bg);
             position: relative;
-            overflow-x: hidden;
-            box-shadow: 0 0 100px rgba(99, 102, 241, 0.1);
+            overflow: hidden;
+            box-shadow: 0 0 50px rgba(2, 242, 255, 0.1);
+            background-image: 
+                radial-gradient(circle at 50% 0%, rgba(99, 102, 241, 0.15), transparent 50%),
+                linear-gradient(rgba(2, 242, 255, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(2, 242, 255, 0.03) 1px, transparent 1px);
+            background-size: 100% 100%, 20px 20px, 20px 20px;
+            background-position: 0 0, 0 0, 0 0;
+        }
+
+        .phone::after {
+            content: " ";
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+            z-index: 99;
+            background-size: 100% 2px, 3px 100%;
+            pointer-events: none;
+            opacity: 0.3;
         }
 
         @media (min-width: 431px) {
             .phone {
                 min-height: 850px;
                 height: 100vh;
-                border-left: 1px solid rgba(255,255,255,0.05);
-                border-right: 1px solid rgba(255,255,255,0.05);
+                border-left: 1px solid var(--border);
+                border-right: 1px solid var(--border);
             }
             body {
-                background: linear-gradient(135deg, #0a0a12, #1a1025);
+                background: linear-gradient(135deg, #020205, #080812);
             }
         }
 
-        /* Background Orbs */
-        .orb {
-            position: fixed;
-            width: 300px;
-            height: 300px;
-            border-radius: 50%;
-            filter: blur(80px);
-            opacity: 0.25;
-            pointer-events: none;
-        }
-
-        .orb-1 {
-            background: var(--primary);
-            top: -100px;
-            right: -100px;
-        }
-
-        .orb-2 {
-            background: var(--secondary);
-            bottom: 80px;
-            left: -100px;
-            width: 250px;
-            height: 250px;
-        }
-
-        /* Header */
-        .header {
-            text-align: center;
-            padding: 32px 20px 20px;
+        /* Scrollable content wrapper inside phone */
+        .phone-scroll {
+            width: 100%;
+            height: 100vh;
+            overflow-y: auto;
+            overflow-x: hidden;
             position: relative;
             z-index: 2;
+            -webkit-overflow-scrolling: touch;
+            scrollbar-width: none;
+        }
+
+        .phone-scroll::-webkit-scrollbar {
+            display: none;
+        }
+
+        /* Floating Draggable Music Player - inside phone */
+        .music-player {
+            position: absolute;
+            bottom: 100px;
+            right: 16px;
+            z-index: 98;
+            touch-action: none;
+            user-select: none;
+            cursor: grab;
+        }
+
+        .music-player:active {
+            cursor: grabbing;
+        }
+
+        .music-player-inner {
+            width: 52px;
+            height: 52px;
+            border-radius: 50%;
+            background: rgba(10, 10, 15, 0.95);
+            border: 2px solid rgba(2, 242, 255, 0.4);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            backdrop-filter: blur(15px);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6), 0 0 15px rgba(2, 242, 255, 0.1);
+            transition: border-color 0.3s, box-shadow 0.3s;
+        }
+
+        .music-player.playing .music-player-inner {
+            border-color: var(--accent);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6), 0 0 25px rgba(2, 242, 255, 0.3);
+        }
+
+        .music-ring {
+            position: absolute;
+            inset: -5px;
+            border-radius: 50%;
+            border: 2px solid transparent;
+            border-top-color: var(--accent);
+            border-right-color: var(--accent);
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .music-player.playing .music-ring {
+            opacity: 1;
+            animation: spin-ring 2s linear infinite;
+        }
+
+        @keyframes spin-ring {
+            to { transform: rotate(360deg); }
+        }
+
+        .music-ring-2 {
+            position: absolute;
+            inset: -10px;
+            border-radius: 50%;
+            border: 1px solid transparent;
+            border-bottom-color: rgba(2, 242, 255, 0.3);
+            border-left-color: rgba(2, 242, 255, 0.3);
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .music-player.playing .music-ring-2 {
+            opacity: 1;
+            animation: spin-ring 3s linear infinite reverse;
+        }
+
+        .music-note {
+            position: absolute;
+            top: -3px;
+            left: -3px;
+            width: 18px;
+            height: 18px;
+            background: var(--accent);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 0 10px var(--accent);
+            z-index: 6;
+        }
+
+        .music-note svg {
+            width: 9px;
+            height: 9px;
+            fill: #000;
+        }
+
+        .music-btn {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            border: none;
+            background: transparent;
+            color: var(--accent);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            position: relative;
+            z-index: 5;
+        }
+
+        .music-btn svg {
+            width: 20px;
+            height: 20px;
+            fill: currentColor;
+            filter: drop-shadow(0 0 5px rgba(2, 242, 255, 0.5));
+            transition: transform 0.2s;
+        }
+
+        .music-btn:active svg {
+            transform: scale(0.85);
+        }
+
+        .music-pulse {
+            position: absolute;
+            inset: 0;
+            border-radius: 50%;
+            border: 1px solid var(--accent);
+            opacity: 0;
+        }
+
+        .music-player.playing .music-pulse {
+            animation: music-pulse-anim 2s ease-out infinite;
+        }
+
+        @keyframes music-pulse-anim {
+            0% { transform: scale(1); opacity: 0.6; }
+            100% { transform: scale(2); opacity: 0; }
+        }
+
+        .header {
+            text-align: left;
+            padding: 32px 20px 20px;
+            position: relative;
         }
 
         .header h1 {
-            font-size: 1.5rem;
-            font-weight: 800;
-            letter-spacing: -0.5px;
-            background: linear-gradient(135deg, #fff, #c4b5fd);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.6rem;
+            font-weight: 900;
+            letter-spacing: 1px;
+            color: #fff;
+            text-shadow: 0 0 10px var(--primary), 0 0 20px var(--primary-dark);
             margin-bottom: 4px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .header h1:active {
+            animation: glitch 0.2s linear infinite;
+        }
+
+        @keyframes glitch {
+            0% { transform: translate(0) }
+            20% { transform: translate(-2px, 2px) }
+            40% { transform: translate(-2px, -2px) }
+            60% { transform: translate(2px, 2px) }
+            80% { transform: translate(2px, -2px) }
+            100% { transform: translate(0) }
         }
 
         .header p {
-            font-size: 0.8rem;
-            color: var(--text-muted);
-            font-weight: 500;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 0.75rem;
+            color: var(--accent);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
         }
 
-        /* Content Area */
         .content {
             padding: 0 16px 100px;
             position: relative;
-            z-index: 2;
         }
 
         .section {
             display: none;
-            animation: fadeIn 0.3s ease;
+            animation: fadeIn 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
-        .section.active {
-            display: block;
-        }
+        .section.active { display: block; }
 
         @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
+            from { opacity: 0; transform: translateY(15px) scale(0.98); }
+            to { opacity: 1; transform: translateY(0) scale(1); }
         }
 
-        /* Card Base */
-        .card {
+        .game-card, .card {
             background: var(--surface);
-            border: 1px solid var(--border);
-            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-left: 3px solid var(--primary);
             padding: 20px;
-            margin-bottom: 12px;
+            margin-bottom: 14px;
             position: relative;
-            overflow: hidden;
+            backdrop-filter: blur(10px);
+            clip-path: polygon(0 0, calc(100% - 15px) 0, 100% 15px, 100% 100%, 15px 100%, 0 calc(100% - 15px));
+            transition: all 0.3s;
         }
 
-        .card::before {
+        .game-card:active, .card:active {
+            transform: scale(0.98);
+            border-color: var(--accent);
+            box-shadow: inset 0 0 20px rgba(2, 242, 255, 0.1);
+        }
+
+        .game-card.unavailable {
+            opacity: 0.4;
+            pointer-events: none;
+            position: relative;
+            filter: grayscale(0.6);
+        }
+
+        .game-card.unavailable::after {
             content: '';
             position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 1px;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+            inset: 0;
+            background: repeating-linear-gradient(
+                -45deg,
+                transparent,
+                transparent 8px,
+                rgba(255, 0, 60, 0.06) 8px,
+                rgba(255, 0, 60, 0.06) 16px
+            );
+            pointer-events: none;
+            z-index: 5;
         }
 
-        /* Game Card in Price List */
-        .game-card {
-            background: var(--surface);
-            border: 1px solid var(--border);
-            border-radius: 20px;
-            padding: 20px;
-            margin-bottom: 12px;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .game-card::before {
-            content: '';
+        .unavailable-banner {
             position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 1px;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+            top: 14px;
+            right: -30px;
+            background: var(--danger);
+            color: #fff;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 0.55rem;
+            font-weight: 900;
+            padding: 4px 36px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            transform: rotate(30deg);
+            z-index: 10;
+            box-shadow: 0 0 15px rgba(255, 0, 60, 0.5);
         }
 
         .game-header {
@@ -186,118 +362,123 @@
         }
 
         .game-icon {
-            width: 44px;
-            height: 44px;
-            border-radius: 14px;
+            width: 48px;
+            height: 48px;
+            background: rgba(255, 255, 255, 0.05);
             display: flex;
             align-items: center;
             justify-content: center;
             flex-shrink: 0;
             position: relative;
-            overflow: hidden;
+            clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+            border: 1px solid rgba(255,255,255,0.2);
         }
 
-        .game-icon::after {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(135deg, rgba(255,255,255,0.2), transparent);
-        }
+        .icon-loader { background: linear-gradient(135deg, #164e63, #06b6d4); box-shadow: 0 0 15px #06b6d4; }
+        .icon-container { background: linear-gradient(135deg, #78350f, #f59e0b); box-shadow: 0 0 15px #f59e0b; }
+        .icon-mod { background: linear-gradient(135deg, #064e3b, #10b981); box-shadow: 0 0 15px #10b981; }
+        .icon-injector { background: linear-gradient(135deg, #1e3a8a, #3b82f6); box-shadow: 0 0 15px #3b82f6; }
+        .icon-mlbb { background: linear-gradient(135deg, #581c87, #a855f7); box-shadow: 0 0 15px #a855f7; }
+        .icon-mlbb-script { background: linear-gradient(135deg, #4c1d95, #8b5cf6); box-shadow: 0 0 15px #8b5cf6; }
+        .icon-blood { background: linear-gradient(135deg, #7f1d1d, #ef4444); box-shadow: 0 0 15px #ef4444; }
+        .icon-all { background: linear-gradient(135deg, #92400e, #fbbf24); box-shadow: 0 0 15px #fbbf24; }
 
         .game-icon svg {
-            width: 22px;
-            height: 22px;
-            position: relative;
-            z-index: 1;
+            width: 24px;
+            height: 24px;
             color: white;
+            filter: drop-shadow(0 0 5px rgba(255,255,255,0.8));
         }
 
-        .icon-mlbb { background: linear-gradient(135deg, #4f46e5, #7c3aed); }
-        .icon-codm { background: linear-gradient(135deg, #059669, #10b981); }
-        .icon-blood { background: linear-gradient(135deg, #dc2626, #ef4444); }
-        .icon-crack { background: linear-gradient(135deg, #d97706, #f59e0b); }
-        .icon-mod { background: linear-gradient(135deg, #0891b2, #06b6d4); }
-        .icon-all { background: linear-gradient(135deg, #f59e0b, #ef4444); }
-
         .game-title {
+            font-family: 'Orbitron', sans-serif;
             font-weight: 700;
             font-size: 1rem;
             color: var(--text);
-            display: flex;
-            align-items: center;
+            text-transform: uppercase;
         }
 
         .game-subtitle {
+            font-family: 'Inter', sans-serif;
             font-size: 0.75rem;
-            color: var(--text-muted);
+            color: var(--accent);
             margin-top: 2px;
         }
 
-        /* Duration Scroll */
+        .game-desc {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.7rem;
+            color: var(--text-muted);
+            margin-top: 4px;
+            line-height: 1.4;
+            padding: 8px 10px;
+            background: rgba(0,0,0,0.3);
+            border-left: 2px solid rgba(2, 242, 255, 0.3);
+            margin-bottom: 12px;
+        }
+
         .duration-scroll {
             display: flex;
-            gap: 8px;
+            gap: 10px;
             overflow-x: auto;
-            padding-bottom: 4px;
+            padding-bottom: 8px;
             margin: 0 -4px;
             scrollbar-width: none;
         }
 
-        .duration-scroll::-webkit-scrollbar {
-            display: none;
-        }
+        .duration-scroll::-webkit-scrollbar { display: none; }
 
         .duration-pill {
+            position: relative;
             flex-shrink: 0;
-            padding: 10px 14px;
-            background: rgba(255,255,255,0.03);
-            border: 1px solid rgba(255,255,255,0.08);
-            border-radius: 12px;
+            padding: 12px 16px;
+            background: rgba(0,0,0,0.4);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 8px;
             text-align: center;
-            min-width: 80px;
+            min-width: 85px;
             cursor: pointer;
             transition: all 0.2s;
+            overflow: hidden;
         }
 
         .duration-pill:active {
-            transform: scale(0.95);
+            transform: scale(0.92);
         }
 
         .duration-pill.active {
-            background: linear-gradient(135deg, rgba(99,102,241,0.2), rgba(139,92,246,0.15));
-            border-color: rgba(99,102,241,0.4);
+            background: rgba(2, 242, 255, 0.1);
+            border-color: var(--accent);
+            box-shadow: 0 0 15px rgba(2, 242, 255, 0.3);
         }
 
         .duration-label {
+            font-family: 'Orbitron', sans-serif;
             font-size: 0.7rem;
             font-weight: 700;
             text-transform: uppercase;
-            letter-spacing: 0.5px;
             color: var(--text-muted);
             margin-bottom: 4px;
         }
 
-        .duration-pill.active .duration-label {
-            color: #a5b4fc;
-        }
+        .duration-pill.active .duration-label { color: var(--accent); }
 
         .duration-price {
-            font-size: 0.95rem;
+            font-size: 1rem;
             font-weight: 800;
             color: var(--text);
         }
 
         .duration-pill.active .duration-price {
-            background: linear-gradient(135deg, #a5b4fc, #c4b5fd);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            color: #fff;
+            text-shadow: 0 0 8px var(--accent);
         }
 
-        /* Download Cards */
-        .download-list {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
+        .duration-alt {
+            font-size: 0.6rem;
+            color: var(--success);
+            margin-top: 2px;
+            font-weight: 600;
         }
 
         .download-item {
@@ -306,162 +487,181 @@
             gap: 14px;
             padding: 16px;
             background: var(--surface);
-            border: 1px solid var(--border);
-            border-radius: 16px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            clip-path: polygon(10px 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%, 0 10px);
             cursor: pointer;
-            transition: all 0.2s;
-            position: relative;
-            overflow: hidden;
             text-decoration: none;
             color: inherit;
+            margin-bottom: 12px;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.2s;
         }
 
         .download-item:active {
-            transform: scale(0.98);
-            background: var(--surface-light);
+            transform: scale(0.97) translateX(5px);
+            border-color: var(--primary);
+            box-shadow: inset 0 0 15px rgba(99, 102, 241, 0.2);
         }
 
         .dl-icon {
-            width: 48px;
-            height: 48px;
-            border-radius: 14px;
+            width: 44px;
+            height: 44px;
+            clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
             display: flex;
             align-items: center;
             justify-content: center;
             flex-shrink: 0;
         }
 
-        .dl-icon svg {
-            width: 24px;
-            height: 24px;
-            color: white;
-        }
-
-        .dl-info {
-            flex: 1;
-        }
-
-        .dl-name {
-            font-weight: 700;
-            font-size: 0.95rem;
-            margin-bottom: 4px;
-        }
-
-        .dl-meta {
-            display: flex;
-            gap: 8px;
-            align-items: center;
-        }
+        .dl-icon svg { width: 22px; height: 22px; color: white; }
+        .dl-name { font-family: 'Orbitron', sans-serif; font-weight: 700; font-size: 0.9rem; margin-bottom: 4px; }
+        .dl-meta { display: flex; gap: 8px; align-items: center; }
 
         .dl-badge {
-            font-size: 0.65rem;
-            font-weight: 700;
-            padding: 2px 8px;
-            border-radius: 6px;
+            font-size: 0.6rem;
+            font-weight: 800;
+            padding: 2px 6px;
+            border-radius: 4px;
             text-transform: uppercase;
         }
+        .badge-new { background: rgba(2, 242, 255, 0.15); color: var(--accent); border: 1px solid var(--accent); }
+        .badge-stable { background: rgba(0, 255, 136, 0.15); color: var(--success); border: 1px solid var(--success); }
 
-        .badge-new { background: rgba(99,102,241,0.15); color: #a5b4fc; }
-        .badge-stable { background: rgba(16,185,129,0.15); color: #34d399; }
-        .badge-beta { background: rgba(245,158,11,0.15); color: #fbbf24; }
+        .dl-arrow { color: var(--accent); transition: transform 0.2s; }
+        .download-item:active .dl-arrow { transform: translateX(6px); }
 
-        .dl-size {
-            font-size: 0.75rem;
-            color: var(--text-muted);
-            font-weight: 500;
+        .btn {
+            width: 100%;
+            padding: 16px;
+            border: none;
+            clip-path: polygon(15px 0, 100% 0, 100% calc(100% - 15px), calc(100% - 15px) 100%, 0 100%, 0 15px);
+            font-family: 'Orbitron', sans-serif;
+            font-size: 0.95rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            cursor: pointer;
+            transition: all 0.2s;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            text-decoration: none;
+            position: relative;
+            overflow: hidden;
         }
 
-        .dl-arrow {
-            color: var(--text-muted);
-            transition: transform 0.2s;
+        .btn:active:not(:disabled) { transform: scale(0.96); }
+        .btn:disabled { opacity: 0.5; cursor: not-allowed; }
+
+        .btn-primary {
+            background: linear-gradient(90deg, var(--primary-dark), var(--primary));
+            box-shadow: 0 0 15px rgba(99, 102, 241, 0.4);
+        }
+        .btn-success {
+            background: linear-gradient(90deg, #064e3b, var(--success));
+            box-shadow: 0 0 15px rgba(0, 255, 136, 0.3);
+            color: #000;
+        }
+        .btn-accent {
+            background: linear-gradient(90deg, #0891b2, var(--accent));
+            box-shadow: 0 0 15px rgba(2, 242, 255, 0.4);
+            color: #000;
         }
 
-        .download-item:active .dl-arrow {
-            transform: translateX(4px);
+        /* Owner Profile */
+        .owner-profile {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 20px;
         }
 
-        /* Owner Section */
+        .owner-avatar-wrap {
+            position: relative;
+            width: 100px;
+            height: 100px;
+            margin-bottom: 12px;
+        }
+
+        .owner-avatar-wrap::before {
+            content: '';
+            position: absolute;
+            inset: -6px;
+            border-radius: 50%;
+            border: 2px solid transparent;
+            border-top-color: var(--accent);
+            border-right-color: var(--accent);
+            animation: spin-ring 3s linear infinite;
+        }
+
+        .owner-avatar-wrap::after {
+            content: '';
+            position: absolute;
+            inset: -11px;
+            border-radius: 50%;
+            border: 1px solid transparent;
+            border-bottom-color: rgba(2, 242, 255, 0.3);
+            border-left-color: rgba(2, 242, 255, 0.3);
+            animation: spin-ring 4s linear infinite reverse;
+        }
+
+        .owner-avatar-wrap img {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            border: 3px solid var(--accent);
+            object-fit: cover;
+            box-shadow: 0 0 25px rgba(2, 242, 255, 0.3);
+        }
+
+        .owner-name {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            color: #fff;
+            text-shadow: 0 0 10px var(--primary);
+        }
+
+        .owner-tag {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 0.65rem;
+            font-weight: 700;
+            color: var(--accent);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-top: 4px;
+        }
+
         .owner-status {
             display: flex;
             align-items: center;
             gap: 12px;
             padding: 16px;
-            background: rgba(16,185,129,0.05);
-            border: 1px solid rgba(16,185,129,0.1);
-            border-radius: 16px;
+            background: rgba(0, 255, 136, 0.05);
+            border: 1px solid rgba(0, 255, 136, 0.2);
+            clip-path: polygon(10px 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%, 0 10px);
             margin-bottom: 16px;
         }
 
         .status-dot {
-            width: 10px;
-            height: 10px;
+            width: 12px;
+            height: 12px;
             background: var(--success);
             border-radius: 50%;
-            box-shadow: 0 0 12px var(--success);
+            box-shadow: 0 0 15px var(--success);
             position: relative;
-            flex-shrink: 0;
         }
-
         .status-dot::after {
-            content: '';
-            position: absolute;
-            inset: -4px;
-            border-radius: 50%;
-            border: 2px solid var(--success);
-            opacity: 0;
-            animation: ripple 2s infinite;
+            content: ''; position: absolute; inset: -4px; border-radius: 50%;
+            border: 1px solid var(--success); animation: ping 2s infinite;
         }
-
-        @keyframes ripple {
+        @keyframes ping {
             0% { transform: scale(0.8); opacity: 1; }
-            100% { transform: scale(2); opacity: 0; }
-        }
-
-        .status-text {
-            font-weight: 600;
-            font-size: 0.9rem;
-        }
-
-        .status-sub {
-            font-size: 0.75rem;
-            color: var(--text-muted);
-        }
-
-        .stats-row {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 10px;
-            margin-bottom: 20px;
-        }
-
-        .stat-box {
-            background: var(--surface);
-            border: 1px solid var(--border);
-            border-radius: 16px;
-            padding: 16px 8px;
-            text-align: center;
-        }
-
-        .stat-num {
-            font-size: 1.25rem;
-            font-weight: 900;
-            color: var(--text);
-            display: block;
-        }
-
-        .stat-label {
-            font-size: 0.65rem;
-            color: var(--text-muted);
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-top: 4px;
-            font-weight: 600;
-        }
-
-        .contact-list {
-            display: flex;
-            flex-direction: column;
-            gap: 8px;
+            100% { transform: scale(2.5); opacity: 0; }
         }
 
         .contact-row {
@@ -469,883 +669,818 @@
             align-items: center;
             gap: 14px;
             padding: 14px 16px;
-            background: var(--surface);
-            border: 1px solid var(--border);
-            border-radius: 14px;
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(255,255,255,0.1);
+            margin-bottom: 8px;
             cursor: pointer;
-            transition: all 0.2s;
             text-decoration: none;
             color: inherit;
+            transition: all 0.2s;
+            position: relative;
+            overflow: hidden;
+            clip-path: polygon(10px 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%, 0 10px);
         }
 
         .contact-row:active {
-            background: var(--surface-light);
+            background: rgba(2, 242, 255, 0.1);
+            border-color: var(--accent);
             transform: scale(0.98);
         }
 
         .contact-icon-sm {
-            width: 36px;
-            height: 36px;
-            border-radius: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: rgba(99,102,241,0.1);
-            flex-shrink: 0;
+            width: 36px; height: 36px; border-radius: 8px;
+            display: flex; align-items: center; justify-content: center;
+        }
+        .contact-icon-sm svg { width: 18px; height: 18px; }
+
+        .contact-icon-telegram {
+            background: linear-gradient(135deg, #0088cc, #29b6f6);
+            color: white;
+            border-radius: 50%;
         }
 
-        .contact-icon-sm svg {
-            width: 18px;
-            height: 18px;
-            color: #a5b4fc;
+        .contact-icon-tiktok {
+            background: #010101;
+            color: white;
+            border-radius: 8px;
+            position: relative;
+            overflow: hidden;
         }
 
-        .contact-text {
-            flex: 1;
+        .contact-icon-tiktok::before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            width: 20px;
+            height: 20px;
+            background: #25f4ee;
+            border-radius: 50%;
+            opacity: 0.3;
         }
 
-        .contact-name {
-            font-weight: 600;
-            font-size: 0.9rem;
+        .contact-icon-tiktok::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            right: -2px;
+            width: 20px;
+            height: 20px;
+            background: #fe2c55;
+            border-radius: 50%;
+            opacity: 0.3;
         }
 
-        .contact-handle {
-            font-size: 0.75rem;
-            color: var(--text-muted);
+        .contact-icon-group {
+            background: linear-gradient(135deg, #0088cc, #00c6ff);
+            color: white;
+            border-radius: 50%;
         }
 
-        /* Keys Section */
         .key-box {
-            background: linear-gradient(135deg, rgba(6,182,212,0.08), rgba(99,102,241,0.08));
-            border: 1px solid rgba(6,182,212,0.2);
-            border-radius: 16px;
+            background: #000;
+            border: 1px solid var(--accent);
             padding: 24px 20px;
             margin-bottom: 16px;
             text-align: center;
+            position: relative;
+            clip-path: polygon(0 0, 100% 0, 100% calc(100% - 15px), calc(100% - 15px) 100%, 0 100%);
+            box-shadow: inset 0 0 20px rgba(2, 242, 255, 0.05);
         }
-
-        .key-label {
-            font-size: 0.8rem;
-            color: var(--text-muted);
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            font-weight: 700;
-            margin-bottom: 14px;
+        .key-box::before {
+            content: 'TERMINAL';
+            position: absolute; top: 0; left: 0; background: var(--accent); color: #000;
+            font-family: 'Orbitron'; font-size: 0.6rem; font-weight: 800; padding: 2px 8px;
         }
 
         .key-input {
             width: 100%;
-            background: rgba(0,0,0,0.5);
-            border: 1px solid rgba(255,255,255,0.15);
-            border-radius: 14px;
-            padding: 18px 10px;
-            font-family: 'Courier New', monospace;
-            font-size: 1.6rem;
+            background: transparent;
+            border: none;
+            border-bottom: 2px solid rgba(2, 242, 255, 0.3);
+            padding: 10px;
+            font-family: 'Orbitron', monospace;
+            font-size: 1.5rem;
             font-weight: 900;
-            color: #22d3ee;
+            color: var(--accent);
             text-align: center;
-            letter-spacing: 3px;
+            letter-spacing: 2px;
             outline: none;
             margin-bottom: 16px;
+            text-shadow: 0 0 10px var(--accent);
             transition: all 0.3s ease;
         }
+        .key-input.generated { border-bottom-color: var(--success); color: var(--success); text-shadow: 0 0 15px var(--success); }
 
-        .key-input::placeholder {
-            color: #475569;
-            letter-spacing: 4px;
-            font-size: 1.3rem;
-            font-weight: 700;
-        }
-
-        @keyframes keyPulse {
-            0% { box-shadow: 0 0 0 0 rgba(34, 211, 238, 0.4); }
-            70% { box-shadow: 0 0 0 15px rgba(34, 211, 238, 0); }
-            100% { box-shadow: 0 0 0 0 rgba(34, 211, 238, 0); }
-        }
-
-        .key-input.generated {
-            animation: keyPulse 2s infinite;
-            border-color: #22d3ee;
-            background: rgba(34, 211, 238, 0.1);
-        }
-
-        .key-hint {
-            font-size: 0.8rem;
-            color: var(--text-muted);
-        }
-
-        .btn {
-            width: 100%;
-            padding: 14px;
-            border: none;
-            border-radius: 14px;
-            font-family: 'Inter', sans-serif;
-            font-size: 0.9rem;
-            font-weight: 700;
-            cursor: pointer;
-            transition: all 0.2s;
-            color: white;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
-            text-decoration: none;
-        }
-
-        .btn:active:not(:disabled) {
-            transform: scale(0.97);
-        }
-        
-        .btn:disabled {
-            opacity: 0.7;
-            cursor: not-allowed;
-            transform: none;
-        }
-
-        .btn-primary {
-            background: linear-gradient(135deg, var(--primary-dark), var(--primary));
-            box-shadow: 0 4px 20px rgba(79, 70, 229, 0.3);
-        }
-
-        .btn-success {
-            background: linear-gradient(135deg, #059669, var(--success));
-            box-shadow: 0 4px 20px rgba(16, 185, 129, 0.3);
-        }
-
-        .btn-accent {
-            background: linear-gradient(135deg, #0891b2, var(--accent));
-            box-shadow: 0 4px 20px rgba(6, 182, 212, 0.3);
-        }
-
-        .btn-ghost {
-            background: rgba(255,255,255,0.05);
-            border: 1px solid rgba(255,255,255,0.1);
-            color: var(--text-muted);
-            margin-top: 10px;
-        }
-
-        .btn-ghost:active {
-            background: rgba(255,255,255,0.08);
-        }
-
-        /* Bottom Nav */
         .bottom-nav {
-            position: fixed;
+            position: absolute;
             bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 100%;
-            max-width: 430px;
-            background: rgba(15, 15, 20, 0.95);
+            left: 0;
+            right: 0;
+            background: rgba(5, 5, 8, 0.95);
             backdrop-filter: blur(20px);
             border-top: 1px solid var(--border);
             padding: 8px 16px 24px;
             display: grid;
             grid-template-columns: repeat(4, 1fr);
             gap: 8px;
-            z-index: 100;
+            z-index: 50;
+            box-shadow: 0 -10px 30px rgba(0,0,0,0.8);
         }
 
         .nav-item {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 4px;
-            padding: 8px;
-            background: none;
-            border: none;
+            display: flex; flex-direction: column; align-items: center; gap: 4px;
+            padding: 8px; background: none; border: none;
             color: var(--text-muted);
-            font-family: 'Inter', sans-serif;
-            font-size: 0.65rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.2s;
-            border-radius: 12px;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 0.65rem; font-weight: 700;
+            cursor: pointer; transition: all 0.3s;
+            position: relative;
         }
 
-        .nav-item:active {
-            background: rgba(255,255,255,0.05);
+        .nav-item::before {
+            content: ''; position: absolute; top: 0; left: 50%; transform: translateX(-50%);
+            width: 0; height: 2px; background: var(--accent); transition: width 0.3s;
+            box-shadow: 0 0 10px var(--accent);
         }
 
-        .nav-item.active {
-            color: #a5b4fc;
-        }
+        .nav-item.active { color: var(--accent); }
+        .nav-item.active::before { width: 50%; }
+        .nav-item svg { width: 22px; height: 22px; transition: transform 0.2s; }
+        .nav-item.active svg { transform: translateY(-3px) scale(1.1); filter: drop-shadow(0 0 5px var(--accent)); }
 
-        .nav-item svg {
-            width: 22px;
-            height: 22px;
-            transition: transform 0.2s;
-        }
-
-        .nav-item.active svg {
-            transform: scale(1.1);
-        }
-
-        /* Modal */
         .modal-overlay {
-            display: none;
-            position: fixed;
-            inset: 0;
-            background: rgba(0,0,0,0.8);
-            backdrop-filter: blur(10px);
-            z-index: 1000;
-            justify-content: center;
-            align-items: flex-end;
-            padding: 0;
-            opacity: 0;
-            transition: opacity 0.3s;
+            display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.85);
+            backdrop-filter: blur(5px); z-index: 1000; justify-content: center; align-items: center;
+            opacity: 0; transition: opacity 0.3s; padding: 20px;
         }
-
-        .modal-overlay.active {
-            display: flex;
-            opacity: 1;
-        }
+        .modal-overlay.active { display: flex; opacity: 1; }
 
         .modal {
-            background: linear-gradient(180deg, #16161e, #0f0f14);
-            border-top: 1px solid rgba(255,255,255,0.1);
-            border-radius: 24px 24px 0 0;
-            padding: 32px 24px 40px;
-            width: 100%;
-            max-width: 430px;
+            background: var(--bg);
+            border: 1px solid var(--accent);
+            padding: 30px 24px;
+            width: 100%; max-width: 360px;
             text-align: center;
-            transform: translateY(100%);
-            transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            transform: scale(0.9);
+            transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            clip-path: polygon(20px 0, 100% 0, 100% calc(100% - 20px), calc(100% - 20px) 100%, 0 100%, 0 20px);
+            box-shadow: 0 0 40px rgba(2, 242, 255, 0.2);
+            position: relative;
+        }
+        .modal::before {
+            content: ''; position: absolute; top: 0; left: 0; width: 40px; height: 40px;
+            border-left: 2px solid var(--accent); border-top: 2px solid var(--accent);
+        }
+        .modal::after {
+            content: ''; position: absolute; bottom: 0; right: 0; width: 40px; height: 40px;
+            border-right: 2px solid var(--accent); border-bottom: 2px solid var(--accent);
         }
 
-        .modal-overlay.active .modal {
-            transform: translateY(0);
-        }
+        .modal-overlay.active .modal { transform: scale(1); }
 
         .modal-icon {
-            width: 56px;
-            height: 56px;
-            border-radius: 18px;
-            background: linear-gradient(135deg, rgba(99,102,241,0.15), rgba(139,92,246,0.1));
-            border: 1px solid rgba(99,102,241,0.2);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 16px;
+            width: 60px; height: 60px; margin: 0 auto 16px;
+            background: rgba(2, 242, 255, 0.1);
+            clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+            display: flex; align-items: center; justify-content: center;
+            color: var(--accent); border: 1px solid var(--accent);
         }
 
-        .modal-icon svg {
-            width: 24px;
-            height: 24px;
-            color: #a5b4fc;
-        }
-
-        .modal h3 {
-            font-size: 1.1rem;
-            font-weight: 800;
-            margin-bottom: 8px;
-        }
-
-        .modal p, #modal-text {
-            font-size: 0.9rem;
-            color: var(--text-muted);
-            line-height: 1.6;
-            margin-bottom: 20px;
-        }
+        .modal h3 { font-family: 'Orbitron'; font-size: 1.2rem; font-weight: 800; margin-bottom: 8px; color: #fff; text-transform: uppercase; }
+        .modal p, #modal-text { font-size: 0.9rem; color: var(--text-muted); line-height: 1.6; margin-bottom: 24px; }
 
         .modal-btn {
-            width: 100%;
-            padding: 14px;
-            background: rgba(255,255,255,0.05);
-            border: 1px solid rgba(255,255,255,0.1);
-            border-radius: 14px;
-            color: var(--text);
-            font-family: 'Inter', sans-serif;
-            font-weight: 700;
-            cursor: pointer;
-            font-size: 0.9rem;
+            width: 100%; padding: 14px; background: rgba(2, 242, 255, 0.1);
+            border: 1px solid var(--accent); color: var(--accent);
+            font-family: 'Orbitron', sans-serif; font-weight: 700; font-size: 0.9rem;
+            cursor: pointer; text-transform: uppercase; letter-spacing: 1px;
+            clip-path: polygon(10px 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%, 0 10px);
+            position: relative; overflow: hidden; transition: all 0.2s;
+        }
+        .modal-btn:active { transform: scale(0.95); background: var(--accent); color: #000; }
+
+        .ripple {
+            position: absolute; border-radius: 50%; transform: scale(0);
+            animation: ripple-anim 0.6s linear;
+            background-color: rgba(255, 255, 255, 0.3); pointer-events: none;
+        }
+        @keyframes ripple-anim {
+            to { transform: scale(4); opacity: 0; }
         }
 
-        .modal-btn:active:not(:disabled) {
-            background: rgba(255,255,255,0.1);
-        }
-
-        ::-webkit-scrollbar {
-            width: 0;
-            height: 0;
-        }
+        ::-webkit-scrollbar { width: 0; height: 0; }
     </style>
 </head>
 <body>
 
-    <div class="orb orb-1"></div>
-    <div class="orb orb-2"></div>
+    <audio id="bgMusic" src="https://audio.jukehost.co.uk/019ed665-0d40-73f7-8856-fb474e909c06" loop></audio>
 
-    <div class="phone">
-        <div class="header">
-            <h1>KIELHAX SULASOK SHOP</h1>
-            <p>QUALITY GAMING CHAIR</p>
-        </div>
+    <div class="phone" id="phoneFrame">
 
-        <div class="content">
+        <!-- Scrollable area -->
+        <div class="phone-scroll" id="phoneScroll">
 
-<!-- //PRICELIST\\ //PRICELIST\\ //PRICELIST\\ //PRICELIST\\ //PRICELIST\\ //PRICELIST\\ //PRICELIST\\ //PRICELIST\\ //PRICELIST\\ //PRICELIST\\ //PRICELIST\\ //PRICELIST\\ //PRICELIST\\ //PRICELIST\\ //PRICELIST\\ //PRICELIST\\ //PRICELIST\\ //PRICELIST\\ //PRICELIST\\ //PRICELIST\\ -->
-            <div class="section active" id="pricelist">
-                
-                <!-- KIEL LOADER -->
-                <div class="game-card">
-                    <div class="game-header">
-                        <div class="game-icon icon-mod">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                                <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
-                            </svg>
-                        </div>
-                        <div>
-                            <div class="game-title">KIEL LOADER ⚡</div>
-                            <div class="game-subtitle">Loader Tool</div>
-                        </div>
-                    </div>
-                    <div class="duration-scroll">
-                        <div class="duration-pill" onclick="selectDuration(this, 'KIEL LOADER', '03 Days', '₱70 (₱150 root)')">
-                            <div class="duration-label">03 Days</div>
-                            <div class="duration-price">₱70</div>
-                        </div>
-                        <div class="duration-pill" onclick="selectDuration(this, 'KIEL LOADER', '07 Days', '₱180 ($3.38)')">
-                            <div class="duration-label">07 Days</div>
-                            <div class="duration-price">₱180</div>
-                        </div>
-                        <div class="duration-pill" onclick="selectDuration(this, 'KIEL LOADER', '14 Days', '₱300 ($5.92)')">
-                            <div class="duration-label">14 Days</div>
-                            <div class="duration-price">₱300</div>
-                        </div>
-                        <div class="duration-pill" onclick="selectDuration(this, 'KIEL LOADER', '31 Days', '₱400 ($8.45)')">
-                            <div class="duration-label">31 Days</div>
-                            <div class="duration-price">₱400</div>
-                        </div>
-                        <div class="duration-pill" onclick="selectDuration(this, 'KIEL LOADER', 'Lifetime', '₱600 (450?)')">
-                            <div class="duration-label">Lifetime</div>
-                            <div class="duration-price">₱600</div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- KIEL MOD/CONTAINER -->
-                <div class="game-card">
-                    <div class="game-header">
-                        <div class="game-icon icon-crack">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                                <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
-                                <path d="M7 11V7a5 5 0 0 1 9.9-1"/>
-                            </svg>
-                        </div>
-                        <div>
-                            <div class="game-title">KIEL MOD/CONTAINER</div>
-                            <div class="game-subtitle">Container Mod</div>
-                        </div>
-                    </div>
-                    <div class="duration-scroll">
-                        <div class="duration-pill" onclick="selectDuration(this, 'KIEL MOD/CONTAINER', '03 Days', '₱90 ($1.69)')">
-                            <div class="duration-label">03 Days</div>
-                            <div class="duration-price">₱90</div>
-                        </div>
-                        <div class="duration-pill" onclick="selectDuration(this, 'KIEL MOD/CONTAINER', '07 Days', '₱200 ($3.38)')">
-                            <div class="duration-label">07 Days</div>
-                            <div class="duration-price">₱200</div>
-                        </div>
-                        <div class="duration-pill" onclick="selectDuration(this, 'KIEL MOD/CONTAINER', '14 Days', '₱280 ($5.92)')">
-                            <div class="duration-label">14 Days</div>
-                            <div class="duration-price">₱280</div>
-                        </div>
-                        <div class="duration-pill" onclick="selectDuration(this, 'KIEL MOD/CONTAINER', '31 Days', '₱380 ($8.45)')">
-                            <div class="duration-label">31 Days</div>
-                            <div class="duration-price">₱380</div>
-                        </div>
-                        <div class="duration-pill" onclick="selectDuration(this, 'KIEL MOD/CONTAINER', 'Lifetime', '₱700 (500?)')">
-                            <div class="duration-label">Lifetime</div>
-                            <div class="duration-price">₱700</div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- KIEL INJECTOR -->
-                <div class="game-card">
-                    <div class="game-header">
-                        <div class="game-icon icon-codm">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                                <circle cx="12" cy="12" r="10"/>
-                                <circle cx="12" cy="12" r="6"/>
-                                <circle cx="12" cy="12" r="2"/>
-                            </svg>
-                        </div>
-                        <div>
-                            <div class="game-title">KIEL INJECTOR</div>
-                            <div class="game-subtitle">Injector Tool</div>
-                        </div>
-                    </div>
-                    <div class="duration-scroll">
-                        <div class="duration-pill" onclick="selectDuration(this, 'KIEL INJECTOR', '03 Days', '₱70 ($1.69)')">
-                            <div class="duration-label">03 Days</div>
-                            <div class="duration-price">₱70</div>
-                        </div>
-                        <div class="duration-pill" onclick="selectDuration(this, 'KIEL INJECTOR', '07 Days', '₱100 ($3.38)')">
-                            <div class="duration-label">07 Days</div>
-                            <div class="duration-price">₱100</div>
-                        </div>
-                        <div class="duration-pill" onclick="selectDuration(this, 'KIEL INJECTOR', '14 Days', '₱130 ($5.92)')">
-                            <div class="duration-label">14 Days</div>
-                            <div class="duration-price">₱130</div>
-                        </div>
-                        <div class="duration-pill" onclick="selectDuration(this, 'KIEL INJECTOR', '31 Days', '₱200 ($8.45)')">
-                            <div class="duration-label">31 Days</div>
-                            <div class="duration-price">₱200</div>
-                        </div>
-                        <div class="duration-pill" onclick="selectDuration(this, 'KIEL INJECTOR', 'Lifetime', '₱300 (200?)')">
-                            <div class="duration-label">Lifetime</div>
-                            <div class="duration-price">₱300</div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- KIEL MLBB V1 (UNAVAILABLE) -->
-                <div class="game-card" style="opacity: 0.6;">
-                    <div class="game-header">
-                        <div class="game-icon icon-mlbb">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M14.5 17.5L3 6V3h3l11.5 11.5"/>
-                                <path d="M13 19l6-6"/>
-                                <path d="M16 16l4 4"/>
-                                <path d="M19 21l2-2"/>
-                            </svg>
-                        </div>
-                        <div>
-                            <div class="game-title">KIEL MLBB V1 <span style="color: var(--danger); font-size: 0.65rem; font-weight: 800; margin-left: 8px; padding: 2px 6px; background: rgba(239, 68, 68, 0.15); border-radius: 4px;">UNAVAILABLE</span></div>
-                            <div class="game-subtitle">Mobile Legends</div>
-                        </div>
-                    </div>
-                    <div class="duration-scroll" style="pointer-events: none; filter: grayscale(1);">
-                        <div class="duration-pill">
-                            <div class="duration-label">03 Days</div>
-                            <div class="duration-price">₱100</div>
-                        </div>
-                        <div class="duration-pill">
-                            <div class="duration-label">07 Days</div>
-                            <div class="duration-price">₱200</div>
-                        </div>
-                        <div class="duration-pill">
-                            <div class="duration-label">14 Days</div>
-                            <div class="duration-price">₱300</div>
-                        </div>
-                        <div class="duration-pill">
-                            <div class="duration-label">31 Days</div>
-                            <div class="duration-price">₱400</div>
-                        </div>
-                        <div class="duration-pill">
-                            <div class="duration-label">Lifetime</div>
-                            <div class="duration-price">₱800</div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- EZEKIEL MLBB V2 (UNAVAILABLE) -->
-                <div class="game-card" style="opacity: 0.6;">
-                    <div class="game-header">
-                        <div class="game-icon icon-mlbb">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M14.5 17.5L3 6V3h3l11.5 11.5"/>
-                                <path d="M13 19l6-6"/>
-                                <path d="M16 16l4 4"/>
-                                <path d="M19 21l2-2"/>
-                            </svg>
-                        </div>
-                        <div>
-                            <div class="game-title">EZEKIEL MLBB V2 <span style="color: var(--danger); font-size: 0.65rem; font-weight: 800; margin-left: 8px; padding: 2px 6px; background: rgba(239, 68, 68, 0.15); border-radius: 4px;">UNAVAILABLE</span></div>
-                            <div class="game-subtitle">Mobile Legends</div>
-                        </div>
-                    </div>
-                    <div class="duration-scroll" style="pointer-events: none; filter: grayscale(1);">
-                        <div class="duration-pill">
-                            <div class="duration-label">03 Days</div>
-                            <div class="duration-price">₱150</div>
-                        </div>
-                        <div class="duration-pill">
-                            <div class="duration-label">07 Days</div>
-                            <div class="duration-price">₱250</div>
-                        </div>
-                        <div class="duration-pill">
-                            <div class="duration-label">14 Days</div>
-                            <div class="duration-price">₱400</div>
-                        </div>
-                        <div class="duration-pill">
-                            <div class="duration-label">30 Days</div>
-                            <div class="duration-price">₱700</div>
-                        </div>
-                        <div class="duration-pill">
-                            <div class="duration-label">60 Days</div>
-                            <div class="duration-price">₱1,000</div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- EZEKIEL MLBB ( SCRIPT ) -->
-                <div class="game-card">
-                    <div class="game-header">
-                        <div class="game-icon icon-mlbb">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M14.5 17.5L3 6V3h3l11.5 11.5"/>
-                                <path d="M13 19l6-6"/>
-                                <path d="M16 16l4 4"/>
-                                <path d="M19 21l2-2"/>
-                            </svg>
-                        </div>
-                        <div>
-                            <div class="game-title">EZEKIEL MLBB (SCRIPT)</div>
-                            <div class="game-subtitle">Mobile Legends Script</div>
-                        </div>
-                    </div>
-                    <div class="duration-scroll">
-                        <div class="duration-pill" onclick="selectDuration(this, 'EZEKIEL MLBB SCRIPT', '03 Days', '₱70 ($5)')">
-                            <div class="duration-label">03 Days</div>
-                            <div class="duration-price">₱70</div>
-                        </div>
-                        <div class="duration-pill" onclick="selectDuration(this, 'EZEKIEL MLBB SCRIPT', '07 Days', '₱150 ($20)')">
-                            <div class="duration-label">07 Days</div>
-                            <div class="duration-price">₱150</div>
-                        </div>
-                        <div class="duration-pill" onclick="selectDuration(this, 'EZEKIEL MLBB SCRIPT', '14 Days', '₱250 ($15)')">
-                            <div class="duration-label">14 Days</div>
-                            <div class="duration-price">₱250</div>
-                        </div>
-                        <div class="duration-pill" onclick="selectDuration(this, 'EZEKIEL MLBB SCRIPT', '30 Days', '₱400 ($20)')">
-                            <div class="duration-label">30 Days</div>
-                            <div class="duration-price">₱400</div>
-                        </div>
-                        <div class="duration-pill" onclick="selectDuration(this, 'EZEKIEL MLBB SCRIPT', '∞ Days', '₱500 ($25)')">
-                            <div class="duration-label">∞ Days</div>
-                            <div class="duration-price">₱500</div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- KIEL BLOODSTRIKE -->
-                <div class="game-card">
-                    <div class="game-header">
-                        <div class="game-icon icon-blood">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/>
-                            </svg>
-                        </div>
-                        <div>
-                            <div class="game-title">KIEL BLOODSTRIKE ✔️</div>
-                            <div class="game-subtitle">BloodStrike Mod</div>
-                        </div>
-                    </div>
-                    <div class="duration-scroll">
-                        <div class="duration-pill" onclick="selectDuration(this, 'KIEL BLOODSTRIKE', '01 Days', '₱50 ($1)')">
-                            <div class="duration-label">01 Days</div>
-                            <div class="duration-price">₱50</div>
-                        </div>
-                        <div class="duration-pill" onclick="selectDuration(this, 'KIEL BLOODSTRIKE', '03 Days', '₱100 ($3)')">
-                            <div class="duration-label">03 Days</div>
-                            <div class="duration-price">₱100</div>
-                        </div>
-                        <div class="duration-pill" onclick="selectDuration(this, 'KIEL BLOODSTRIKE', '07 Days', '₱200 ($5)')">
-                            <div class="duration-label">07 Days</div>
-                            <div class="duration-price">₱200</div>
-                        </div>
-                        <div class="duration-pill" onclick="selectDuration(this, 'KIEL BLOODSTRIKE', '14 Days', '₱300 ($8)')">
-                            <div class="duration-label">14 Days</div>
-                            <div class="duration-price">₱300</div>
-                        </div>
-                        <div class="duration-pill" onclick="selectDuration(this, 'KIEL BLOODSTRIKE', '30 Days', '₱400 ($10)')">
-                            <div class="duration-label">30 Days</div>
-                            <div class="duration-price">₱400</div>
-                        </div>
-                        <div class="duration-pill" onclick="selectDuration(this, 'KIEL BLOODSTRIKE', 'Lifetime', '₱500 (₱399)')">
-                            <div class="duration-label">Lifetime</div>
-                            <div class="duration-price">₱500</div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- (KIEL) ALL CHEAT ACCESS -->
-                <div class="game-card">
-                    <div class="game-header">
-                        <div class="game-icon icon-all">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
-                            </svg>
-                        </div>
-                        <div>
-                            <div class="game-title">(KIEL) ALL ACCESS 👑</div>
-                            <div class="game-subtitle">Premium Bundle</div>
-                        </div>
-                    </div>
-                    <div class="duration-scroll">
-                        <div class="duration-pill" onclick="selectDuration(this, '(KIEL) ALL CHEAT ACCESS', '03 Days', '₱200 ($1.69)')">
-                            <div class="duration-label">03 Days</div>
-                            <div class="duration-price">₱200</div>
-                        </div>
-                        <div class="duration-pill" onclick="selectDuration(this, '(KIEL) ALL CHEAT ACCESS', '07 Days', '₱300 ($3.38)')">
-                            <div class="duration-label">07 Days</div>
-                            <div class="duration-price">₱300</div>
-                        </div>
-                        <div class="duration-pill" onclick="selectDuration(this, '(KIEL) ALL CHEAT ACCESS', '14 Days', '₱400 ($5.92)')">
-                            <div class="duration-label">14 Days</div>
-                            <div class="duration-price">₱400</div>
-                        </div>
-                        <div class="duration-pill" onclick="selectDuration(this, '(KIEL) ALL CHEAT ACCESS', '31 Days', '₱700 ($8.45)')">
-                            <div class="duration-label">31 Days</div>
-                            <div class="duration-price">₱700</div>
-                        </div>
-                        <div class="duration-pill" onclick="selectDuration(this, '(KIEL) ALL CHEAT ACCESS', 'Lifetime', '₱2000 (₱1000)')">
-                            <div class="duration-label">Lifetime</div>
-                            <div class="duration-price">₱2000</div>
-                        </div>
-                    </div>
-                </div>
-
-                <button class="btn btn-primary" onclick="window.open('https://t.me/FEEDBACK_EZEKIEL', '_blank')">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
-                    </svg>
-                    View Feedback Details
-                </button>
+            <div class="header">
+                <h1>KIELHAX SULASOK</h1>
+                <p>Quality Gaming Chair</p>
             </div>
 
-<!-- //FILES\\ //FILES\\ //FILES\\ //FILES\\ //FILES\\ //FILES\\ //FILES\\ //FILES\\ //FILES\\ //FILES\\ //FILES\\ //FILES\\ //FILES\\ //FILES\\ //FILES\\ //FILES\\ //FILES\\ //FILES\\ //FILES\\ //FILES\\ -->
-            <div class="section" id="files">
-                <div class="download-list">
+            <div class="content">
+                <!-- PRICELIST -->
+                <div class="section active" id="pricelist">
                     
-                    <!-- CONTAINER FILE -->
-                    <a href="https://t.me/crack_files1/9" class="download-item" target="_blank">
-                        <div class="dl-icon icon-mod">
+                    <!-- LOADER CODM -->
+                    <div class="game-card interaction">
+                        <div class="game-header">
+                            <div class="game-icon icon-loader">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <circle cx="12" cy="12" r="10"/>
+                                    <line x1="22" y1="12" x2="18" y2="12"/>
+                                    <line x1="6" y1="12" x2="2" y2="12"/>
+                                    <line x1="12" y1="6" x2="12" y2="2"/>
+                                    <line x1="12" y1="22" x2="12" y2="18"/>
+                                    <circle cx="12" cy="12" r="2"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <div class="game-title">LOADER CODM</div>
+                                <div class="game-subtitle">Supported Root</div>
+                            </div>
+                        </div>
+                        <div class="game-desc">Requires virtual environment but uses ImGui interface.</div>
+                        <div class="duration-scroll">
+                            <div class="duration-pill interaction" onclick="selectDuration(this, 'LOADER CODM', '03 Days', '70 PHP')">
+                                <div class="duration-label">03 Days</div>
+                                <div class="duration-price">P70</div>
+                            </div>
+                            <div class="duration-pill interaction" onclick="selectDuration(this, 'LOADER CODM', '07 Days', '180 PHP')">
+                                <div class="duration-label">07 Days</div>
+                                <div class="duration-price">P180</div>
+                            </div>
+                            <div class="duration-pill interaction" onclick="selectDuration(this, 'LOADER CODM', '14 Days', '300 PHP')">
+                                <div class="duration-label">14 Days</div>
+                                <div class="duration-price">P300</div>
+                            </div>
+                            <div class="duration-pill interaction" onclick="selectDuration(this, 'LOADER CODM', '31 Days', '400 PHP')">
+                                <div class="duration-label">31 Days</div>
+                                <div class="duration-price">P400</div>
+                            </div>
+                            <div class="duration-pill interaction" onclick="selectDuration(this, 'LOADER CODM', 'Lifetime', '600 PHP')">
+                                <div class="duration-label">Lifetime</div>
+                                <div class="duration-price">P600</div>
+                                <div class="duration-alt">P450</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- MOD / CONTAINER CODM -->
+                    <div class="game-card interaction">
+                        <div class="game-header">
+                            <div class="game-icon icon-container">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
+                                    <polyline points="3.27 6.96 12 12.01 20.73 6.96"/>
+                                    <line x1="12" y1="22.08" x2="12" y2="12"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <div class="game-title">MOD / CONTAINER</div>
+                                <div class="game-subtitle">CODM Virtual Space</div>
+                            </div>
+                        </div>
+                        <div class="game-desc">Everything is inside. All features packed in one container.</div>
+                        <div class="duration-scroll">
+                            <div class="duration-pill interaction" onclick="selectDuration(this, 'MOD / CONTAINER CODM', '03 Days', '90 PHP')">
+                                <div class="duration-label">03 Days</div>
+                                <div class="duration-price">P90</div>
+                            </div>
+                            <div class="duration-pill interaction" onclick="selectDuration(this, 'MOD / CONTAINER CODM', '07 Days', '200 PHP')">
+                                <div class="duration-label">07 Days</div>
+                                <div class="duration-price">P200</div>
+                            </div>
+                            <div class="duration-pill interaction" onclick="selectDuration(this, 'MOD / CONTAINER CODM', '14 Days', '280 PHP')">
+                                <div class="duration-label">14 Days</div>
+                                <div class="duration-price">P280</div>
+                            </div>
+                            <div class="duration-pill interaction" onclick="selectDuration(this, 'MOD / CONTAINER CODM', '31 Days', '380 PHP')">
+                                <div class="duration-label">31 Days</div>
+                                <div class="duration-price">P380</div>
+                            </div>
+                            <div class="duration-pill interaction" onclick="selectDuration(this, 'MOD / CONTAINER CODM', 'Lifetime', '700 PHP')">
+                                <div class="duration-label">Lifetime</div>
+                                <div class="duration-price">P700</div>
+                                <div class="duration-alt">P500</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- INJECTOR CODM -->
+                    <div class="game-card interaction">
+                        <div class="game-header">
+                            <div class="game-icon icon-injector">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <div class="game-title">INJECTOR CODM</div>
+                                <div class="game-subtitle">Lightweight Injector</div>
+                            </div>
+                        </div>
+                        <div class="game-desc">Requires virtual environment. Simple UI with no special features, just the essentials.</div>
+                        <div class="duration-scroll">
+                            <div class="duration-pill interaction" onclick="selectDuration(this, 'INJECTOR CODM', '03 Days', '70 PHP')">
+                                <div class="duration-label">03 Days</div>
+                                <div class="duration-price">P70</div>
+                            </div>
+                            <div class="duration-pill interaction" onclick="selectDuration(this, 'INJECTOR CODM', '07 Days', '100 PHP')">
+                                <div class="duration-label">07 Days</div>
+                                <div class="duration-price">P100</div>
+                            </div>
+                            <div class="duration-pill interaction" onclick="selectDuration(this, 'INJECTOR CODM', '14 Days', '130 PHP')">
+                                <div class="duration-label">14 Days</div>
+                                <div class="duration-price">P130</div>
+                            </div>
+                            <div class="duration-pill interaction" onclick="selectDuration(this, 'INJECTOR CODM', '31 Days', '200 PHP')">
+                                <div class="duration-label">31 Days</div>
+                                <div class="duration-price">P200</div>
+                            </div>
+                            <div class="duration-pill interaction" onclick="selectDuration(this, 'INJECTOR CODM', 'Lifetime', '300 PHP')">
+                                <div class="duration-label">Lifetime</div>
+                                <div class="duration-price">P300</div>
+                                <div class="duration-alt">P200</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- MLBB V1 - UNAVAILABLE -->
+                    <div class="game-card unavailable">
+                        <div class="unavailable-banner">Unavailable</div>
+                        <div class="game-header">
+                            <div class="game-icon icon-mlbb">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M14.5 17.5L3 6V3h3l11.5 11.5"/>
+                                    <path d="M13 19l6-6"/>
+                                    <path d="M16 16l4 4"/>
+                                    <path d="M19 21l2-2"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <div class="game-title">MLBB V1</div>
+                                <div class="game-subtitle">Currently Offline</div>
+                            </div>
+                        </div>
+                        <div class="game-desc">This version is currently unavailable. Please check back later for updates.</div>
+                        <div class="duration-scroll">
+                            <div class="duration-pill"><div class="duration-label">03 Days</div><div class="duration-price">P100</div></div>
+                            <div class="duration-pill"><div class="duration-label">07 Days</div><div class="duration-price">P200</div></div>
+                            <div class="duration-pill"><div class="duration-label">14 Days</div><div class="duration-price">P300</div></div>
+                            <div class="duration-pill"><div class="duration-label">31 Days</div><div class="duration-price">P400</div></div>
+                            <div class="duration-pill"><div class="duration-label">Lifetime</div><div class="duration-price">P800</div><div class="duration-alt">P500</div></div>
+                        </div>
+                    </div>
+
+                    <!-- MLBB V2 - UNAVAILABLE -->
+                    <div class="game-card unavailable">
+                        <div class="unavailable-banner">Unavailable</div>
+                        <div class="game-header">
+                            <div class="game-icon icon-mlbb">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M14.5 17.5L3 6V3h3l11.5 11.5"/>
+                                    <path d="M13 19l6-6"/>
+                                    <path d="M16 16l4 4"/>
+                                    <path d="M19 21l2-2"/>
+                                    <path d="M9.5 6.5L21 18v3h-3L6.5 9.5"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <div class="game-title">MLBB V2</div>
+                                <div class="game-subtitle">Currently Offline</div>
+                            </div>
+                        </div>
+                        <div class="game-desc">This version is currently unavailable. Please check back later for updates.</div>
+                        <div class="duration-scroll">
+                            <div class="duration-pill"><div class="duration-label">03 Days</div><div class="duration-price">P150</div></div>
+                            <div class="duration-pill"><div class="duration-label">07 Days</div><div class="duration-price">P250</div></div>
+                            <div class="duration-pill"><div class="duration-label">14 Days</div><div class="duration-price">P400</div></div>
+                            <div class="duration-pill"><div class="duration-label">30 Days</div><div class="duration-price">P700</div></div>
+                            <div class="duration-pill"><div class="duration-label">60 Days</div><div class="duration-price">P1,000</div></div>
+                        </div>
+                    </div>
+
+                    <!-- MLBB SCRIPT -->
+                    <div class="game-card interaction">
+                        <div class="game-header">
+                            <div class="game-icon icon-mlbb-script">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <polyline points="16 18 22 12 16 6"/>
+                                    <polyline points="8 6 2 12 8 18"/>
+                                    <line x1="14" y1="4" x2="10" y2="20"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <div class="game-title">MLBB SCRIPT</div>
+                                <div class="game-subtitle">GameGuardian Based</div>
+                            </div>
+                        </div>
+                        <div class="game-desc">Runs with GameGuardian. Strong bypass with less detection.</div>
+                        <div class="duration-scroll">
+                            <div class="duration-pill interaction" onclick="selectDuration(this, 'MLBB SCRIPT', '03 Days', '70 PHP')"><div class="duration-label">03 Days</div><div class="duration-price">P70</div></div>
+                            <div class="duration-pill interaction" onclick="selectDuration(this, 'MLBB SCRIPT', '07 Days', '150 PHP')"><div class="duration-label">07 Days</div><div class="duration-price">P150</div></div>
+                            <div class="duration-pill interaction" onclick="selectDuration(this, 'MLBB SCRIPT', '14 Days', '250 PHP')"><div class="duration-label">14 Days</div><div class="duration-price">P250</div></div>
+                            <div class="duration-pill interaction" onclick="selectDuration(this, 'MLBB SCRIPT', '30 Days', '400 PHP')"><div class="duration-label">30 Days</div><div class="duration-price">P400</div></div>
+                            <div class="duration-pill interaction" onclick="selectDuration(this, 'MLBB SCRIPT', 'Infinite', '500 PHP')"><div class="duration-label">Infinite</div><div class="duration-price">P500</div></div>
+                        </div>
+                    </div>
+
+                    <!-- BLOODSTRIKE -->
+                    <div class="game-card interaction">
+                        <div class="game-header">
+                            <div class="game-icon icon-blood">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <div class="game-title">BLOODSTRIKE</div>
+                                <div class="game-subtitle">BloodStrike Injector</div>
+                            </div>
+                        </div>
+                        <div class="game-desc">Simple UI but deadly features. Straightforward and effective.</div>
+                        <div class="duration-scroll">
+                            <div class="duration-pill interaction" onclick="selectDuration(this, 'BLOODSTRIKE', '01 Day', '50 PHP')"><div class="duration-label">01 Day</div><div class="duration-price">P50</div></div>
+                            <div class="duration-pill interaction" onclick="selectDuration(this, 'BLOODSTRIKE', '03 Days', '100 PHP')"><div class="duration-label">03 Days</div><div class="duration-price">P100</div></div>
+                            <div class="duration-pill interaction" onclick="selectDuration(this, 'BLOODSTRIKE', '07 Days', '200 PHP')"><div class="duration-label">07 Days</div><div class="duration-price">P200</div></div>
+                            <div class="duration-pill interaction" onclick="selectDuration(this, 'BLOODSTRIKE', '14 Days', '300 PHP')"><div class="duration-label">14 Days</div><div class="duration-price">P300</div></div>
+                            <div class="duration-pill interaction" onclick="selectDuration(this, 'BLOODSTRIKE', '30 Days', '400 PHP')"><div class="duration-label">30 Days</div><div class="duration-price">P400</div></div>
+                            <div class="duration-pill interaction" onclick="selectDuration(this, 'BLOODSTRIKE', 'Lifetime', '500 PHP')"><div class="duration-label">Lifetime</div><div class="duration-price">P500</div><div class="duration-alt">P399</div></div>
+                        </div>
+                    </div>
+
+                    <!-- ALL CHEAT ACCESS -->
+                    <div class="game-card interaction">
+                        <div class="game-header">
+                            <div class="game-icon icon-all">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M2 4l3 12h14l3-12-6 7-4-7-4 7-6-7z"/>
+                                    <path d="M3 20h18"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <div class="game-title">VIP ALL ACCESS</div>
+                                <div class="game-subtitle">Premium Master Bundle</div>
+                            </div>
+                        </div>
+                        <div class="game-desc">Every game will be unlocked. Full access to all cheats and tools.</div>
+                        <div class="duration-scroll">
+                            <div class="duration-pill interaction" onclick="selectDuration(this, 'ALL CHEAT ACCESS', '03 Days', '200 PHP')"><div class="duration-label">03 Days</div><div class="duration-price">P200</div></div>
+                            <div class="duration-pill interaction" onclick="selectDuration(this, 'ALL CHEAT ACCESS', '07 Days', '300 PHP')"><div class="duration-label">07 Days</div><div class="duration-price">P300</div></div>
+                            <div class="duration-pill interaction" onclick="selectDuration(this, 'ALL CHEAT ACCESS', '14 Days', '400 PHP')"><div class="duration-label">14 Days</div><div class="duration-price">P400</div></div>
+                            <div class="duration-pill interaction" onclick="selectDuration(this, 'ALL CHEAT ACCESS', '31 Days', '700 PHP')"><div class="duration-label">31 Days</div><div class="duration-price">P700</div></div>
+                            <div class="duration-pill interaction" onclick="selectDuration(this, 'ALL CHEAT ACCESS', 'Lifetime', '2,000 PHP')"><div class="duration-label">Lifetime</div><div class="duration-price">P2,000</div><div class="duration-alt">PROMO: P1,000</div></div>
+                        </div>
+                    </div>
+
+                    <button class="btn btn-primary interaction" onclick="window.open('https://t.me/FEEDBACK_EZEKIEL', '_blank')">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                        View Feedback
+                    </button>
+                </div>
+
+                <!-- FILES -->
+                <div class="section" id="files">
+                    <a href="https://t.me/crack_files1/9" class="download-item interaction" target="_blank">
+                        <div class="dl-icon icon-container">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
-                                <path d="M7 11V7a5 5 0 0 1 9.9-1"/>
+                                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/>
                             </svg>
                         </div>
                         <div class="dl-info">
-                            <div class="dl-name" style="font-size: 0.8rem;">CONTAINER (CODM, MLBB, BLOODSTRIKE, CRACK)</div>
+                            <div class="dl-name" style="font-size: 0.8rem;">CONTAINER</div>
                             <div class="dl-meta">
                                 <span class="dl-badge badge-stable">LATEST</span>
-                                <span class="dl-size">Telegram</span>
+                                <span style="color:var(--text-muted); font-size: 0.75rem;">Telegram</span>
                             </div>
                         </div>
-                        <svg class="dl-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <polyline points="9 18 15 12 9 6"/>
-                        </svg>
+                        <svg class="dl-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
                     </a>
 
-                    <!-- GARENA APK FILE -->
-                    <a href="https://t.me/crack_files1/11" class="download-item" target="_blank">
-                        <div class="dl-icon icon-codm">
+                    <a href="https://t.me/crack_files1/11" class="download-item interaction" target="_blank">
+                        <div class="dl-icon icon-mod">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
-                                <polyline points="7 10 12 15 17 10"/>
-                                <line x1="12" y1="15" x2="12" y2="3"/>
+                                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/>
                             </svg>
                         </div>
                         <div class="dl-info">
-                            <div class="dl-name">GARENA APK</div>
+                            <div class="dl-name">GARENA APK MOD</div>
                             <div class="dl-meta">
                                 <span class="dl-badge badge-new">OFFICIAL</span>
-                                <span class="dl-size">Telegram</span>
+                                <span style="color:var(--text-muted); font-size: 0.75rem;">Telegram</span>
                             </div>
                         </div>
-                        <svg class="dl-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <polyline points="9 18 15 12 9 6"/>
-                        </svg>
+                        <svg class="dl-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
                     </a>
 
-                </div>
-
-                <button class="btn btn-ghost" onclick="showModal('All files are verified with SHA-256 checksums and scanned for malware before release.', 'Security Info')" style="margin-top: 16px;">
-                    Security Details
-                </button>
-            </div>
-
-<!-- //OWNER\\ //OWNER\\ //OWNER\\ //OWNER\\ //OWNER\\ //OWNER\\ //OWNER\\ //OWNER\\ //OWNER\\ //OWNER\\ //OWNER\\ //OWNER\\ //OWNER\\ //OWNER\\ //OWNER\\ //OWNER\\ //OWNER\\ //OWNER\\ //OWNER\\ //OWNER\\ -->
-            <div class="section" id="owner">
-                <div class="card">
-                    <div class="owner-status">
-                        <div class="status-dot"></div>
-                        <div>
-                            <div class="status-text">Online Now</div>
-                            <div class="status-sub">Avg. response: 3 min</div>
-                        </div>
-                    </div>
-
-                    <div class="stats-row">
-                        <div class="stat-box">
-                            <span class="stat-num">1K+</span>
-                            <span class="stat-label">Clients</span>
-                        </div>
-                        <div class="stat-box">
-                            <span class="stat-num">99%</span>
-                            <span class="stat-label">Uptime</span>
-                        </div>
-                        <div class="stat-box">
-                            <span class="stat-num">4.9</span>
-                            <span class="stat-label">Rating</span>
-                        </div>
-                    </div>
-
-                    <div class="contact-list">
-                        <a href="https://t.me/kielhax" class="contact-row" target="_blank">
-                            <div class="contact-icon-sm">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                    <path d="M21.198 2.433a2.242 2.242 0 0 0-1.022.215l-8.609 3.33c-2.068.8-4.133 1.598-5.724 2.21a405.15 405.15 0 0 1-2.849.973c-.433.147-.85.309-1.285.465-1.317.487-1.9 1.638-1.319 2.74.343.647.71 1.323 1.086 1.962.365.623.747 1.276 1.143 1.927.712 1.18 1.648 2.305 2.79 3.336 1.142 1.03 2.461 1.954 3.932 2.75 1.47.796 3.097 1.46 4.848 1.98 1.75.52 3.62.896 5.61 1.13 1.99.233 4.097.323 6.322.27 2.225-.053 4.566-.26 7.023-.62a2.242 2.242 0 0 0 1.022-.215l-8.609-3.33c-2.068-.8-4.133-1.598-5.724-2.21a405.15 405.15 0 0 1-2.849-.973c-.433-.147-.85-.309-1.285-.465-1.317-.487-1.9-1.638-1.319-2.74-.343-.647-.71-1.323-1.086-1.962-.365-.623-.747-1.276-1.143-1.927-.712-1.18-1.648-2.305-2.79-3.336-1.142-1.03-2.461-1.954-3.932-2.75-1.47-.796-3.097-1.46-4.848-1.98-1.75-.52-3.62-.896-5.61-1.13-1.99-.233-4.097-.323-6.322-.27-2.225.053-4.566.26-7.023.62z"/>
-                                </svg>
-                            </div>
-                            <div class="contact-text">
-                                <div class="contact-name">Telegram</div>
-                                <div class="contact-handle">@kielhax</div>
-                            </div>
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color: var(--text-muted);">
-                                <polyline points="9 18 15 12 9 6"/>
-                            </svg>
-                        </a>
-
-                        <a href="https://tiktok.com/@kiel_no_aim" class="contact-row" target="_blank">
-                            <div class="contact-icon-sm">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                    <path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"/>
-                                </svg>
-                            </div>
-                            <div class="contact-text">
-                                <div class="contact-name">TikTok</div>
-                                <div class="contact-handle">@kiel_no_aim</div>
-                            </div>
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color: var(--text-muted);">
-                                <polyline points="9 18 15 12 9 6"/>
-                            </svg>
-                        </a>
-
-                        <a href="mailto:sentexalohabaxter@gmail.com" class="contact-row">
-                            <div class="contact-icon-sm">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
-                                    <polyline points="22,6 12,13 2,6"/>
-                                </svg>
-                            </div>
-                            <div class="contact-text">
-                                <div class="contact-name">Email</div>
-                                <div class="contact-handle">sentexalohabaxter@gmail.com</div>
-                            </div>
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color: var(--text-muted);">
-                                <polyline points="9 18 15 12 9 6"/>
-                            </svg>
-                        </a>
-                    </div>
-
-                    <a href="https://t.me/kielhax" class="btn btn-success" target="_blank" style="margin-top: 16px;">
-                        Buy Now
-                    </a>
-                </div>
-            </div>
-
-<!-- //KEYS\\ //KEYS\\ //KEYS\\ //KEYS\\ //KEYS\\ //KEYS\\ //KEYS\\ //KEYS\\ //KEYS\\ //KEYS\\ //KEYS\\ //KEYS\\ //KEYS\\ //KEYS\\ //KEYS\\ //KEYS\\ //KEYS\\ //KEYS\\ //KEYS\\ //KEYS\\ -->
-            <div class="section" id="keys">
-                <div class="card" style="text-align: center;">
-                    <div class="key-box">
-                        <div class="key-label">Generated Key</div>
-                        <input type="text" class="key-input" id="keyInput" placeholder="XXXX-XXXX-XXXX" readonly>
-                        <div class="key-hint">Tap generate to create your free key</div>
-                    </div>
-
-                    <button class="btn btn-accent" id="generateBtn" onclick="generateKey()">
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <polyline points="23 4 23 10 17 10"/>
-                            <path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"/>
-                        </svg>
-                        Generate Key
-                    </button>
-
-                    <button class="btn btn-ghost" onclick="showModal('• 1 key per IP every Expires after 24hours if not used\n• Keys expire after UKNOWN days\n• Premium keys available for purchase\n• Contact owner for unlimited access', 'Key Rules')">
-                        Key Policy
+                    <button class="btn interaction" style="background: transparent; border: 1px solid var(--accent); color: var(--accent); margin-top: 16px;" onclick="showModal('All files are verified with SHA-256 checksums and scanned for malware before release.', 'Security Protocol')">
+                        Security Info
                     </button>
                 </div>
 
-                <div class="card" style="margin-top: 12px;">
-                    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; text-align: center;">
-                        <div>
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#06b6d4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin: 0 auto 8px; display: block;">
-                                <circle cx="12" cy="12" r="10"/>
-                                <polyline points="12 6 12 12 16 14"/>
-                            </svg>
-                            <div style="font-size: 0.75rem; font-weight: 700; color: var(--text);">RESET BY OWNER</div>
-                            <div style="font-size: 0.65rem; color: var(--text-muted); margin-top: 2px;">Weekly/Daily Free</div>
+                <!-- OWNER -->
+                <div class="section" id="owner">
+                    <div class="card interaction">
+                        
+                        <div class="owner-profile">
+                            <div class="owner-avatar-wrap">
+                                <img src="https://raw.githubusercontent.com/senseikiel8-coder/kiel.json/main/kielhax_picture.jpg" alt="KielHax" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect fill=%22%23111%22 width=%22100%22 height=%22100%22/><text x=%2250%22 y=%2255%22 text-anchor=%22middle%22 fill=%22%2302f2ff%22 font-size=%2240%22 font-family=%22sans-serif%22>K</text></svg>'">
+                            </div>
+                            <div class="owner-name">KIELHAX</div>
+                            <div class="owner-tag">Developer / Owner</div>
                         </div>
-                        <div>
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin: 0 auto 8px; display: block;">
-                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
-                            </svg>
-                            <div style="font-size: 0.75rem; font-weight: 700; color: var(--text);">Secure</div>
-                            <div style="font-size: 0.65rem; color: var(--text-muted); margin-top: 2px;">1 Per IP</div>
+
+                        <div class="owner-status">
+                            <div class="status-dot"></div>
+                            <div>
+                                <div style="font-family: 'Orbitron'; font-weight: 800; font-size: 0.95rem; text-transform: uppercase;">System Online</div>
+                                <div style="font-size: 0.75rem; color: var(--text-muted);">Avg. response: <span style="color:var(--success);">3 min</span></div>
+                            </div>
                         </div>
-                        <div>
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#8b5cf6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin: 0 auto 8px; display: block;">
-                                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
-                                <polyline points="22 4 12 14.01 9 11.01"/>
-                            </svg>
-                            <div style="font-size: 0.75rem; font-weight: 700; color: var(--text);">Verified</div>
-                            <div style="font-size: 0.65rem; color: var(--text-muted); margin-top: 2px;">Instant Use</div>
+
+                        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-bottom: 20px;">
+                            <div style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; padding: 16px 8px; text-align: center;">
+                                <span style="font-family: 'Orbitron'; font-size: 1.25rem; font-weight: 900; color: var(--accent); display: block;">1K+</span>
+                                <span style="font-size: 0.65rem; color: var(--text-muted); text-transform: uppercase; font-weight: 600;">Clients</span>
+                            </div>
+                            <div style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; padding: 16px 8px; text-align: center;">
+                                <span style="font-family: 'Orbitron'; font-size: 1.25rem; font-weight: 900; color: var(--accent); display: block;">99%</span>
+                                <span style="font-size: 0.65rem; color: var(--text-muted); text-transform: uppercase; font-weight: 600;">Uptime</span>
+                            </div>
+                            <div style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; padding: 16px 8px; text-align: center;">
+                                <span style="font-family: 'Orbitron'; font-size: 1.25rem; font-weight: 900; color: var(--accent); display: block;">4.9</span>
+                                <span style="font-size: 0.65rem; color: var(--text-muted); text-transform: uppercase; font-weight: 600;">Rating</span>
+                            </div>
                         </div>
+
+                        <a href="https://t.me/kielhax" class="contact-row interaction" target="_blank">
+                            <div class="contact-icon-sm contact-icon-telegram">
+                                <svg viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M9.78 18.65l.28-4.23 7.68-6.92c.34-.31-.07-.46-.52-.19L7.74 13.3 3.64 12c-.88-.25-.89-.86.2-1.3l15.97-6.16c.73-.33 1.43.18 1.15 1.3l-2.72 12.81c-.19.91-.74 1.13-1.5.71L12.6 16.3l-1.99 1.93c-.23.23-.42.42-.83.42z"/></svg>
+                            </div>
+                            <div style="flex: 1;">
+                                <div style="font-family: 'Orbitron'; font-weight: 700; font-size: 0.9rem;">Telegram</div>
+                                <div style="font-size: 0.75rem; color: var(--text-muted);">@kielhax</div>
+                            </div>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color: #29b6f6;"><polyline points="9 18 15 12 9 6"/></svg>
+                        </a>
+                        
+                        <a href="https://t.me/Ezekielhax" class="contact-row interaction" target="_blank">
+                            <div class="contact-icon-sm contact-icon-group">
+                                <svg viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M9.78 18.65l.28-4.23 7.68-6.92c.34-.31-.07-.46-.52-.19L7.74 13.3 3.64 12c-.88-.25-.89-.86.2-1.3l15.97-6.16c.73-.33 1.43.18 1.15 1.3l-2.72 12.81c-.19.91-.74 1.13-1.5.71L12.6 16.3l-1.99 1.93c-.23.23-.42.42-.83.42z"/></svg>
+                            </div>
+                            <div style="flex: 1;">
+                                <div style="font-family: 'Orbitron'; font-weight: 700; font-size: 0.9rem;">Official Group</div>
+                                <div style="font-size: 0.75rem; color: var(--text-muted);">t.me/Ezekielhax</div>
+                            </div>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color: #00c6ff;"><polyline points="9 18 15 12 9 6"/></svg>
+                        </a>
+
+                        <a href="https://tiktok.com/@kiel_no_aim" class="contact-row interaction" target="_blank">
+                            <div class="contact-icon-sm contact-icon-tiktok">
+                                <svg viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1v-3.5a6.37 6.37 0 0 0-.79-.05A6.34 6.34 0 0 0 3.15 15.2a6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.34-6.34V8.75a8.26 8.26 0 0 0 4.81 1.54V6.84a4.86 4.86 0 0 1-1.05-.15z"/></svg>
+                            </div>
+                            <div style="flex: 1;">
+                                <div style="font-family: 'Orbitron'; font-weight: 700; font-size: 0.9rem;">TikTok</div>
+                                <div style="font-size: 0.75rem; color: var(--text-muted);">@kiel_no_aim</div>
+                            </div>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color: #fe2c55;"><polyline points="9 18 15 12 9 6"/></svg>
+                        </a>
+
+                        <a href="https://t.me/kielhax" class="btn btn-success interaction" target="_blank" style="margin-top: 16px;">
+                            Initialize Purchase
+                        </a>
                     </div>
                 </div>
+
+                <!-- KEYS -->
+                <div class="section" id="keys">
+                    <div class="card interaction" style="text-align: center;">
+                        <div class="key-box">
+                            <input type="text" class="key-input" id="keyInput" placeholder="XXXX-XXXX-XXXX" readonly>
+                            <div style="font-size: 0.75rem; color: var(--text-muted); text-transform: uppercase; font-weight: 600;">Status: Awaiting Generation</div>
+                        </div>
+
+                        <button class="btn btn-accent interaction" id="generateBtn" onclick="generateKey()">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="23 4 23 10 17 10"/><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"/></svg>
+                            Compile Free Key
+                        </button>
+
+                        <button class="btn interaction" style="background: transparent; border: 1px solid rgba(255,255,255,0.1); color: var(--text-muted); margin-top: 12px;" onclick="showModal('1 key per IP. Expires after 24 hours if not used.\nKeys expire after an unknown period.\nPremium keys are available for purchase.\nContact the owner for unlimited access.', 'KEY PROTOCOL')">
+                            Read Policy
+                        </button>
+                    </div>
+                </div>
+
             </div>
 
+            <!-- Spacer for bottom nav -->
+            <div style="height: 80px;"></div>
         </div>
 
-<!-- //BOTTOM_NAV\\ //BOTTOM_NAV\\ //BOTTOM_NAV\\ //BOTTOM_NAV\\ //BOTTOM_NAV\\ //BOTTOM_NAV\\ //BOTTOM_NAV\\ //BOTTOM_NAV\\ //BOTTOM_NAV\\ //BOTTOM_NAV\\ //BOTTOM_NAV\\ //BOTTOM_NAV\\ //BOTTOM_NAV\\ //BOTTOM_NAV\\ //BOTTOM_NAV\\ //BOTTOM_NAV\\ //BOTTOM_NAV\\ //BOTTOM_NAV\\ //BOTTOM_NAV\\ //BOTTOM_NAV\\ -->
+        <!-- Bottom Nav - inside phone -->
         <nav class="bottom-nav">
-            <button class="nav-item active" onclick="switchTab('pricelist')" data-tab="pricelist">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <line x1="12" y1="1" x2="12" y2="23"/>
-                    <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
-                </svg>
-                Prices
+            <button class="nav-item active interaction" onclick="switchTab('pricelist')" data-tab="pricelist">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                Pricing
             </button>
-            <button class="nav-item" onclick="switchTab('files')" data-tab="files">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
-                    <polyline points="7 10 12 15 17 10"/>
-                    <line x1="12" y1="15" x2="12" y2="3"/>
-                </svg>
+            <button class="nav-item interaction" onclick="switchTab('files')" data-tab="files">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
                 Files
             </button>
-            <button class="nav-item" onclick="switchTab('owner')" data-tab="owner">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
-                    <circle cx="12" cy="7" r="4"/>
-                </svg>
+            <button class="nav-item interaction" onclick="switchTab('owner')" data-tab="owner">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
                 Owner
             </button>
-            <button class="nav-item" onclick="switchTab('keys')" data-tab="keys">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
-                    <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
-                </svg>
+            <button class="nav-item interaction" onclick="switchTab('keys')" data-tab="keys">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
                 Keys
             </button>
         </nav>
+
+        <!-- Music Player - inside phone frame -->
+        <div class="music-player" id="musicPlayer">
+            <div class="music-ring"></div>
+            <div class="music-ring-2"></div>
+            <div class="music-pulse"></div>
+            <div class="music-player-inner">
+                <div class="music-note">
+                    <svg viewBox="0 0 24 24"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>
+                </div>
+                <button class="music-btn" id="musicBtn">
+                    <svg id="playIcon" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                    <svg id="pauseIcon" viewBox="0 0 24 24" style="display:none;"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>
+                </button>
+            </div>
+        </div>
     </div>
 
-<!-- //MODAL\\ //MODAL\\ //MODAL\\ //MODAL\\ //MODAL\\ //MODAL\\ //MODAL\\ //MODAL\\ //MODAL\\ //MODAL\\ //MODAL\\ //MODAL\\ //MODAL\\ //MODAL\\ //MODAL\\ //MODAL\\ //MODAL\\ //MODAL\\ //MODAL\\ //MODAL\\ -->
+    <!-- MODAL -->
     <div class="modal-overlay" id="modal" onclick="closeModal(event)">
         <div class="modal" onclick="event.stopPropagation()">
             <div class="modal-icon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
-                    <polyline points="22 4 12 14.01 9 11.01"/>
-                </svg>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
             </div>
             <h3 id="modal-title">Title</h3>
             <div id="modal-text">Content</div>
             <div id="modal-buttons" style="display: flex; gap: 12px; width: 100%;">
-                <button class="modal-btn" data-close="true" onclick="closeModal()">Got it</button>
+                <button class="modal-btn interaction" data-close="true" onclick="closeModal()">Acknowledge</button>
             </div>
         </div>
     </div>
 
-<!-- //JAVASCRIPT\\ //JAVASCRIPT\\ //JAVASCRIPT\\ //JAVASCRIPT\\ //JAVASCRIPT\\ //JAVASCRIPT\\ //JAVASCRIPT\\ //JAVASCRIPT\\ //JAVASCRIPT\\ //JAVASCRIPT\\ //JAVASCRIPT\\ //JAVASCRIPT\\ //JAVASCRIPT\\ //JAVASCRIPT\\ //JAVASCRIPT\\ //JAVASCRIPT\\ //JAVASCRIPT\\ //JAVASCRIPT\\ //JAVASCRIPT\\ //JAVASCRIPT\\ -->
     <script>
         let isGenerating = false;
+        const bgMusic = document.getElementById('bgMusic');
+        let isPlaying = false;
+
+        // Music Toggle
+        function toggleMusic() {
+            const player = document.getElementById('musicPlayer');
+            const playIcon = document.getElementById('playIcon');
+            const pauseIcon = document.getElementById('pauseIcon');
+
+            if (isPlaying) {
+                bgMusic.pause();
+                player.classList.remove('playing');
+                playIcon.style.display = 'block';
+                pauseIcon.style.display = 'none';
+            } else {
+                bgMusic.play().catch(err => console.log("Audio play failed:", err));
+                player.classList.add('playing');
+                playIcon.style.display = 'none';
+                pauseIcon.style.display = 'block';
+            }
+            isPlaying = !isPlaying;
+        }
+
+        // Draggable Music Player - confined to phone frame
+        (function() {
+            const player = document.getElementById('musicPlayer');
+            const phone = document.getElementById('phoneFrame');
+            let isDragging = false;
+            let hasMoved = false;
+            let startX, startY, startLeft, startTop;
+
+            function getPos(e) {
+                if (e.touches) return { x: e.touches[0].clientX, y: e.touches[0].clientY };
+                return { x: e.clientX, y: e.clientY };
+            }
+
+            function onStart(e) {
+                const pos = getPos(e);
+                startX = pos.x;
+                startY = pos.y;
+                startLeft = player.offsetLeft;
+                startTop = player.offsetTop;
+                isDragging = true;
+                hasMoved = false;
+                player.style.transition = 'none';
+            }
+
+            function onMove(e) {
+                if (!isDragging) return;
+                e.preventDefault();
+                const pos = getPos(e);
+                const dx = pos.x - startX;
+                const dy = pos.y - startY;
+
+                if (Math.abs(dx) > 3 || Math.abs(dy) > 3) {
+                    hasMoved = true;
+                }
+
+                let newLeft = startLeft + dx;
+                let newTop = startTop + dy;
+
+                const pw = player.offsetWidth;
+                const ph = player.offsetHeight;
+                const frameW = phone.offsetWidth;
+                const frameH = phone.offsetHeight;
+
+                // Keep inside phone frame with padding
+                const pad = 8;
+                newLeft = Math.max(pad, Math.min(frameW - pw - pad, newLeft));
+                newTop = Math.max(pad, Math.min(frameH - ph - 80, newTop)); // 80 for bottom nav
+
+                player.style.left = newLeft + 'px';
+                player.style.top = newTop + 'px';
+                player.style.right = 'auto';
+                player.style.bottom = 'auto';
+            }
+
+            function onEnd() {
+                if (!isDragging) return;
+                isDragging = false;
+                player.style.transition = 'left 0.3s ease, top 0.3s ease';
+
+                // Snap to nearest side
+                const rect = player.getBoundingClientRect();
+                const phoneRect = phone.getBoundingClientRect();
+                const relLeft = rect.left - phoneRect.left;
+                const frameW = phone.offsetWidth;
+                const pw = player.offsetWidth;
+
+                if (relLeft + pw / 2 < frameW / 2) {
+                    player.style.left = '12px';
+                } else {
+                    player.style.left = (frameW - pw - 12) + 'px';
+                }
+            }
+
+            player.addEventListener('mousedown', onStart);
+            document.addEventListener('mousemove', onMove);
+            document.addEventListener('mouseup', onEnd);
+
+            player.addEventListener('touchstart', onStart, { passive: true });
+            document.addEventListener('touchmove', onMove, { passive: false });
+            document.addEventListener('touchend', onEnd);
+
+            // Handle click vs drag on the button
+            document.getElementById('musicBtn').addEventListener('click', function(e) {
+                if (hasMoved) {
+                    e.stopPropagation();
+                    e.preventDefault();
+                    hasMoved = false;
+                    return;
+                }
+                toggleMusic();
+            }, true);
+        })();
+
+        // Ripple Effect
+        function createRipple(event) {
+            const button = event.currentTarget;
+            const circle = document.createElement("span");
+            const diameter = Math.max(button.clientWidth, button.clientHeight);
+            const radius = diameter / 2;
+            const rect = button.getBoundingClientRect();
+            
+            const clientX = event.touches ? event.touches[0].clientX : event.clientX;
+            const clientY = event.touches ? event.touches[0].clientY : event.clientY;
+            
+            circle.style.width = circle.style.height = `${diameter}px`;
+            circle.style.left = `${clientX - rect.left - radius}px`;
+            circle.style.top = `${clientY - rect.top - radius}px`;
+            circle.classList.add("ripple");
+            
+            const existingRipple = button.getElementsByClassName("ripple")[0];
+            if (existingRipple) existingRipple.remove();
+            
+            button.appendChild(circle);
+        }
+
+        document.querySelectorAll('.interaction').forEach(element => {
+            element.addEventListener('mousedown', createRipple);
+            element.addEventListener('touchstart', createRipple, {passive: true});
+        });
 
         function switchTab(tabName) {
             document.querySelectorAll('.nav-item').forEach(tab => {
@@ -1354,17 +1489,22 @@
             });
             document.querySelectorAll('.section').forEach(sec => sec.classList.remove('active'));
             document.getElementById(tabName).classList.add('active');
+            // Scroll to top when switching tabs
+            document.getElementById('phoneScroll').scrollTop = 0;
         }
 
         function selectDuration(el, game, duration, price) {
             const parent = el.parentElement;
             parent.querySelectorAll('.duration-pill').forEach(p => p.classList.remove('active'));
             el.classList.add('active');
-            
-            showModal(game + ' — ' + duration + '<br>Price: ' + price + '<br><br>Tap Buy in Owner tab to purchase this plan.', 'Plan Selected', true);
+            showModal(game + ' - ' + duration + '<br>Price: ' + price + '<br><br>Head to the Owner tab to initialize your purchase.', 'Package Selected', true);
         }
 
-        function showModal(text, title = 'Notification', isHTML = false, buttonsHTML = null) {
+        function showModal(text, title, isHTML, buttonsHTML) {
+            title = title || 'System Log';
+            isHTML = isHTML || false;
+            buttonsHTML = buttonsHTML || null;
+
             if(isHTML) {
                 document.getElementById('modal-text').innerHTML = text;
             } else {
@@ -1376,14 +1516,12 @@
             if (buttonsHTML) {
                 btnContainer.innerHTML = buttonsHTML;
             } else {
-                btnContainer.innerHTML = '<button class="modal-btn" data-close="true" onclick="closeModal()">Got it</button>';
+                btnContainer.innerHTML = '<button class="modal-btn interaction" data-close="true" onclick="closeModal()">Acknowledge</button>';
             }
-
             document.getElementById('modal').classList.add('active');
         }
 
         function closeModal(event) {
-            // Closes modal if called without parameters, clicked background, or button holds data-close
             if (!event || event.target.id === 'modal' || event.target.dataset.close === 'true') {
                 document.getElementById('modal').classList.remove('active');
             }
@@ -1392,188 +1530,55 @@
         function generateKey() {
             if (isGenerating) return;
 
-            let buttons = `
-                <button class="modal-btn" data-close="true" style="background: rgba(255,255,255,0.05); color: var(--text-muted);" onclick="cancelGeneration()">No</button>
-                <button class="modal-btn" style="background: linear-gradient(135deg, #059669, #10b981); color: white;" onclick="proceedToTikTok()">Follow</button>
-            `;
-            showModal('Please follow kiel on tiktok, click the button below.', 'Action Required', false, buttons);
+            var buttons = '<button class="modal-btn interaction" data-close="true" style="background: rgba(255,0,0,0.1); border-color: var(--danger); color: var(--danger);" onclick="cancelGeneration()">Abort</button>' +
+                '<button class="modal-btn interaction" style="background: rgba(0,255,136,0.2); border-color: var(--success); color: var(--success);" onclick="proceedToTikTok()">Verify Base</button>';
+            showModal('Authorization required. Follow Kiel on TikTok to bypass security and compile a key.', 'Security Protocol', false, buttons);
         }
 
         function cancelGeneration() {
-            // Delayed to show after modal visually closes
-            setTimeout(() => {
-                showModal('Key generation cancelled. You must follow to get a free key.', 'Cancelled');
-            }, 300);
+            setTimeout(function() { showModal('Compilation aborted. Authorization failed.', 'Process Terminated'); }, 300);
         }
 
         function proceedToTikTok() {
             isGenerating = true;
             
-            const btn = document.getElementById('generateBtn');
-            const originalBtnHTML = btn.innerHTML;
+            var btn = document.getElementById('generateBtn');
+            var originalBtnHTML = btn.innerHTML;
             btn.disabled = true;
-            btn.innerHTML = 'Generating...';
+            btn.innerHTML = 'COMPILING...';
 
-            // Redirect user to TikTok profile to follow
             window.open('https://tiktok.com/@kiel_no_aim', '_blank');
 
-            // Verification phase
-            let waitTime = 10;
-            let timerHtml = `<button class="modal-btn" style="opacity: 0.7; cursor: not-allowed;" disabled>Waiting (<span id="wait-timer">${waitTime}</span>s)...</button>`;
+            var waitTime = 10;
+            var timerHtml = '<button class="modal-btn" style="opacity: 0.5; border-color: #888;" disabled>Decrypting (<span id="wait-timer">' + waitTime + '</span>s)...</button>';
             
-            showModal('Please follow kiel on tiktok.<br><br>Waiting for verification...', 'Generating Key', true, timerHtml);
+            showModal('Bypassing security protocols...<br><br>Awaiting verification ping.', 'System Compiling', true, timerHtml);
 
-            const waitInterval = setInterval(() => {
+            var waitInterval = setInterval(function() {
                 waitTime--;
-                let timerSpan = document.getElementById('wait-timer');
+                var timerSpan = document.getElementById('wait-timer');
                 
-                if(timerSpan) {
-                    timerSpan.innerText = waitTime;
-                }
+                if(timerSpan) timerSpan.innerText = waitTime;
 
                 if (waitTime <= 0) {
                     clearInterval(waitInterval);
                     isGenerating = false;
                     
-                    // Reset generate button
                     btn.innerHTML = originalBtnHTML;
                     btn.disabled = false;
 
-                    //put key here\\ //put key here\\ //put key here\\ //put key here\\ //put key here\\ 
-                    let key = '1xCHRIS-U6GK3rFVNy';
+                    var key = '1xCHRIS-U6GK3rFVNy';
                     
-                    const input = document.getElementById('keyInput');
+                    var input = document.getElementById('keyInput');
                     input.value = key;
                     input.classList.add('generated');
                     
-                    let finalHtml = `
-                        Your key has been successfully generated!<br><br>
-                        <div style="font-size: 1.8rem; font-weight: 900; color: #22d3ee; letter-spacing: 3px; padding: 20px 10px; background: rgba(0,0,0,0.4); border-radius: 12px; border: 1px solid rgba(34, 211, 238, 0.4); margin: 10px 0; word-break: break-all;">
-                            ${key}
-                        </div>
-                        <br>Copy it now — it will not be shown again.
-                    `;
-                    showModal(finalHtml, 'Key Generated', true);
+                    var finalHtml = 'Decryption successful!<br><br>' +
+                        '<div style="font-family: Orbitron; font-size: 1.6rem; font-weight: 900; color: var(--success); letter-spacing: 2px; padding: 20px 10px; background: rgba(0, 255, 136, 0.1); border: 1px solid var(--success); margin: 10px 0; word-break: break-all; text-shadow: 0 0 10px var(--success);">' +
+                        key + '</div><br>Save to clipboard immediately. Terminal will clear the log shortly.';
+                    showModal(finalHtml, 'KEY COMPILED SUCCESSFULLY', true);
                 }
             }, 1000);
-        }
-    </script>
-
-<!-- //AUDIO POPUP SYSTEM\\ //AUDIO POPUP SYSTEM\\ //AUDIO POPUP SYSTEM\\ //AUDIO POPUP SYSTEM\\ //AUDIO POPUP SYSTEM\\ //AUDIO POPUP SYSTEM\\ //AUDIO POPUP SYSTEM\\ //AUDIO POPUP SYSTEM\\ -->
-    <style>
-        .music-overlay {
-            position: fixed;
-            inset: 0;
-            background: rgba(0,0,0,0.85);
-            backdrop-filter: blur(10px);
-            z-index: 2000;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 20px;
-        }
-        .music-modal {
-            background: linear-gradient(180deg, #16161e, #0f0f14);
-            border: 1px solid var(--border);
-            border-radius: 24px;
-            padding: 30px 24px;
-            width: 100%;
-            max-width: 350px;
-            text-align: center;
-            box-shadow: 0 0 40px rgba(0,0,0,0.5);
-            animation: popIn 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
-        }
-        @keyframes popIn {
-            0% { transform: scale(0.8); opacity: 0; }
-            100% { transform: scale(1); opacity: 1; }
-        }
-        .music-icon {
-            width: 60px;
-            height: 60px;
-            background: rgba(99,102,241,0.1);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 16px;
-            color: #a5b4fc;
-        }
-        .music-modal h3 {
-            font-family: 'Inter', sans-serif;
-            font-size: 1.2rem;
-            font-weight: 800;
-            margin-bottom: 10px;
-            color: var(--text);
-        }
-        .music-modal p {
-            font-family: 'Inter', sans-serif;
-            color: var(--text-muted);
-            font-size: 0.9rem;
-            margin-bottom: 24px;
-        }
-        .music-btn-row {
-            display: flex;
-            gap: 12px;
-        }
-        .music-btn {
-            flex: 1;
-            padding: 14px;
-            border-radius: 14px;
-            font-family: 'Inter', sans-serif;
-            font-weight: 700;
-            font-size: 0.95rem;
-            border: none;
-            cursor: pointer;
-            transition: all 0.2s;
-        }
-        .music-btn-no {
-            background: rgba(255,255,255,0.05);
-            color: var(--text-muted);
-            border: 1px solid rgba(255,255,255,0.1);
-        }
-        .music-btn-yes {
-            background: linear-gradient(135deg, var(--primary-dark), var(--primary));
-            color: white;
-            box-shadow: 0 4px 20px rgba(79, 70, 229, 0.3);
-        }
-        .music-btn:active {
-            transform: scale(0.95);
-        }
-    </style>
-
-    <div class="music-overlay" id="musicOverlay">
-        <div class="music-modal">
-            <div class="music-icon">
-                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M9 18V5l12-2v13"></path>
-                    <circle cx="6" cy="18" r="3"></circle>
-                    <circle cx="18" cy="16" r="3"></circle>
-                </svg>
-            </div>
-            <h3>Play Background Music?</h3>
-            <p>Would you like to play the theme song while exploring to kielhax shop?</p>
-            <div class="music-btn-row">
-                <button class="music-btn music-btn-no" onclick="initMusic(false)">No</button>
-                <button class="music-btn music-btn-yes" onclick="initMusic(true)">Yes</button>
-            </div>
-        </div>
-    </div>
-
-    <audio id="bgMusic" src="https://audio.jukehost.co.uk/019ed665-0d40-73f7-8856-fb474e909c06" loop></audio>
-
-    <script>
-        function initMusic(play) {
-            const overlay = document.getElementById('musicOverlay');
-            const audio = document.getElementById('bgMusic');
-            
-            overlay.style.display = 'none'; 
-            
-            if (play) {
-                audio.volume = 1.0; 
-                audio.play().catch(e => {
-                    console.log("Audio play failed:", e);
-                });
-            }
         }
     </script>
 </body>
