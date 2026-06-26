@@ -12,19 +12,9 @@
           "download_url": "https://xaidomain.x10.mx/Farlight/libkielhaxpremier.so"
         },
         {
-          "name": "KIELHAX DELUXE [ SKINHAX OPTIMIZED ]",
-          "lib_name": "libkielhaxdeluxe.so",
-          "download_url": "https://xaidomain.x10.mx/Farlight/libkielhaxdeluxe.so"
-        },
-        {
           "name": "KIELHAX LOWEND [ NO SKINHAX ]",
           "lib_name": "libkielhaxlowend.so",
           "download_url": "https://xaidomain.x10.mx/Farlight/libkielhaxlowend.so"
-        },
-        {
-          "name": "OLD LOWEND V3",
-          "lib_name": "libkielhaxlowendv3.so",
-          "download_url": "https://xaidomain.x10.mx/Farlight/libkielhaxlowendv3.so"
         }
       ]
     },
