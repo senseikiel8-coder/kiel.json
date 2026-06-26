@@ -43,12 +43,12 @@
     },
     {
       "name": "MOBILE LEGENDS",
-      "status": "MAINTENANCE",
+      "status": "ONLINE",
       "game_activity": "com.moba.unityplugin.MobaGameMainActivity",
       "logo": "https://raw.githubusercontent.com/senseikiel8-coder/kiel.json/main/1ee440fb871542f6cdb2032200ef725f.jpg",
       "libs": [
         {
-          "name": "KIELHAX MLBB [ AUTOBAN 10Y ]",
+          "name": "KIELHAX MLBB",
           "lib_name": "libkielhaxmlbb.so",
           "download_url": "https://xaidomain.x10.mx/Farlight/libkielhaxmlbb.so"
         }
