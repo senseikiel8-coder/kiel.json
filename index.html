@@ -1,15 +1,14 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>KIELHAX SULASOK WEBSITE</title>
-    
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Orbitron:wght@400;500;700;900&display=swap" rel="stylesheet">
-    
-    <style>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<title>KIELHAX SULASOK WEBSITE</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;family=Orbitron:wght@400;500;700;900&amp;display=swap" rel="stylesheet"/>
+<style>
         * {
             margin: 0;
             padding: 0;
@@ -873,472 +872,360 @@
     </style>
 </head>
 <body>
-
-    <audio id="bgMusic" src="https://audio.jukehost.co.uk/019ed665-0d40-73f7-8856-fb474e909c06" loop></audio>
-
-    <div class="phone" id="phoneFrame">
-
-        <!-- Scrollable area -->
-        <div class="phone-scroll" id="phoneScroll">
-
-            <div class="header">
-                <h1>KIELHAX SULASOK</h1>
-                <p>Quality Gaming Chair</p>
-            </div>
-
-            <div class="content">
-                <!-- PRICELIST -->
-                <div class="section active" id="pricelist">
-                    
-                    <!-- LOADER CODM -->
-                    <div class="game-card unavailable">
-                        <div class="unavailable-banner">Unavailable</div>
-                        <div class="game-header">
-                            <div class="game-icon icon-loader">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                    <circle cx="12" cy="12" r="10"/>
-                                    <line x1="22" y1="12" x2="18" y2="12"/>
-                                    <line x1="6" y1="12" x2="2" y2="12"/>
-                                    <line x1="12" y1="6" x2="12" y2="2"/>
-                                    <line x1="12" y1="22" x2="12" y2="18"/>
-                                    <circle cx="12" cy="12" r="2"/>
-                                </svg>
-                            </div>
-                            <div>
-                                <div class="game-title">LOADER CODM</div>
-                                <div class="game-subtitle">Currently Offline</div>
-                            </div>
-                        </div>
-                        <div class="game-desc">This version is currently unavailable. Please check back later for updates.</div>
-                        <div class="duration-scroll">
-                            <div class="duration-pill">
-                                <div class="duration-label">03 Days</div>
-                                <div class="duration-price">P70</div>
-                            </div>
-                            <div class="duration-pill">
-                                <div class="duration-label">07 Days</div>
-                                <div class="duration-price">P180</div>
-                            </div>
-                            <div class="duration-pill">
-                                <div class="duration-label">14 Days</div>
-                                <div class="duration-price">P300</div>
-                            </div>
-                            <div class="duration-pill">
-                                <div class="duration-label">31 Days</div>
-                                <div class="duration-price">P400</div>
-                            </div>
-                            <div class="duration-pill">
-                                <div class="duration-label">Lifetime</div>
-                                <div class="duration-price">P600</div>
-                                <div class="duration-alt">P450</div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- MOD / CONTAINER CODM -->
-                    <div class="game-card interaction">
-                        <div class="game-header">
-                            <div class="game-icon icon-container">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                    <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
-                                    <polyline points="3.27 6.96 12 12.01 20.73 6.96"/>
-                                    <line x1="12" y1="22.08" x2="12" y2="12"/>
-                                </svg>
-                            </div>
-                            <div>
-                                <div class="game-title">MOD / CONTAINER</div>
-                                <div class="game-subtitle">CODM Virtual Space</div>
-                            </div>
-                        </div>
-                        <div class="game-desc">Everything is inside. All features packed in one container.</div>
-                        <div class="duration-scroll">
-                            <div class="duration-pill interaction" onclick="selectDuration(this, 'MOD / CONTAINER CODM', '03 Days', '90 PHP')">
-                                <div class="duration-label">03 Days</div>
-                                <div class="duration-price">P90</div>
-                            </div>
-                            <div class="duration-pill interaction" onclick="selectDuration(this, 'MOD / CONTAINER CODM', '07 Days', '200 PHP')">
-                                <div class="duration-label">07 Days</div>
-                                <div class="duration-price">P200</div>
-                            </div>
-                            <div class="duration-pill interaction" onclick="selectDuration(this, 'MOD / CONTAINER CODM', '14 Days', '280 PHP')">
-                                <div class="duration-label">14 Days</div>
-                                <div class="duration-price">P280</div>
-                            </div>
-                            <div class="duration-pill interaction" onclick="selectDuration(this, 'MOD / CONTAINER CODM', '31 Days', '380 PHP')">
-                                <div class="duration-label">31 Days</div>
-                                <div class="duration-price">P380</div>
-                            </div>
-                            <div class="duration-pill interaction" onclick="selectDuration(this, 'MOD / CONTAINER CODM', 'Lifetime', '700 PHP')">
-                                <div class="duration-label">Lifetime</div>
-                                <div class="duration-price">P700</div>
-                                <div class="duration-alt">P500</div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- INJECTOR CODM -->
-                    <div class="game-card unavailable">
-                        <div class="unavailable-banner">Unavailable</div>
-                        <div class="game-header">
-                            <div class="game-icon icon-injector">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                    <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
-                                </svg>
-                            </div>
-                            <div>
-                                <div class="game-title">INJECTOR CODM</div>
-                                <div class="game-subtitle">Currently Offline</div>
-                            </div>
-                        </div>
-                        <div class="game-desc">This version is currently unavailable. Please check back later for updates.</div>
-                        <div class="duration-scroll">
-                            <div class="duration-pill">
-                                <div class="duration-label">03 Days</div>
-                                <div class="duration-price">P70</div>
-                            </div>
-                            <div class="duration-pill">
-                                <div class="duration-label">07 Days</div>
-                                <div class="duration-price">P100</div>
-                            </div>
-                            <div class="duration-pill">
-                                <div class="duration-label">14 Days</div>
-                                <div class="duration-price">P130</div>
-                            </div>
-                            <div class="duration-pill">
-                                <div class="duration-label">31 Days</div>
-                                <div class="duration-price">P200</div>
-                            </div>
-                            <div class="duration-pill">
-                                <div class="duration-label">Lifetime</div>
-                                <div class="duration-price">P300</div>
-                                <div class="duration-alt">P200</div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- MLBB V1 -->
-                    <div class="game-card interaction">
-                        <div class="game-header">
-                            <div class="game-icon icon-mlbb">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                    <path d="M14.5 17.5L3 6V3h3l11.5 11.5"/>
-                                    <path d="M13 19l6-6"/>
-                                    <path d="M16 16l4 4"/>
-                                    <path d="M19 21l2-2"/>
-                                </svg>
-                            </div>
-                            <div>
-                                <div class="game-title">MLBB V1</div>
-                                <div class="game-subtitle">Available Now</div>
-                            </div>
-                        </div>
-                        <div class="game-desc">MLBB V1 is now available. Select your preferred duration below.</div>
-                        <div class="duration-scroll">
-                            <div class="duration-pill interaction" onclick="selectDuration(this, 'MLBB V1', '03 Days', '100 PHP')"><div class="duration-label">03 Days</div><div class="duration-price">P100</div></div>
-                            <div class="duration-pill interaction" onclick="selectDuration(this, 'MLBB V1', '07 Days', '200 PHP')"><div class="duration-label">07 Days</div><div class="duration-price">P200</div></div>
-                            <div class="duration-pill interaction" onclick="selectDuration(this, 'MLBB V1', '14 Days', '300 PHP')"><div class="duration-label">14 Days</div><div class="duration-price">P300</div></div>
-                            <div class="duration-pill interaction" onclick="selectDuration(this, 'MLBB V1', '31 Days', '400 PHP')"><div class="duration-label">31 Days</div><div class="duration-price">P400</div></div>
-                            <div class="duration-pill interaction" onclick="selectDuration(this, 'MLBB V1', 'Lifetime', '800 PHP')"><div class="duration-label">Lifetime</div><div class="duration-price">P800</div><div class="duration-alt">P500</div></div>
-                        </div>
-                    </div>
-
-                    <!-- MLBB V2 - UNAVAILABLE -->
-                    <div class="game-card unavailable">
-                        <div class="unavailable-banner">Unavailable</div>
-                        <div class="game-header">
-                            <div class="game-icon icon-mlbb">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                    <path d="M14.5 17.5L3 6V3h3l11.5 11.5"/>
-                                    <path d="M13 19l6-6"/>
-                                    <path d="M16 16l4 4"/>
-                                    <path d="M19 21l2-2"/>
-                                    <path d="M9.5 6.5L21 18v3h-3L6.5 9.5"/>
-                                </svg>
-                            </div>
-                            <div>
-                                <div class="game-title">MLBB V2</div>
-                                <div class="game-subtitle">Currently Offline</div>
-                            </div>
-                        </div>
-                        <div class="game-desc">This version is currently unavailable. Please check back later for updates.</div>
-                        <div class="duration-scroll">
-                            <div class="duration-pill"><div class="duration-label">03 Days</div><div class="duration-price">P150</div></div>
-                            <div class="duration-pill"><div class="duration-label">07 Days</div><div class="duration-price">P250</div></div>
-                            <div class="duration-pill"><div class="duration-label">14 Days</div><div class="duration-price">P400</div></div>
-                            <div class="duration-pill"><div class="duration-label">30 Days</div><div class="duration-price">P700</div></div>
-                            <div class="duration-pill"><div class="duration-label">60 Days</div><div class="duration-price">P1,000</div></div>
-                        </div>
-                    </div>
-
-                    <!-- MLBB SCRIPT -->
-                    <div class="game-card interaction">
-                        <div class="game-header">
-                            <div class="game-icon icon-mlbb-script">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                    <polyline points="16 18 22 12 16 6"/>
-                                    <polyline points="8 6 2 12 8 18"/>
-                                    <line x1="14" y1="4" x2="10" y2="20"/>
-                                </svg>
-                            </div>
-                            <div>
-                                <div class="game-title">MLBB SCRIPT</div>
-                                <div class="game-subtitle">GameGuardian Based</div>
-                            </div>
-                        </div>
-                        <div class="game-desc">Runs with GameGuardian. Strong bypass with less detection.</div>
-                        <div class="duration-scroll">
-                            <div class="duration-pill interaction" onclick="selectDuration(this, 'MLBB SCRIPT', '03 Days', '70 PHP')"><div class="duration-label">03 Days</div><div class="duration-price">P70</div></div>
-                            <div class="duration-pill interaction" onclick="selectDuration(this, 'MLBB SCRIPT', '07 Days', '150 PHP')"><div class="duration-label">07 Days</div><div class="duration-price">P150</div></div>
-                            <div class="duration-pill interaction" onclick="selectDuration(this, 'MLBB SCRIPT', '14 Days', '250 PHP')"><div class="duration-label">14 Days</div><div class="duration-price">P250</div></div>
-                            <div class="duration-pill interaction" onclick="selectDuration(this, 'MLBB SCRIPT', '30 Days', '400 PHP')"><div class="duration-label">30 Days</div><div class="duration-price">P400</div></div>
-                            <div class="duration-pill interaction" onclick="selectDuration(this, 'MLBB SCRIPT', 'Infinite', '500 PHP')"><div class="duration-label">Infinite</div><div class="duration-price">P500</div></div>
-                        </div>
-                    </div>
-
-                    <!-- BLOODSTRIKE -->
-                    <div class="game-card interaction">
-                        <div class="game-header">
-                            <div class="game-icon icon-blood">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                    <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/>
-                                </svg>
-                            </div>
-                            <div>
-                                <div class="game-title">BLOODSTRIKE</div>
-                                <div class="game-subtitle">BloodStrike Injector</div>
-                            </div>
-                        </div>
-                        <div class="game-desc">Simple UI but deadly features. Straightforward and effective.</div>
-                        <div class="duration-scroll">
-                            <div class="duration-pill interaction" onclick="selectDuration(this, 'BLOODSTRIKE', '01 Day', '50 PHP')"><div class="duration-label">01 Day</div><div class="duration-price">P50</div></div>
-                            <div class="duration-pill interaction" onclick="selectDuration(this, 'BLOODSTRIKE', '03 Days', '100 PHP')"><div class="duration-label">03 Days</div><div class="duration-price">P100</div></div>
-                            <div class="duration-pill interaction" onclick="selectDuration(this, 'BLOODSTRIKE', '07 Days', '200 PHP')"><div class="duration-label">07 Days</div><div class="duration-price">P200</div></div>
-                            <div class="duration-pill interaction" onclick="selectDuration(this, 'BLOODSTRIKE', '14 Days', '300 PHP')"><div class="duration-label">14 Days</div><div class="duration-price">P300</div></div>
-                            <div class="duration-pill interaction" onclick="selectDuration(this, 'BLOODSTRIKE', '30 Days', '400 PHP')"><div class="duration-label">30 Days</div><div class="duration-price">P400</div></div>
-                            <div class="duration-pill interaction" onclick="selectDuration(this, 'BLOODSTRIKE', 'Lifetime', '500 PHP')"><div class="duration-label">Lifetime</div><div class="duration-price">P500</div><div class="duration-alt">P399</div></div>
-                        </div>
-                    </div>
-
-                    <!-- ALL CHEAT ACCESS -->
-                    <div class="game-card interaction">
-                        <div class="game-header">
-                            <div class="game-icon icon-all">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                    <path d="M2 4l3 12h14l3-12-6 7-4-7-4 7-6-7z"/>
-                                    <path d="M3 20h18"/>
-                                </svg>
-                            </div>
-                            <div>
-                                <div class="game-title">VIP ALL ACCESS</div>
-                                <div class="game-subtitle">Premium Master Bundle</div>
-                            </div>
-                        </div>
-                        <div class="game-desc">Every game will be unlocked. Full access to all cheats and tools.</div>
-                        <div class="duration-scroll">
-                            <div class="duration-pill interaction" onclick="selectDuration(this, 'ALL CHEAT ACCESS', '03 Days', '200 PHP')"><div class="duration-label">03 Days</div><div class="duration-price">P200</div></div>
-                            <div class="duration-pill interaction" onclick="selectDuration(this, 'ALL CHEAT ACCESS', '07 Days', '300 PHP')"><div class="duration-label">07 Days</div><div class="duration-price">P300</div></div>
-                            <div class="duration-pill interaction" onclick="selectDuration(this, 'ALL CHEAT ACCESS', '14 Days', '400 PHP')"><div class="duration-label">14 Days</div><div class="duration-price">P400</div></div>
-                            <div class="duration-pill interaction" onclick="selectDuration(this, 'ALL CHEAT ACCESS', '31 Days', '700 PHP')"><div class="duration-label">31 Days</div><div class="duration-price">P700</div></div>
-                            <div class="duration-pill interaction" onclick="selectDuration(this, 'ALL CHEAT ACCESS', 'Lifetime', '2,000 PHP')"><div class="duration-label">Lifetime</div><div class="duration-price">P2,000</div><div class="duration-alt">PROMO: P1,000</div></div>
-                        </div>
-                    </div>
-
-                    <button class="btn btn-primary interaction" onclick="window.open('https://t.me/FEEDBACK_EZEKIEL', '_blank')">
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+<audio id="bgMusic" loop="" src="https://audio.jukehost.co.uk/019ed665-0d40-73f7-8856-fb474e909c06"></audio>
+<div class="phone" id="phoneFrame">
+<!-- Scrollable area -->
+<div class="phone-scroll" id="phoneScroll">
+<div class="header">
+<h1>KIELHAX SULASOK</h1>
+<p>Legit Gaming Services</p>
+</div>
+<div class="content">
+<!-- PRICELIST -->
+<div class="section active" id="pricelist">
+<!-- KIEL APP ACCESS -->
+<div class="game-card interaction">
+<div class="game-header">
+<div class="game-icon icon-loader">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><line x1="22" x2="18" y1="12" y2="12"></line><line x1="6" x2="2" y1="12" y2="12"></line><line x1="12" x2="12" y1="6" y2="2"></line><line x1="12" x2="12" y1="22" y2="18"></line><circle cx="12" cy="12" r="2"></circle></svg>
+</div>
+<div>
+<div class="game-title">KIELHAX LOADER</div>
+<div class="game-subtitle">SUPORTED ROOT DEVICE</div>
+</div>
+</div>
+<div class="game-desc">This variant is root suport can be directly execute on original codm</div>
+<div class="duration-scroll">
+<div class="duration-pill interaction" onclick="selectDuration(this, 'KIEL LOADER', '03 Days', '₱70')"><div class="duration-label">03 Days</div><div class="duration-price">P70</div></div>
+<div class="duration-pill interaction" onclick="selectDuration(this, 'KIEL LOADER', '07 Days', '₱150')"><div class="duration-label">07 Days</div><div class="duration-price">P150</div></div>
+<div class="duration-pill interaction" onclick="selectDuration(this, 'KIEL LOADER', '14 Days', '₱200')"><div class="duration-label">14 Days</div><div class="duration-price">P200</div></div>
+<div class="duration-pill interaction" onclick="selectDuration(this, 'KIEL LOADER', '31 Days', '₱300')"><div class="duration-label">31 Days</div><div class="duration-price">P300</div></div>
+<div class="duration-pill interaction" onclick="selectDuration(this, 'KIEL LOADER', 'Season', '₱400')"><div class="duration-label">Season</div><div class="duration-price">P400</div></div>
+<div class="duration-pill interaction" onclick="selectDuration(this, 'KIEL LOADER', 'Lifetime', '₱800')"><div class="duration-label">Lifetime</div><div class="duration-price">P800</div></div>
+</div>
+</div>
+<!-- KIEL PREMIUM PACKAGE -->
+<div class="game-card interaction">
+<div class="game-header">
+<div class="game-icon icon-container">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" x2="12" y1="22.08" y2="12"></line></svg>
+</div>
+<div>
+<div class="game-title">KIELHAX MOD/CONTAINER</div>
+<div class="game-subtitle">MOD APK AND CONTAINER</div>
+</div>
+</div>
+<div class="game-desc">Mod is apk while container is no need delete codm original apk</div>
+<div class="duration-scroll">
+<div class="duration-pill interaction" onclick="selectDuration(this, 'KIELHAX MOD/CONT', '03 Days', '₱90')"><div class="duration-label">03 Days</div><div class="duration-price">P90</div></div>
+<div class="duration-pill interaction" onclick="selectDuration(this, 'KIELHAX MOD/CONT', '07 Days', '₱200')"><div class="duration-label">07 Days</div><div class="duration-price">P200</div></div>
+<div class="duration-pill interaction" onclick="selectDuration(this, 'KIELHAX MOD/CONT', '14 Days', '₱280')"><div class="duration-label">14 Days</div><div class="duration-price">P280</div></div>
+<div class="duration-pill interaction" onclick="selectDuration(this, 'KIELHAX MOD/CONT', '31 Days', '₱380')"><div class="duration-label">31 Days</div><div class="duration-price">P380</div></div>
+<div class="duration-pill interaction" onclick="selectDuration(this, 'KIELHAX MOD/CONT', 'Season', '₱500')"><div class="duration-label">Season</div><div class="duration-price">P500</div></div>
+<div class="duration-pill interaction" onclick="selectDuration(this, 'KIELHAX MOD/CONT', 'Lifetime', '₱1,000')"><div class="duration-label">Lifetime</div><div class="duration-price">P1,000</div></div>
+</div>
+</div>
+<!-- KIEL BASIC PACKAGE -->
+<div class="game-card interaction unavailable">
+<div class="unavailable-banner">Unavailable</div>
+<div class="game-header">
+<div class="game-icon icon-injector">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path></svg>
+</div>
+<div>
+<div class="game-title">KIELHAX INJECTOR [ CODM ]</div>
+<div class="game-subtitle">Affordable [ need virtual ]</div>
+</div>
+</div>
+<div class="game-desc">This variant is friendly budget</div>
+<div class="duration-scroll">
+<div class="duration-pill interaction" onclick="selectDuration(this, 'KIELHAX INJECTOR CODM', '03 Days', '₱70')"><div class="duration-label">03 Days</div><div class="duration-price">P70</div></div>
+<div class="duration-pill interaction" onclick="selectDuration(this, 'KIELHAX INJECTOR CODM', '07 Days', '₱100')"><div class="duration-label">07 Days</div><div class="duration-price">P100</div></div>
+<div class="duration-pill interaction" onclick="selectDuration(this, 'KIELHAX INJECTOR CODM', '14 Days', '₱130')"><div class="duration-label">14 Days</div><div class="duration-price">P130</div></div>
+<div class="duration-pill interaction" onclick="selectDuration(this, 'KIELHAX INJECTOR CODM', '31 Days', '₱200')"><div class="duration-label">31 Days</div><div class="duration-price">P200</div></div>
+<div class="duration-pill interaction" onclick="selectDuration(this, 'KIELHAX INJECTOR CODM', 'Season', '₱300')"><div class="duration-label">Season</div><div class="duration-price">P300</div></div>
+<div class="duration-pill interaction" onclick="selectDuration(this, 'KIELHAX INJECTOR CODM', 'Lifetime', '₱500')"><div class="duration-label">Lifetime</div><div class="duration-price">P500</div></div>
+</div>
+</div>
+<!-- KIEL MLBB GUIDE V1 -->
+<div class="game-card interaction">
+<div class="game-header">
+<div class="game-icon icon-mlbb">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M14.5 17.5L3 6V3h3l11.5 11.5"></path><path d="M13 19l6-6"></path><path d="M16 16l4 4"></path><path d="M19 21l2-2"></path></svg>
+</div>
+<div>
+<div class="game-title">KIEL MLBB V1</div>
+<div class="game-subtitle">RISKY [ BETTER BUY SCRIPT ]</div>
+</div>
+</div>
+<div class="game-desc">This variant has auto execute unlike script.</div>
+<div class="duration-scroll">
+<div class="duration-pill interaction" onclick="selectDuration(this, 'KIEL MLBB V1', '03 Days', '₱100')"><div class="duration-label">03 Days</div><div class="duration-price">P100</div></div>
+<div class="duration-pill interaction" onclick="selectDuration(this, 'KIEL MLBB V1', '07 Days', '₱200')"><div class="duration-label">07 Days</div><div class="duration-price">P200</div></div>
+<div class="duration-pill interaction" onclick="selectDuration(this, 'KIEL MLBB V1', '14 Days', '₱300')"><div class="duration-label">14 Days</div><div class="duration-price">P300</div></div>
+<div class="duration-pill interaction" onclick="selectDuration(this, 'KIEL MLBB V1', '31 Days', '₱400')"><div class="duration-label">31 Days</div><div class="duration-price">P400</div></div>
+<div class="duration-pill interaction" onclick="selectDuration(this, 'KIEL MLBB V1', 'Lifetime', '₱800')"><div class="duration-label">Lifetime</div><div class="duration-price">P800</div></div>
+</div>
+</div>
+<!-- EZEKIEL MLBB GUIDE V2 -->
+<div class="game-card interaction unavailable">
+<div class="unavailable-banner">Unavailable</div>
+<div class="game-header">
+<div class="game-icon icon-mlbb">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M14.5 17.5L3 6V3h3l11.5 11.5"></path><path d="M13 19l6-6"></path><path d="M16 16l4 4"></path><path d="M19 21l2-2"></path></svg>
+</div>
+<div>
+<div class="game-title">EZEKIEL MLBB V2</div>
+<div class="game-subtitle">Advanced MLBB Package</div>
+</div>
+</div>
+<div class="game-desc">Super safe can be brutally game.</div>
+<div class="duration-scroll">
+<div class="duration-pill interaction" onclick="selectDuration(this, 'EZEKIEL MLBB V2', '03 Days', '₱150')"><div class="duration-label">03 Days</div><div class="duration-price">P150</div></div>
+<div class="duration-pill interaction" onclick="selectDuration(this, 'EZEKIEL MLBB V2', '07 Days', '₱250')"><div class="duration-label">07 Days</div><div class="duration-price">P250</div></div>
+<div class="duration-pill interaction" onclick="selectDuration(this, 'EZEKIEL MLBB V2', '14 Days', '₱400')"><div class="duration-label">14 Days</div><div class="duration-price">P400</div></div>
+<div class="duration-pill interaction" onclick="selectDuration(this, 'EZEKIEL MLBB V2', '30 Days', '₱700')"><div class="duration-label">30 Days</div><div class="duration-price">P700</div></div>
+<div class="duration-pill interaction" onclick="selectDuration(this, 'EZEKIEL MLBB V2', '60 Days', '₱1,000')"><div class="duration-label">60 Days</div><div class="duration-price">P1,000</div></div>
+</div>
+</div>
+<!-- EZEKIEL MLBB STRATEGY PACK -->
+<div class="game-card interaction">
+<div class="game-header">
+<div class="game-icon icon-mlbb-script">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline><line x1="14" x2="10" y1="4" y2="20"></line></svg>
+</div>
+<div>
+<div class="game-title">EZEKIEL MLBB SCRIPT</div>
+<div class="game-subtitle">RUN VIA GAMEGUARDIAN</div>
+</div>
+</div>
+<div class="game-desc">This script is so good that it almost cannot be detected.</div>
+<div class="duration-scroll">
+<div class="duration-pill interaction" onclick="selectDuration(this, 'EZEKIEL MLBB SCRIPT', '03 Days', '₱70')"><div class="duration-label">03 Days</div><div class="duration-price">P70</div></div>
+<div class="duration-pill interaction" onclick="selectDuration(this, 'EZEKIEL MLBB SCRIPT', '07 Days', '₱150')"><div class="duration-label">07 Days</div><div class="duration-price">P150</div></div>
+<div class="duration-pill interaction" onclick="selectDuration(this, 'EZEKIEL MLBB SCRIPT', '14 Days', '₱250')"><div class="duration-label">14 Days</div><div class="duration-price">P250</div></div>
+<div class="duration-pill interaction" onclick="selectDuration(this, 'EZEKIEL MLBB SCRIPT', '30 Days', '₱400')"><div class="duration-label">30 Days</div><div class="duration-price">P400</div></div>
+<div class="duration-pill interaction" onclick="selectDuration(this, 'EZEKIEL MLBB SCRIPT', 'Unlimited', '₱500')"><div class="duration-label">Unlimited</div><div class="duration-price">P500</div></div>
+</div>
+</div>
+<!-- KIEL BLOODSTRIKE GUIDE -->
+<div class="game-card interaction">
+<div class="game-header">
+<div class="game-icon icon-blood">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"></path></svg>
+</div>
+<div>
+<div class="game-title">KIEL BLOODSTRIKE</div>
+<div class="game-subtitle">UKNOWN</div>
+</div>
+</div>
+<div class="game-desc">support package for BloodStrike players.</div>
+<div class="duration-scroll">
+<div class="duration-pill interaction" onclick="selectDuration(this, 'KIEL BLOODSTRIKE', '01 Day', '₱50')"><div class="duration-label">01 Day</div><div class="duration-price">P50</div></div>
+<div class="duration-pill interaction" onclick="selectDuration(this, 'KIEL BLOODSTRIKE', '03 Days', '₱100')"><div class="duration-label">03 Days</div><div class="duration-price">P100</div></div>
+<div class="duration-pill interaction" onclick="selectDuration(this, 'KIEL BLOODSTRIKE', '07 Days', '₱200')"><div class="duration-label">07 Days</div><div class="duration-price">P200</div></div>
+<div class="duration-pill interaction" onclick="selectDuration(this, 'KIEL BLOODSTRIKE', '14 Days', '₱300')"><div class="duration-label">14 Days</div><div class="duration-price">P300</div></div>
+<div class="duration-pill interaction" onclick="selectDuration(this, 'KIEL BLOODSTRIKE', '30 Days', '₱400')"><div class="duration-label">30 Days</div><div class="duration-price">P400</div></div>
+<div class="duration-pill interaction" onclick="selectDuration(this, 'KIEL BLOODSTRIKE', 'Lifetime', '₱500')"><div class="duration-label">Lifetime</div><div class="duration-price">P500</div></div>
+</div>
+</div>
+<!-- KIEL VIP ALL ACCESS -->
+<div class="game-card interaction">
+<div class="game-header">
+<div class="game-icon icon-all">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M2 4l3 12h14l3-12-6 7-4-7-4 7-6-7z"></path><path d="M3 20h18"></path></svg>
+</div>
+<div>
+<div class="game-title">KIEL VIP ALL ACCESS</div>
+<div class="game-subtitle">Premium Master Bundle</div>
+</div>
+</div>
+<div class="game-desc">Full access to all listed legitimate HACKS.</div>
+<div class="duration-scroll">
+<div class="duration-pill interaction" onclick="selectDuration(this, 'KIEL VIP ALL ACCESS', '03 Days', '₱200')"><div class="duration-label">03 Days</div><div class="duration-price">P200</div></div>
+<div class="duration-pill interaction" onclick="selectDuration(this, 'KIEL VIP ALL ACCESS', '07 Days', '₱300')"><div class="duration-label">07 Days</div><div class="duration-price">P300</div></div>
+<div class="duration-pill interaction" onclick="selectDuration(this, 'KIEL VIP ALL ACCESS', '14 Days', '₱400')"><div class="duration-label">14 Days</div><div class="duration-price">P400</div></div>
+<div class="duration-pill interaction" onclick="selectDuration(this, 'KIEL VIP ALL ACCESS', '31 Days', '₱700')"><div class="duration-label">31 Days</div><div class="duration-price">P700</div></div>
+<div class="duration-pill interaction" onclick="selectDuration(this, 'KIEL VIP ALL ACCESS', 'Season', '₱1,000')"><div class="duration-label">Season</div><div class="duration-price">P1,000</div></div>
+<div class="duration-pill interaction" onclick="selectDuration(this, 'KIEL VIP ALL ACCESS', 'Lifetime', '₱2,000')"><div class="duration-label">Lifetime</div><div class="duration-price">P2,000</div></div>
+</div>
+</div>
+<button class="btn btn-primary interaction" onclick="window.open('https://t.me/FEEDBACK_EZEKIEL', '_blank')">
+<svg fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
                         View Feedback
                     </button>
-                </div>
-
-                <!-- FILES -->
-                <div class="section" id="files">
-                    <a href="https://t.me/crack_files1/9" class="download-item interaction" target="_blank">
-                        <div class="dl-icon icon-container">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/>
-                            </svg>
-                        </div>
-                        <div class="dl-info">
-                            <div class="dl-name" style="font-size: 0.8rem;">CONTAINER</div>
-                            <div class="dl-meta">
-                                <span class="dl-badge badge-stable">LATEST</span>
-                                <span style="color:var(--text-muted); font-size: 0.75rem;">Telegram</span>
-                            </div>
-                        </div>
-                        <svg class="dl-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
-                    </a>
-
-                    <a href="https://t.me/crack_files1/11" class="download-item interaction" target="_blank">
-                        <div class="dl-icon icon-mod">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/>
-                            </svg>
-                        </div>
-                        <div class="dl-info">
-                            <div class="dl-name">GARENA APK MOD</div>
-                            <div class="dl-meta">
-                                <span class="dl-badge badge-new">OFFICIAL</span>
-                                <span style="color:var(--text-muted); font-size: 0.75rem;">Telegram</span>
-                            </div>
-                        </div>
-                        <svg class="dl-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
-                    </a>
-
-                    <button class="btn interaction" style="background: transparent; border: 1px solid var(--accent); color: var(--accent); margin-top: 16px;" onclick="showModal('All files are verified with SHA-256 checksums and scanned for malware before release.', 'Security Protocol')">
-                        Security Info
+</div>
+<!-- FILES -->
+<div class="section" id="files">
+<a class="download-item interaction" href="https://t.me/kielhax" target="_blank">
+<div class="dl-icon icon-container">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24">
+<path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" x2="12" y1="15" y2="3"></line>
+</svg>
+</div>
+<div class="dl-info">
+<div class="dl-name" style="font-size: 0.8rem;">ORDER GUIDE</div>
+<div class="dl-meta">
+<span class="dl-badge badge-stable">UPDATED</span>
+<span style="color:var(--text-muted); font-size: 0.75rem;">Telegram Support</span>
+</div>
+</div>
+<svg class="dl-arrow" fill="none" height="20" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="20"><polyline points="9 18 15 12 9 6"></polyline></svg>
+</a>
+<a class="download-item interaction" href="https://t.me/FEEDBACK_EZEKIEL" target="_blank">
+<div class="dl-icon icon-mod">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24">
+<path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+</svg>
+</div>
+<div class="dl-info">
+<div class="dl-name">CUSTOMER FEEDBACK</div>
+<div class="dl-meta">
+<span class="dl-badge badge-new">OFFICIAL</span>
+<span style="color:var(--text-muted); font-size: 0.75rem;">Telegram</span>
+</div>
+</div>
+<svg class="dl-arrow" fill="none" height="20" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="20"><polyline points="9 18 15 12 9 6"></polyline></svg>
+</a>
+<button class="btn interaction" onclick="showModal('All listed packages are presented as legitimate guides, support access, and customer-service plans.', 'Service Notice')" style="background: transparent; border: 1px solid var(--accent); color: var(--accent); margin-top: 16px;">
+                        Service Info
                     </button>
-                </div>
-
-                <!-- OWNER -->
-                <div class="section" id="owner">
-                    <div class="card interaction">
-                        
-                        <div class="owner-profile">
-                            <div class="owner-avatar-wrap">
-                                <img src="https://raw.githubusercontent.com/senseikiel8-coder/kiel.json/main/kielhax_picture.jpg" alt="KielHax" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect fill=%22%23111%22 width=%22100%22 height=%22100%22/><text x=%2250%22 y=%2255%22 text-anchor=%22middle%22 fill=%22%2302f2ff%22 font-size=%2240%22 font-family=%22sans-serif%22>K</text></svg>'">
-                            </div>
-                            <div class="owner-name">KIELHAX</div>
-                            <div class="owner-tag">Developer / Owner</div>
-                        </div>
-
-                        <div class="owner-status">
-                            <div class="status-dot"></div>
-                            <div>
-                                <div style="font-family: 'Orbitron'; font-weight: 800; font-size: 0.95rem; text-transform: uppercase;">System Online</div>
-                                <div style="font-size: 0.75rem; color: var(--text-muted);">Avg. response: <span style="color:var(--success);">3 min</span></div>
-                            </div>
-                        </div>
-
-                        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-bottom: 20px;">
-                            <div style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; padding: 16px 8px; text-align: center;">
-                                <span style="font-family: 'Orbitron'; font-size: 1.25rem; font-weight: 900; color: var(--accent); display: block;">1K+</span>
-                                <span style="font-size: 0.65rem; color: var(--text-muted); text-transform: uppercase; font-weight: 600;">Clients</span>
-                            </div>
-                            <div style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; padding: 16px 8px; text-align: center;">
-                                <span style="font-family: 'Orbitron'; font-size: 1.25rem; font-weight: 900; color: var(--accent); display: block;">99%</span>
-                                <span style="font-size: 0.65rem; color: var(--text-muted); text-transform: uppercase; font-weight: 600;">Uptime</span>
-                            </div>
-                            <div style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; padding: 16px 8px; text-align: center;">
-                                <span style="font-family: 'Orbitron'; font-size: 1.25rem; font-weight: 900; color: var(--accent); display: block;">4.9</span>
-                                <span style="font-size: 0.65rem; color: var(--text-muted); text-transform: uppercase; font-weight: 600;">Rating</span>
-                            </div>
-                        </div>
-
-                        <a href="https://t.me/kielhax" class="contact-row interaction" target="_blank">
-                            <div class="contact-icon-sm contact-icon-telegram">
-                                <svg viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M9.78 18.65l.28-4.23 7.68-6.92c.34-.31-.07-.46-.52-.19L7.74 13.3 3.64 12c-.88-.25-.89-.86.2-1.3l15.97-6.16c.73-.33 1.43.18 1.15 1.3l-2.72 12.81c-.19.91-.74 1.13-1.5.71L12.6 16.3l-1.99 1.93c-.23.23-.42.42-.83.42z"/></svg>
-                            </div>
-                            <div style="flex: 1;">
-                                <div style="font-family: 'Orbitron'; font-weight: 700; font-size: 0.9rem;">Telegram</div>
-                                <div style="font-size: 0.75rem; color: var(--text-muted);">@kielhax</div>
-                            </div>
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color: #29b6f6;"><polyline points="9 18 15 12 9 6"/></svg>
+</div>
+<!-- OWNER -->
+<div class="section" id="owner">
+<div class="card interaction">
+<div class="owner-profile">
+<div class="owner-avatar-wrap">
+<img alt="KielHax" onerror="this.src='data:image/svg+xml,&lt;svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22&gt;&lt;rect fill=%22%23111%22 width=%22100%22 height=%22100%22/&gt;&lt;text x=%2250%22 y=%2255%22 text-anchor=%22middle%22 fill=%22%2302f2ff%22 font-size=%2240%22 font-family=%22sans-serif%22&gt;K&lt;/text&gt;&lt;/svg&gt;'" src="https://raw.githubusercontent.com/senseikiel8-coder/kiel.json/main/kielhax_picture.jpg"/>
+</div>
+<div class="owner-name">KIELHAX</div>
+<div class="owner-tag">Developer / Owner</div>
+</div>
+<div class="owner-status">
+<div class="status-dot"></div>
+<div>
+<div style="font-family: 'Orbitron'; font-weight: 800; font-size: 0.95rem; text-transform: uppercase;">System Online</div>
+<div style="font-size: 0.75rem; color: var(--text-muted);">Avg. response: <span style="color:var(--success);">3 min</span></div>
+</div>
+</div>
+<div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-bottom: 20px;">
+<div style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; padding: 16px 8px; text-align: center;">
+<span style="font-family: 'Orbitron'; font-size: 1.25rem; font-weight: 900; color: var(--accent); display: block;">1K+</span>
+<span style="font-size: 0.65rem; color: var(--text-muted); text-transform: uppercase; font-weight: 600;">Clients</span>
+</div>
+<div style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; padding: 16px 8px; text-align: center;">
+<span style="font-family: 'Orbitron'; font-size: 1.25rem; font-weight: 900; color: var(--accent); display: block;">99%</span>
+<span style="font-size: 0.65rem; color: var(--text-muted); text-transform: uppercase; font-weight: 600;">Uptime</span>
+</div>
+<div style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; padding: 16px 8px; text-align: center;">
+<span style="font-family: 'Orbitron'; font-size: 1.25rem; font-weight: 900; color: var(--accent); display: block;">4.9</span>
+<span style="font-size: 0.65rem; color: var(--text-muted); text-transform: uppercase; font-weight: 600;">Rating</span>
+</div>
+</div>
+<a class="contact-row interaction" href="https://t.me/kielhax" target="_blank">
+<div class="contact-icon-sm contact-icon-telegram">
+<svg fill="currentColor" stroke="none" viewbox="0 0 24 24"><path d="M9.78 18.65l.28-4.23 7.68-6.92c.34-.31-.07-.46-.52-.19L7.74 13.3 3.64 12c-.88-.25-.89-.86.2-1.3l15.97-6.16c.73-.33 1.43.18 1.15 1.3l-2.72 12.81c-.19.91-.74 1.13-1.5.71L12.6 16.3l-1.99 1.93c-.23.23-.42.42-.83.42z"></path></svg>
+</div>
+<div style="flex: 1;">
+<div style="font-family: 'Orbitron'; font-weight: 700; font-size: 0.9rem;">Telegram</div>
+<div style="font-size: 0.75rem; color: var(--text-muted);">@kielhax</div>
+</div>
+<svg fill="none" height="16" stroke="currentColor" stroke-width="2" style="color: #29b6f6;" viewbox="0 0 24 24" width="16"><polyline points="9 18 15 12 9 6"></polyline></svg>
+</a>
+<a class="contact-row interaction" href="https://t.me/Ezekielhax" target="_blank">
+<div class="contact-icon-sm contact-icon-group">
+<svg fill="currentColor" stroke="none" viewbox="0 0 24 24"><path d="M9.78 18.65l.28-4.23 7.68-6.92c.34-.31-.07-.46-.52-.19L7.74 13.3 3.64 12c-.88-.25-.89-.86.2-1.3l15.97-6.16c.73-.33 1.43.18 1.15 1.3l-2.72 12.81c-.19.91-.74 1.13-1.5.71L12.6 16.3l-1.99 1.93c-.23.23-.42.42-.83.42z"></path></svg>
+</div>
+<div style="flex: 1;">
+<div style="font-family: 'Orbitron'; font-weight: 700; font-size: 0.9rem;">Official Group</div>
+<div style="font-size: 0.75rem; color: var(--text-muted);">t.me/Ezekielhax</div>
+</div>
+<svg fill="none" height="16" stroke="currentColor" stroke-width="2" style="color: #00c6ff;" viewbox="0 0 24 24" width="16"><polyline points="9 18 15 12 9 6"></polyline></svg>
+</a>
+<a class="contact-row interaction" href="https://tiktok.com/@kiel_no_aim" target="_blank">
+<div class="contact-icon-sm contact-icon-tiktok">
+<svg fill="currentColor" stroke="none" viewbox="0 0 24 24"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1v-3.5a6.37 6.37 0 0 0-.79-.05A6.34 6.34 0 0 0 3.15 15.2a6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.34-6.34V8.75a8.26 8.26 0 0 0 4.81 1.54V6.84a4.86 4.86 0 0 1-1.05-.15z"></path></svg>
+</div>
+<div style="flex: 1;">
+<div style="font-family: 'Orbitron'; font-weight: 700; font-size: 0.9rem;">TikTok</div>
+<div style="font-size: 0.75rem; color: var(--text-muted);">@kiel_no_aim</div>
+</div>
+<svg fill="none" height="16" stroke="currentColor" stroke-width="2" style="color: #fe2c55;" viewbox="0 0 24 24" width="16"><polyline points="9 18 15 12 9 6"></polyline></svg>
+</a>
+<a class="btn btn-success interaction" href="https://t.me/kielhax" style="margin-top: 16px;" target="_blank">
+                            Start Order
                         </a>
-                        
-                        <a href="https://t.me/Ezekielhax" class="contact-row interaction" target="_blank">
-                            <div class="contact-icon-sm contact-icon-group">
-                                <svg viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M9.78 18.65l.28-4.23 7.68-6.92c.34-.31-.07-.46-.52-.19L7.74 13.3 3.64 12c-.88-.25-.89-.86.2-1.3l15.97-6.16c.73-.33 1.43.18 1.15 1.3l-2.72 12.81c-.19.91-.74 1.13-1.5.71L12.6 16.3l-1.99 1.93c-.23.23-.42.42-.83.42z"/></svg>
-                            </div>
-                            <div style="flex: 1;">
-                                <div style="font-family: 'Orbitron'; font-weight: 700; font-size: 0.9rem;">Official Group</div>
-                                <div style="font-size: 0.75rem; color: var(--text-muted);">t.me/Ezekielhax</div>
-                            </div>
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color: #00c6ff;"><polyline points="9 18 15 12 9 6"/></svg>
-                        </a>
-
-                        <a href="https://tiktok.com/@kiel_no_aim" class="contact-row interaction" target="_blank">
-                            <div class="contact-icon-sm contact-icon-tiktok">
-                                <svg viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1v-3.5a6.37 6.37 0 0 0-.79-.05A6.34 6.34 0 0 0 3.15 15.2a6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.34-6.34V8.75a8.26 8.26 0 0 0 4.81 1.54V6.84a4.86 4.86 0 0 1-1.05-.15z"/></svg>
-                            </div>
-                            <div style="flex: 1;">
-                                <div style="font-family: 'Orbitron'; font-weight: 700; font-size: 0.9rem;">TikTok</div>
-                                <div style="font-size: 0.75rem; color: var(--text-muted);">@kiel_no_aim</div>
-                            </div>
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color: #fe2c55;"><polyline points="9 18 15 12 9 6"/></svg>
-                        </a>
-
-                        <a href="https://t.me/kielhax" class="btn btn-success interaction" target="_blank" style="margin-top: 16px;">
-                            Initialize Purchase
-                        </a>
-                    </div>
-                </div>
-
-                <!-- KEYS -->
-                <div class="section" id="keys">
-                    <div class="card interaction" style="text-align: center;">
-                        <div class="key-box">
-                            <input type="text" class="key-input" id="keyInput" placeholder="XXXX-XXXX-XXXX" readonly>
-                            <div style="font-size: 0.75rem; color: var(--text-muted); text-transform: uppercase; font-weight: 600;">Status: Awaiting Generation</div>
-                        </div>
-
-                        <button class="btn btn-accent interaction" id="generateBtn" onclick="generateKey()">
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="23 4 23 10 17 10"/><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"/></svg>
-                            Compile Free Key
+</div>
+</div>
+<!-- KEYS -->
+<div class="section" id="keys">
+<div class="card interaction" style="text-align: center;">
+<div class="key-box">
+<input class="key-input" id="keyInput" placeholder="XXX-XXX-XXX" readonly="" type="text"/>
+<div style="font-size: 0.75rem; color: var(--text-muted); text-transform: uppercase; font-weight: 600;">Status: Awaiting Promo Code</div>
+</div>
+<button class="btn btn-accent interaction" id="generateBtn" onclick="generateKey()">
+<svg fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><polyline points="23 4 23 10 17 10"></polyline><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"></path></svg>
+                            GENERATE FREE KEY
                         </button>
-
-                        <button class="btn interaction" style="background: transparent; border: 1px solid rgba(255,255,255,0.1); color: var(--text-muted); margin-top: 12px;" onclick="showModal('1 key per IP. Expires after 24 hours if not used.\nKeys expire after an unknown period.\nPremium keys are available for purchase.\nContact the owner for unlimited access.', 'KEY PROTOCOL')">
+<button class="btn interaction" onclick="showModal('1 promo code per visitor. Codes may expire after 24 hours if not used. Contact the owner for official package access.', 'PROMO POLICY')" style="background: transparent; border: 1px solid rgba(255,255,255,0.1); color: var(--text-muted); margin-top: 12px;">
                             Read Policy
                         </button>
-                    </div>
-                </div>
-
-            </div>
-
-            <!-- Spacer for bottom nav -->
-            <div style="height: 80px;"></div>
-        </div>
-
-        <!-- Bottom Nav - inside phone -->
-        <nav class="bottom-nav">
-            <button class="nav-item active interaction" onclick="switchTab('pricelist')" data-tab="pricelist">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
-                Pricing
+</div>
+</div>
+</div>
+<!-- Spacer for bottom nav -->
+<div style="height: 80px;"></div>
+</div>
+<!-- Bottom Nav - inside phone -->
+<nav class="bottom-nav">
+<button class="nav-item active interaction" data-tab="pricelist" onclick="switchTab('pricelist')">
+<svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><line x1="12" x2="12" y1="1" y2="23"></line><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
+                Price
             </button>
-            <button class="nav-item interaction" onclick="switchTab('files')" data-tab="files">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+<button class="nav-item interaction" data-tab="files" onclick="switchTab('files')">
+<svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" x2="12" y1="15" y2="3"></line></svg>
                 Files
             </button>
-            <button class="nav-item interaction" onclick="switchTab('owner')" data-tab="owner">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+<button class="nav-item interaction" data-tab="owner" onclick="switchTab('owner')">
+<svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
                 Owner
             </button>
-            <button class="nav-item interaction" onclick="switchTab('keys')" data-tab="keys">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+<button class="nav-item interaction" data-tab="keys" onclick="switchTab('keys')">
+<svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><rect height="11" rx="2" ry="2" width="18" x="3" y="11"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
                 Keys
             </button>
-        </nav>
-
-        <!-- Music Player - inside phone frame -->
-        <div class="music-player" id="musicPlayer">
-            <div class="music-ring"></div>
-            <div class="music-ring-2"></div>
-            <div class="music-pulse"></div>
-            <div class="music-player-inner">
-                <div class="music-note">
-                    <svg viewBox="0 0 24 24"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>
-                </div>
-                <button class="music-btn" id="musicBtn">
-                    <svg id="playIcon" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
-                    <svg id="pauseIcon" viewBox="0 0 24 24" style="display:none;"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>
-                </button>
-            </div>
-        </div>
-    </div>
-
-    <!-- MODAL -->
-    <div class="modal-overlay" id="modal" onclick="closeModal(event)">
-        <div class="modal" onclick="event.stopPropagation()">
-            <div class="modal-icon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-            </div>
-            <h3 id="modal-title">Title</h3>
-            <div id="modal-text">Content</div>
-            <div id="modal-buttons" style="display: flex; gap: 12px; width: 100%;">
-                <button class="modal-btn interaction" data-close="true" onclick="closeModal()">Acknowledge</button>
-            </div>
-        </div>
-    </div>
-
-    <script>
+</nav>
+<!-- Music Player - inside phone frame -->
+<div class="music-player" id="musicPlayer">
+<div class="music-ring"></div>
+<div class="music-ring-2"></div>
+<div class="music-pulse"></div>
+<div class="music-player-inner">
+<div class="music-note">
+<svg viewbox="0 0 24 24"><path d="M9 18V5l12-2v13"></path><circle cx="6" cy="18" r="3"></circle><circle cx="18" cy="16" r="3"></circle></svg>
+</div>
+<button class="music-btn" id="musicBtn">
+<svg id="playIcon" viewbox="0 0 24 24"><path d="M8 5v14l11-7z"></path></svg>
+<svg id="pauseIcon" style="display:none;" viewbox="0 0 24 24"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"></path></svg>
+</button>
+</div>
+</div>
+</div>
+<!-- MODAL -->
+<div class="modal-overlay" id="modal" onclick="closeModal(event)">
+<div class="modal" onclick="event.stopPropagation()">
+<div class="modal-icon">
+<svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+</div>
+<h3 id="modal-title">Title</h3>
+<div id="modal-text">Content</div>
+<div id="modal-buttons" style="display: flex; gap: 12px; width: 100%;">
+<button class="modal-btn interaction" data-close="true" onclick="closeModal()">Acknowledge</button>
+</div>
+</div>
+</div>
+<script>
         let isGenerating = false;
         const bgMusic = document.getElementById('bgMusic');
         let isPlaying = false;
@@ -1498,7 +1385,7 @@
             const parent = el.parentElement;
             parent.querySelectorAll('.duration-pill').forEach(p => p.classList.remove('active'));
             el.classList.add('active');
-            showModal(game + ' - ' + duration + '<br>Price: ' + price + '<br><br>Head to the Owner tab to initialize your purchase.', 'Package Selected', true);
+            showModal(game + ' - ' + duration + '<br>Price: ' + price + '<br><br>Head to the Owner tab to start your order.', 'Package Selected', true);
         }
 
         function showModal(text, title, isHTML, buttonsHTML) {
@@ -1532,12 +1419,12 @@
             if (isGenerating) return;
 
             var buttons = '<button class="modal-btn interaction" data-close="true" style="background: rgba(255,0,0,0.1); border-color: var(--danger); color: var(--danger);" onclick="cancelGeneration()">Abort</button>' +
-                '<button class="modal-btn interaction" style="background: rgba(0,255,136,0.2); border-color: var(--success); color: var(--success);" onclick="proceedToTikTok()">Verify Base</button>';
-            showModal('Authorization required. Follow Kiel on TikTok to bypass security and compile a key.', 'Security Protocol', false, buttons);
+                '<button class="modal-btn interaction" style="background: rgba(0,255,136,0.2); border-color: var(--success); color: var(--success);" onclick="proceedToTikTok()">Continue</button>';
+            showModal('Verification required. Follow Kiel on TikTok to continue generating your promo code.', 'Service Protocol', false, buttons);
         }
 
         function cancelGeneration() {
-            setTimeout(function() { showModal('Compilation aborted. Authorization failed.', 'Process Terminated'); }, 300);
+            setTimeout(function() { showModal('Promo generation cancelled.', 'Process Cancelled'); }, 300);
         }
 
         function proceedToTikTok() {
@@ -1546,14 +1433,14 @@
             var btn = document.getElementById('generateBtn');
             var originalBtnHTML = btn.innerHTML;
             btn.disabled = true;
-            btn.innerHTML = 'COMPILING...';
+            btn.innerHTML = 'GENERATING...';
 
             window.open('https://tiktok.com/@kiel_no_aim', '_blank');
 
             var waitTime = 10;
-            var timerHtml = '<button class="modal-btn" style="opacity: 0.5; border-color: #888;" disabled>Decrypting (<span id="wait-timer">' + waitTime + '</span>s)...</button>';
+            var timerHtml = '<button class="modal-btn" style="opacity: 0.5; border-color: #888;" disabled>Generating (<span id="wait-timer">' + waitTime + '</span>s)...</button>';
             
-            showModal('Bypassing security protocols...<br><br>Awaiting verification ping.', 'System Compiling', true, timerHtml);
+            showModal('Generating promo code...<br><br>Awaiting verification.', 'Promo Generating', true, timerHtml);
 
             var waitInterval = setInterval(function() {
                 waitTime--;
@@ -1574,10 +1461,10 @@
                     input.value = key;
                     input.classList.add('generated');
                     
-                    var finalHtml = 'Decryption successful!<br><br>' +
+                    var finalHtml = 'Promo code generated!<br><br>' +
                         '<div style="font-family: Orbitron; font-size: 1.6rem; font-weight: 900; color: var(--success); letter-spacing: 2px; padding: 20px 10px; background: rgba(0, 255, 136, 0.1); border: 1px solid var(--success); margin: 10px 0; word-break: break-all; text-shadow: 0 0 10px var(--success);">' +
-                        key + '</div><br>Save to clipboard immediately. Terminal will clear the log shortly.';
-                    showModal(finalHtml, 'KEY COMPILED SUCCESSFULLY', true);
+                        key + '</div><br>Save this promo code and contact the owner to confirm package availability.';
+                    showModal(finalHtml, 'PROMO CODE READY', true);
                 }
             }, 1000);
         }
