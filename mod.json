@@ -9,24 +9,10 @@
       "game_activity": "com.tencent.tmgp.cod.CODMainActivity"
     },
     {
-      "name": "KIELHAX DELUXE [OPTIMIZED SKINHAX]",
-      "status": "ONLINE",
-      "lib_name": "libkielhaxdeluxe.so",
-      "download_url": "https://xaidomain.x10.mx/Farlight/libkielhaxdeluxe.so",
-      "game_activity": "com.tencent.tmgp.cod.CODMainActivity"
-    },
-    {
-      "name": "KIELHAX OLD [LOWEND V3]",
-      "status": "ONLINE",
-      "lib_name": "libkielhaxlowendv3.so",
-      "download_url": "https://xaidomain.x10.mx/Farlight/libkielhaxlowendv3.so",
-      "game_activity": "com.tencent.tmgp.cod.CODMainActivity"
-    },
-    {
       "name": "KIELHAX LOWEND [NO SKINHACKS]",
       "status": "ONLINE",
       "lib_name": "libkielhaxlowend.so",
-      "download_url": "https://xaidomain.x10.mx/Farlight/libkielhaxlowend.so",
+      "download_url": "https://raw.githubusercontent.com/senseikiel8-coder/5347JKSFDGHJ38/main/libkielhaxlowend.so",
       "game_activity": "com.tencent.tmgp.cod.CODMainActivity"
     }
   ]
