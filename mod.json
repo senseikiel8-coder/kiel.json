@@ -7,13 +7,6 @@
       "lib_name": "libkielhaxpremier.so",
       "download_url": "https://xaidomain.x10.mx/Farlight/libkielhaxpremier.so",
       "game_activity": "com.tencent.tmgp.cod.CODMainActivity"
-    },
-    {
-      "name": "KIELHAX LOWEND [NO SKINHACKS]",
-      "status": "ONLINE",
-      "lib_name": "libkielhaxlowend.so",
-      "download_url": "https://xaidomain.x10.mx/Farlight/libkielhaxlowend.so",
-      "game_activity": "com.tencent.tmgp.cod.CODMainActivity"
     }
   ]
 }
