@@ -7,6 +7,13 @@
       "lib_name": "libkielhaxpremier.so",
       "download_url": "https://xaidomain.x10.mx/Farlight/libkielhaxpremier.so",
       "game_activity": "com.tencent.tmgp.cod.CODMainActivity"
+    },
+    {
+      "name": "KIELHAX OBSIDIAN [SMOOTH/SB SKIN]",
+      "status": "ONLINE",
+      "lib_name": "libkielhaxobsidian.so",
+      "download_url": "https://xaidomain.x10.mx/Farlight/libkielhaxobsidian.so",
+      "game_activity": "com.tencent.tmgp.cod.CODMainActivity"
     }
   ]
 }
